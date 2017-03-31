@@ -1,0 +1,18 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={The competitive firm's optimal output \label{fig:optoutput}},description={Here, $q_0$ represents the optimal supply decision when the price is $P_0$. At output $q_1$ the cost of additional units is less than the revenue from such units and therefore it is profitable to increase output beyond $q_1$. Conversely, at $q_2$ the $MC$ of production exceeds the revenue obtained, and so output should be reduced.}}
+% MC curve
+\draw [dashed,mccolour,ultra thick,domain=3:18,name path=MC] plot (\x, {0.25*pow(1.25,\x)+4}) node [mynode,right,black] {$MC$};
+% Demand line
+\draw [demandcolour,ultra thick,name path=demand] (0,10) node [black,mynode,left] {$P_0$} -- (24,10) node [black,mynode,above=0.35cm and 0cm] {Demand facing\\individual firm:} node [black,mynode,above] {$P=MR$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} |- (25,0) node (xaxis) [right] {Quantity};
+% intersection of MC and demand
+\draw [name intersections={of=MC and demand, by=Q0}]
+	[dotted,thick] (Q0) -- (xaxis -| Q0) node [mynode,below] {$q_0$};
+% paths for Q1 and Q2
+\path [name path=Q1line] (7,0) -- +(0,20);
+\path [name path=Q2line] (18,0) -- +(0,20);
+% intersection of paths and MC curve
+\draw [name intersections={of=MC and Q1line, by=Q1},name intersections={of=MC and Q2line, by=Q2}]
+	[dotted,thick] (Q1) -- (xaxis -| Q1) node [mynode,below] {$q_1$}
+	[dotted,thick] (Q2) -- (xaxis -| Q2) node [mynode,below] {$q_2$};
+\end{TikzFigure}

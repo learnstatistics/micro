@@ -1,0 +1,7 @@
+\newcommand{\booktitle}{Principles of Microeconomics}
+\newcommand{\booksubject}{MICROECONOMICS}
+\newcommand{\bookauthor}{Douglas Curtis and Ian Irvine}
+
+\newcommand{\version}{2017}
+\newcommand{\revision}{A}
+

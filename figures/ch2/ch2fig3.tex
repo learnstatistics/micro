@@ -1,0 +1,60 @@
+\begin{TikzFigure}{xscale=1,yscale=1,caption={Price of housing \label{fig:housemortgageprice}}}
+\begin{axis}[
+	%axis lines=left,
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=4,xmax=9,ymin=0,ymax=900,
+	y=0.75cm/100,
+	x=2cm/1,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Mortgage rate},
+	ylabel={House price},
+]
+\addplot[datasetcolourtwo,only marks,mark=+] table {
+	X		Y
+	7.75	350
+	6.85	360
+	6.6		395
+	5.8		434
+	6.05	477
+	6.3		580
+	6.65	630
+	7.3		710
+	5.8		605
+	5.4		740
+	5.2		800
+};
+\addplot[reglinecolour,ultra thick,mark=none] table[
+	y={create col/linear regression={y=Y}}] % compute a linear regression from the coordinates above
+{
+	X			Y
+	7.75	350
+	6.85	360
+	6.6		395
+	5.8		434
+	6.05	477
+	6.3		580
+	6.65	630
+	7.3		710
+	5.8		605
+	5.4		740
+	5.2		800
+};
+\addplot[black,dotted] table {
+	X		Y
+	6.5		0
+	6.5		535.588
+	0		535.588
+};
+\addplot[black,dotted] table {
+	X		Y
+	7.5		0
+	7.5		430.28
+	0		430.28
+};
+\end{axis}
+\end{TikzFigure}

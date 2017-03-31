@@ -1,0 +1,170 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:government}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:government} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch14ex1}
+An economy is composed of two individuals, whose demands for a public good -- street lighting -- are given by $P=12-(1/2)Q$ and $P=8-(1/3)Q$.
+\begin{enumerate}
+\item	Graph these demands on a diagram, for values of $Q=1,\ldots,24$.
+\item	Graph the total demand for this public good by summing the demands vertically, specifying the numerical value of each intercept.
+\item	Let the marginal cost of providing the good be \$5 per unit. Illustrate graphically the efficient supply of the public good ($Q^{*}$) in this economy.
+\item	Illustrate graphically the area that represents the total value to the consumers of the amount $Q^{*}$.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See figure below.
+\item	The total demand for the public good has a vertical intercept of 20 and a horizontal intercept of 24. The form of the equation is therefore $P=20-(5/6)Q$.
+\item	Equate the $MC$ of \$5 to the total demand curve to obtain $Q=18$. This is the `optimal' output -- where the cost of the last unit produced equals the value placed on it by both individuals. At this quantity the individual valuations (the price that each is willing to pay) are obtained from the individual demand curves. Substituting $Q=18$ into each yields \$3 and \$2.
+\item	The area below the total demand, above the quantity axis up to $Q^{*}$.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.24,yscale=0.24]
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {\$} |- (30,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,demandcolour,name path=TD] (0,20) node [mynode,left,black] {20} -- node [mynode,above right,black,pos=0.2] {Total demand} (24,0) node [mynode,below,black] {24};
+\draw [ultra thick,demandcolour!50,name path=ID1] (0,12) node [mynode,left,black] {12} -- (24,0);
+\draw [ultra thick,demandcolour!50,name path=ID2] (0,8) node [mynode,left,black] {8} -- (24,0);
+\draw [ultra thick,supplycolour,name path=S] (0,5) -- +(30,0) node [mynode,black,right] {$MC=5$};
+\path [name path=arrowline] (7,0) -- +(0,25);
+\draw [name intersections={of=arrowline and ID1, by=i1}]
+[<-,thick,shorten <=1mm] (i1) -- +(10,5) coordinate (IDcoord) node [mynode,right] {Individual demands};
+\draw [name intersections={of=arrowline and ID2, by=i2}]
+[<-,thick,shorten <=1mm] (i2) -- (IDcoord);
+\draw [name intersections={of=S and TD, by=Qstar}]
+	[dotted,thick] (Qstar) -- (xaxis -| Qstar) node [mynode,below] {$Q^{*}$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch14ex2}
+In Exercise~\ref{ex:ch14ex1}, suppose a new citizen joins the economy, and her demand for the public good is given by $P=10-(5/12)Q$.
+\begin{enumerate}
+\item	Add this individual's demand curve to the graphic for the above question and graph the new total demand curve, specifying the intercept values. 
+\item	Illustrate the area on your graph that represents the new total value to the three citizens of the optimal amount supplied. 
+\item	Illustrate graphically the net value to society of the new $Q^{*}$ -- the total value minus the total cost.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The new individual demand has a value of \$10 and a quantity intercept of 24. The new total demand has intercepts $\{\$30,24\}$.
+\item	The new $Q^{*}$ is greater than with two individuals. Hence the total value of the public good rises.
+\item	See the diagram.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch14ex3}
+An industry that is characterized by a decreasing cost structure has a demand curve given by $P=100-Q$ and the marginal revenue curve by $MR=100-2Q$. The marginal cost is $MC=4$, and average cost is $AC=4+188/Q$.
+\begin{enumerate}
+\item	Graph this cost and demand structure. [\textit{Hint}: This graph is similar to Figure~\ref{fig:deccostsupplier}.]
+\item	Illustrate the efficient output and the monopoly output for the industry.
+\item	Illustrate on the graph the price the monopolist would charge if he were unregulated.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the diagram below.
+\item	The efficient output is where the $MC=P$, as given by the demand curve. He would maximize profit by producing where $MC=MR$.
+\item	He would choose a price from the demand curve at an output where $MC=MR$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=100,ymin=0,ymax=100,
+	y=0.95cm/15,
+	x=0.95cm/10,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Quantity},
+	ylabel={\$},
+	]
+	\addplot[demandcolour,ultra thick,mark=none] table {
+		X	Y
+		10	90
+		20	80
+		30	70
+		40	60
+		50	50
+		60	40
+		70	30
+		80	20
+		90	10
+		100	0
+	};\addlegendentry{$D$}
+	\addplot[datasetcolourtwo,dashed,ultra thick,mark=none] table {
+		X	Y
+		10	80
+		20	60
+		30	40
+		40	20
+		50	0
+	};\addlegendentry{$MR$}
+	\addplot[mccolour,dotted,ultra thick,mark=none] table {
+		X	Y
+		10	4
+		20	4
+		30	4
+		40	4
+		50	4
+		60	4
+		70	4
+		80	4
+		90	4
+		100	4
+	};\addlegendentry{$MC$}
+	\addplot[atccolour,dashdotted,ultra thick,mark=none] table {
+		X	Y
+		10	22.8
+		20	13.4
+		30	10.3
+		40	8.7
+		50	7.8
+		60	7.1
+		70	6.7
+		80	6.4
+		90	6.1
+		100	5.9
+	};\addlegendentry{$AC$}
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch14ex4}
+\textit{Optional}: In Question~\ref{ex:ch14ex3}, suppose the government decides to regulate the behaviour of the supplier, in the interests of the consumer. 
+\begin{enumerate}
+\item	Illustrate graphically the price and output that would emerge if the supplier were regulated so that his allowable price equalled average cost. 
+\item	Is this greater or less than the efficient output?
+\item	Compute the $AC$ and $P$ that would be charged with this regulation.
+\item	Illustrate graphically the deadweight loss associated with the regulated price and compare it with the deadweight loss under monopoly. 
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Equating the $ATC$ to the demand curve yields $100-Q=4+188/Q$. The solution is $Q=94$.
+\item	This is (slightly) less than the efficient output.
+\item	Average cost is \$(4+188)/94=\$6; price is \$6.
+\item	The DWL under this regulation equals the area beneath the demand curve and above the $MC$ curve between quantity values 94 and 96. The unrestricted monopoly DWL is the same area between the quantity values where $MC=MR$ and 96.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch14ex5}
+\textit{Optional}: As an alternative to regulating the supplier such that price covers average total cost, suppose that a two part tariff were used to generate revenue. This scheme involves charging the $MC$ for each unit that is purchased and in addition charging each buyer in the market a fixed cost that is independent of the amount he purchases. If an efficient output is supplied in the market, illustrate graphically the total revenue to be obtained from the component covering a price per unit of the good supplied, and the component covering fixed cost.
+\begin{econsolution}
+An efficient output is where $P=MC$, that is $Q=96$. At this output he charges a price of \$4. Hence his loss per unit is the difference between price and $ATC$ which is 188/96. Since he produces 96 units, then charging a price of just \$4 leads to a revenue shortfall of $96\times (188/96)=\$188$. This amount would have to be spread as a charge over the number of buyers in the market as a fixed cost associated with purchasing. In essence each buyer would have to pay a certain entry fee just to purchase the good.
+
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

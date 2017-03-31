@@ -1,0 +1,6 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Increasing and decreasing cost industries \label{fig:incdeccost}},description={When individual-supplier costs rise as the output of the industry increases we have an increasing cost supply curve for the industry in the long run. Conversely, when the costs of individual suppliers fall with the scale of the industry, we have a decreasing cost industry.}}
+\draw [supplycolour,ultra thick,domain=0:24] plot (\x, {pow(1.25,\x-20)+11}) node [black,mynode,right] {Increasing cost LR\\industry supply curve};
+\draw [supplycolour,ultra thick,domain=0:24] plot (\x, {10}) node [black,mynode,right] {Constant cost LR\\industry supply curve};
+\draw [supplycolour,ultra thick,domain=0:24] plot (\x, {-1*pow(1.25,\x-20)+9}) node [black,mynode,right] {Decreasing cost LR\\industry supply curve};
+\draw [thick, -] (0,20) node [above] {\$} |- (25,0) node [right] {Industry Output};
+\end{TikzFigure}

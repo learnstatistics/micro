@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.45,yscale=0.45,descwidth=25em,caption={The taxi market \label{fig:taximarketB}},description={The curves represented by $D'$ and $S'$ represent the curves for bad weather: Taxi rides are more highly valued on the demand side, and drivers must be paid more to supply in less favourable work conditions.}}
+% axes
+\draw [thick] (0,15) node (yaxis) [above,mynode1] {Price (fee\\per hour)} |- (15,0) node (xaxis) [right,mynode1] {Quantity (thousands\\of hours of rides)};
+% demand line
+\draw [demandcolour,ultra thick,name path=D] (0,9) node [mynode,left,black] {90} -- node [mynode,above right,black,pos=0.25] {$D$} (9,0);
+\draw [demandcolour,ultra thick,name path=Dprime] (0,12) -- node [mynode,above right,black,pos=0.25] {$D'$} (12,0);
+% supply line
+\draw [supplycolour,ultra thick,name path=S] (0,3) node [mynode,left,black] {30} -- (12,6) node [mynode,right,black] {$S$};
+\draw [supplycolour,ultra thick,name path=Sprime] (0,3) -- (12,9) node [mynode,right,black] {$S'$};
+% intersection of S and D, and Sprime and Dprime
+\draw [name intersections={of=D and S, by=E}, name intersections={of=Dprime and Sprime, by=Eprime}]
+	[thick,dotted] (yaxis |- E) node [mynode,left] {42} -- (E) node [mynode,above] {E} -- (xaxis -| E) node [mynode,below] {48}
+	[thick,dotted] (yaxis |- Eprime) node [mynode,left] {60} -- (Eprime) node [mynode,above] {$\text{E}'$} -- (xaxis -| Eprime) node [mynode,below] {60};
+\end{TikzFigure}

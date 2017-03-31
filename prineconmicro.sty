@@ -1,0 +1,216 @@
+% % % % % % % % % % % % %
+% % % % % % % %
+% %
+% % Style for Principles of Microeconomics textbook
+% %
+% % % % % % % %
+% % % % % % % % % % % % %
+
+
+
+
+% % % % % % % % % % %
+% Colours!!!
+% % % % % % % % % % %
+%
+% Title page colours
+\definecolor{titletextcolour}{HTML}{FAA21A}
+\definecolor{subtitletextcolour}{HTML}{FEE8C6}
+\definecolor{cctextcolour}{HTML}{FEE8C6}
+
+% LSCS page text colour
+\definecolor{lscstextcolour}{HTML}{FAA21A}
+
+% Section and subsection header colours
+\definecolor{sectionheadercolour}{HTML}{FAA21A}
+\definecolor{subsectioncolour}{HTML}{FAA21A}
+
+% Part page line colour
+\definecolor{partlinecolour}{HTML}{FAA21A}
+
+% Chapter header colours
+\definecolor{mainchapterboxcolour}{HTML}{FEE8C6}
+\definecolor{chaptertextcolour}{HTML}{FAA21A}
+
+% Chapter topics box colours
+\definecolor{chaptopicsoutlinecolour}{HTML}{FAA21A}
+\definecolor{chaptopicsbkgdcolour}{HTML}{FEE8C6}
+%
+% % % % % % % % % % %
+
+
+% % % % % % % % % % %
+% Colours for figures and functions
+% % % % % % % % % % %
+%
+
+% Pie chart colours
+\definecolor{piecolourone}{HTML}{CAA496}
+\definecolor{piecolourtwo}{HTML}{DDE9EC}
+\definecolor{piecolourthree}{HTML}{C4C4CE}
+\definecolor{piecolourfour}{HTML}{A9AFC7}
+\definecolor{piecolourfive}{HTML}{9FB8CD}
+\definecolor{piecoloursix}{HTML}{DBE296}
+\definecolor{piecolourseven}{HTML}{FBE093}
+
+% PPF function colours
+\definecolor{ppfcolourone}{HTML}{006795}
+\definecolor{ppfcolourtwo}{HTML}{FAA21A}
+\definecolor{ppfcolourthree}{HTML}{800080}
+\definecolor{ppfcolourfour}{HTML}{E64B00}
+
+% dataset line colours
+\definecolor{datasetcolourone}{HTML}{FAA21A}
+\definecolor{datasetcolourtwo}{HTML}{006795}
+\definecolor{datasetcolourthree}{HTML}{800080}
+\definecolor{datasetcolourfour}{HTML}{E64B00}
+
+% Price-mortgage relationship colour
+\definecolor{pricemortcolour}{HTML}{800080}
+
+% Regression line colour
+\definecolor{reglinecolour}{HTML}{800080}
+
+% Supply and demand function colours
+\definecolor{supplycolour}{HTML}{FAA21A}
+\definecolor{demandcolour}{HTML}{006795}
+
+% Industry demand (used in ch12fig2)
+\definecolor{inddemandcolour}{HTML}{55198E}
+
+% Market supply (used in ch9fig3)
+\definecolor{marketsupplycolour}{HTML}{FAA21A}
+
+% Total utility
+\definecolor{tucolour}{HTML}{800080}
+
+% Marginal utility
+\definecolor{mucolour}{HTML}{C4C4CE}
+
+% Budget line (constraint)
+\definecolor{budgetcolour}{HTML}{000000}
+
+% Indifference curve
+\definecolor{indiffcolour}{HTML}{800080}
+
+% Total product curve (TP)
+\definecolor{tpcolour}{HTML}{800080}
+
+% Average product curve (AP)
+\definecolor{apcolour}{HTML}{000000}
+
+% Marginal product curve (MP)
+\definecolor{mpcolour}{HTML}{E64B00}
+
+% Total cost curve (TC)
+\definecolor{tccolour}{HTML}{E64B00}
+
+% Variable cost curve (VC)
+\definecolor{vccolour}{HTML}{EE814D}
+
+% Fixed cost curve (FC)
+\definecolor{fccolour}{HTML}{000000}
+
+% Marginal cost curve (MC)
+\definecolor{mccolour}{HTML}{E64B00}
+
+% Average Total cost (ATC) [also Average cost (AC)?]
+\definecolor{atccolour}{HTML}{E64B00}
+\definecolor{atccolouralt}{HTML}{006795}
+
+% Average variable cost (AVC)
+\definecolor{avccolour}{HTML}{FAA21A}
+
+% Average fixed cost (AFC)
+\definecolor{afccolour}{HTML}{800080}
+
+% Long-run marginal cost (LMC)
+\definecolor{lmccolour}{HTML}{E64B00}
+
+% Total revenue (TR)
+\definecolor{trcolour}{HTML}{2C6078}
+
+% Marginal revenue (MR)
+\definecolor{mrcolour}{HTML}{006795}
+
+% Short-run average cost (SAC)
+\definecolor{saccolour}{HTML}{E64B00}
+
+% Long-run average total cost (LATC) [also LAC?]
+\definecolor{latccolour}{HTML}{E64B00}
+
+% Value of marginal product (VMP)
+\definecolor{vmpcolour}{HTML}{800080}
+%
+% % % % % % % % % % %
+% End of Colours!!!
+% % % % % % % % % % %
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For the pie charts
+%
+% Only used in the microeconomics text (Chapter 14)
+%
+\tikzstyle{chart}=[
+legend label/.style={font={\scriptsize},anchor=west,align=left},
+legend box/.style={rectangle, draw, minimum size=5pt},
+axis/.style={black,semithick,->},
+axis label/.style={anchor=east,font={\tiny}},
+]
+
+\tikzstyle{pie chart}=[
+chart,
+slice/.style={line cap=round, line join=round, very thick,draw=white},
+pie title/.style={font={\bf}},
+slice type/.style 2 args={
+	##1/.style={fill=##2},
+	values of ##1/.style={}
+}
+]
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\newcommand{\pie}[2][]{
+	\begin{scope}[#1]
+		\pgfmathsetmacro{\curA}{90}
+		\pgfmathsetmacro{\r}{1}
+		\def\c{(0,0)};
+		\foreach \v/\s in{#2}{
+			\pgfmathsetmacro{\deltaA}{\v/100*360}
+			\pgfmathsetmacro{\nextA}{\curA + \deltaA}
+			\pgfmathsetmacro{\midA}{(\curA+\nextA)/2}
+			
+			\path[slice,\s] \c
+			-- +(\curA:\r)
+			arc (\curA:\nextA:\r)
+			-- cycle;
+			\pgfmathsetmacro{\d}{max((\deltaA * -(.5/50) + 1) , .5)}
+			
+			\begin{pgfonlayer}{foreground}
+				\path \c -- node[pos=\d,pie values,values of \s]{$\v\%$} +(\midA:\r);
+			\end{pgfonlayer}
+			
+			\global\let\curA\nextA
+		}
+	\end{scope}
+}
+
+\newcommand{\legend}[2][]{
+	\begin{scope}[#1]
+		\path
+		\foreach \n/\s in {#2}
+		{
+			++(0,-10pt) node[\s,legend box] {} +(5pt,0) node[legend label] {\n}
+		}
+		;
+	\end{scope}
+}
+%
+% % % % % %
+% End of pie chart code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

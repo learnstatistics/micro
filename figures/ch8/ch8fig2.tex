@@ -1,0 +1,42 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=25em,caption={Average and marginal product curves \label{fig:AMPcurve}},description={The productivity curves initially rise and then decline, reflecting increasing and decreasing productivity. The $MP_L$ curves must intersect the $AP_L$ curve at the maximum of the $AP_L$: The average must increase if the marginal exceeds the average and must decline if the marginal is less than the average.}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	x=0.9cm/1,
+	y=0.75cm/5,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=12,ymin=0,ymax=45,
+	xlabel={Labour},
+	ylabel={Output},
+]
+\addplot[ultra thick,apcolour,mark=none] coordinates { % average product curve
+	(1,15)
+	(2,20)
+	(3,23.3)
+	(4,27.5)
+	(5,29)
+	(6,29.2)
+	(7,28.6)
+	(8,27.5)
+	(9,26.1)
+	(10,24.0)
+	(11,21.4)
+} node [black,mynode,pos=0.8,above right] {Average\\product\\of labour};
+\addplot[dashed,ultra thick,mpcolour,mark=none] coordinates { % marginal product curve
+	(1,15)
+	(2,25)
+	(3,30)
+	(4,40)
+	(5,35)
+	(6,30)
+	(7,25)
+	(8,20)
+	(9,15)
+	(10,5)
+	(11,-5)
+} node [black,mynode,pos=0.7,below left] {Marginal\\product\\of labour};
+\end{axis}
+\end{TikzFigure}

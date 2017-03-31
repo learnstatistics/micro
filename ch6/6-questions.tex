@@ -1,0 +1,385 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:individualchoice}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:individualchoice} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch6ex1}
+In the example given in Table~\ref{table:utilsnowjazz}, suppose Neal experiences a small increase in income. Will he allocate it to snowboarding or jazz? [\textit{Hint}: At the existing equilibrium, which activity will yield the higher $MU$ for an additional dollar spent on it?]
+\begin{econsolution}
+Since the additional utility per dollar spent on another unit of either activity is the same (1.2 units), he should be indifferent as to where he spends it. However, if he gets an income increase that is sufficient to cover the purchase of one whole unit of the goods then snowboarding yields the highest $MU$ per dollar spent.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex2}
+Suppose that utility depends on the square root of the amount of good $X$ consumed: $U=\sqrt{X}$.
+\begin{enumerate}
+\item	In a spreadsheet enter the values 1\dots 16 as the $X$ column (col A), and in the adjoining column (B) compute the value of utility corresponding to each quantity of $X$. To do this use the `SQRT' command. For example, the entry in cell B3 will be of the form `=SQRT(A3)'. 
+\item	In the third column enter the marginal utility ($MU$) associated with each value of $X$ -- the change in utility in going from one value of $X$ to the next.
+\item	Use the `graph' tool to map the relationship between $U$ and $X$. 
+\item	Use the graph tool to map the relationship between $MU$ and $X$. 
+\end{enumerate}
+\begin{econsolution}
+The utility and marginal utility curves are given below.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=1,xmax=25,ymin=0,ymax=6,
+y=1cm/1,
+x=1cm/3,
+x label style={at={(axis description cs:0.5,-0.02)},anchor=north},
+y label style={at={(axis description cs:0.01,0.5)},anchor=north},
+xlabel={$X$},
+ylabel={$U$},
+legend entries={Utility,Marginal Utility},
+legend style={at={(axis cs:2,5.75)},anchor=north west},
+]
+\addplot[tucolour,ultra thick,mark=x] table {
+	X	Y
+	1	1
+	2	1.4142
+	3	1.73205
+	4	2
+	5	2.23607
+	6	2.44949
+	7	2.64575
+	8	2.82843
+	9	3
+	10	3.162277
+	11	3.316624
+	12	3.464102
+	13	3.605551
+	14	3.741657
+	15	3.872983
+	16	4
+	17	4.123105
+	18	4.242641
+	19	4.358899
+	20	4.472136
+	21	4.582576
+	22	4.690416
+	23	4.795832
+	24	4.898979
+	25	5
+};
+\addplot[mucolour,ultra thick,mark=x] table {
+	X	Y
+	1	0.5
+	2	0.4142
+	3	0.3178
+	4	0.2679
+	5	0.23607
+	6	0.2134
+	7	0.19626
+	8	0.1826
+	9	0.17157
+	10	0.1628
+	11	0.15434
+	12	0.1475
+	13	0.14145
+	14	0.13611
+	15	0.13132
+	16	0.127016
+	17	0.123105
+	18	0.119535
+	19	0.116258
+	20	0.113237
+	21	0.110439
+	22	0.10784
+	23	0.105416
+	24	0.103418
+	25	0.1010205
+};
+\end{axis}
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex3}
+Instead of the square-root utility function in Exercise~\ref{ex:ch6ex2}, suppose that utility takes the form $U=x^2$. 
+\begin{enumerate}
+\item    Follow the same procedure as in the previous question -- graph the utility function.
+\item    Why is this utility function not consistent with our beliefs on utility?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	See the diagram below.
+	\item	Because the $MU$ increases with each unit consumed.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=9,ymin=0,ymax=81,
+	y=1cm/15,
+	x=1cm/1.2,
+	x label style={at={(axis description cs:0.5,-0.02)},anchor=north},
+	y label style={at={(axis description cs:0.01,0.5)},anchor=north},
+	xlabel={$X$},
+	ylabel={$U$},
+	]
+	\addplot[tucolour,ultra thick,mark=x] table {
+		X	Y
+		0	0
+		1	1
+		2	4
+		3	9
+		4	16
+		5	25
+		6	36
+		7	49
+		8	64
+		9	81
+	};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex4}
+\begin{enumerate}
+\item	Plot the utility function $U=2X$, following the same procedure as in the previous questions.
+\item	Next plot the marginal utility values in a graph. What do we notice about the behaviour of the $MU$?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the diagram below.
+\item	The $MU$ is constant, rather than diminishing.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=9,ymin=0,ymax=18,
+	y=1cm/3.2,
+	x=1cm/1.2,
+	x label style={at={(axis description cs:0.5,-0.02)},anchor=north},
+	y label style={at={(axis description cs:0.01,0.5)},anchor=north},
+	xlabel={$X$},
+	ylabel={$U$},
+	]
+	\addplot[tucolour,ultra thick,mark=x] table {
+		X	Y
+		0	0
+		1	2
+		2	4
+		3	6
+		4	8
+		5	10
+		6	12
+		7	14
+		8	16
+		9	18
+	};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex5}
+Let us see if we can draw a utility function for beer. In this instance the individual may reach a point where he takes too much. 
+\begin{enumerate}
+\item	If the utility function is of the form $U=6X-X^2$, plot the utility values for $X$ values in the range $1\ldots8$, using either a spreadsheet or manual calculations. 
+\item	At how many units of $X$ (beer) is the individual's utility maximized?
+\item	At how many beers does the utility become negative? 
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the diagram below.
+\item	$X=3$.
+\item	$X=6$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=7,ymin=-8,ymax=10,
+	y=1cm/3.2,
+	x=1cm/1,
+	x label style={at={(axis description cs:0.5,-0.02)},anchor=north},
+	y label style={at={(axis description cs:0.01,0.5)},anchor=north},
+	xlabel={$X$},
+	ylabel={$U$},
+	]
+	\addplot[tucolour,ultra thick,mark=x] table {
+		X	Y
+		0	0
+		1	5
+		2	8
+		3	9
+		4	8
+		5	5
+		6	0
+		7	-7
+	};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex6}
+Cappuccinos, $C$, cost \$3 each, and music downloads of your favourite artist, $M$, cost \$1 each from your iTunes store. Income is \$24.
+\begin{enumerate}
+\item	Draw the budget line, with cappuccinos on the vertical axis, and music on the horizontal axis, and compute the values of the intercepts. 
+\item	What is the slope of the budget constraint, and what is the opportunity cost of 1 cappuccino?
+\item	Are the following combinations of goods in the affordable set: (4$C$ and 9$M$), (6$C$ and 2$M$), (3$C$ and 15$M$)?
+\item	Which combination(s) above lie inside the affordable set, and which lie on the boundary? 
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the diagram below.
+\item	The slope is $-8/24=-1/3$. Opportunity cost of 1 cappuccino is 3 `tunes'.
+\item	Yes, yes, yes.
+\item	The first two lie inside, the third lies on the budget line.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+	\draw [thick] (0,20) node (yaxis) [mynode1,above] {Cappuccinos} |- (25,0) node (xaxis) [mynode1,right] {Music};
+	\draw [ultra thick,budgetcolour,name path=G] (0,18) node [mynode,left,black] {8} -- node [mynode,below left=2em and 2em,black] {Feasible region} node [mynode,above right=2em and 2em,black] {Non-feasible region} (24,0) node [mynode,below,black] {24};
+	\path [name path=int] (8,0) -- +(0,20);
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex7}
+George spends his income on gasoline and ``other goods.''
+\begin{enumerate}
+\item	First, draw a budget constraint, with gasoline on the horizontal axis.
+\item	Suppose now that, in response to a gasoline shortage in the economy, the government imposes a \textit{ration} on each individual that limits the purchase of gasoline to an amount less than the gasoline intercept of the budget constraint. Draw the new effective budget constraint.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Let $G$ be the initial intercept on the gasoline axis, then $1/2G$ is the new intercept.
+\item	A vertical line at a point less than $1/2G$ reduces the feasible set to the area bounded by the new budget constraint (dashed line) and the vertical line $GQ$.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+\draw [thick] (0,20) node (yaxis) [mynode1,above] {Other} |- (25,0) node (xaxis) [mynode1,right] {Gas};
+\draw [ultra thick,budgetcolour,name path=G] (0,19) coordinate (yint) -- node [mynode,above right,midway] {Budget constraint with\\ration is dashed line} (24,0) node [mynode,below,black] {$G$};
+\draw [ultra thick,supplycolour,name path=quota] (7,0) -- +(0,19) node [mynode,above,black] {Gas ration};
+\draw [name intersections={of=G and quota, by=e}]
+	[ultra thick,budgetcolour,dashed] ([yshift=0.2cm]yint) -- ([xshift=-0.2cm,yshift=0.3cm]e) -- ([xshift=-0.2cm]xaxis -| e);
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex8}
+Suppose that you are told that the indifference curves defining the trade-off for two goods took the form of straight lines. Which of the four properties outlines in Section~\ref{sec:ch6sec3} would such indifference curves violate?
+\begin{econsolution}
+They are not strictly convex to the origin, and so they do not display a diminishing marginal rate of substitution.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex9}
+Draw an indifference map with several indifference curves and several budget constraints corresponding to different possible levels of income. Note that these budget constraints should all be parallel because only income changes, not prices. Now find some optimizing (tangency) points. Join all of these points. You have just constructed what is called an income-consumption curve. Can you understand why it is called an income-consumption curve?
+\begin{econsolution}
+See figure below.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+\draw [thick,name path=L0] (0,13.55) -- (13,0);
+\draw [thick,name path=L2] (0,7.55) -- (7,0);
+\draw [thick,name path=L1] (0,19.55) -- (19,0);
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=I2] (1,10) to [out=270,in=180] (10,1);
+\draw [indiffcolour,ultra thick,name path=I0] (4,13) to [out=270,in=180] (13,4);
+\draw [indiffcolour,ultra thick,name path=I1] (7,16) to [out=270,in=180] (16,7);
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {$Y$} -- (0,0) -- (25,0) node (xaxis) [right] {$X$};
+\draw [ultra thick] (1,1) -- (15,15) node [mynode,below right,pos=0.8] {Income consumption curve};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex10}
+Draw an indifference map again, in conjunction with a set of budget constraints. This time the budget constraints should each have a different price of good $X$ and the same price for good $Y$.
+\begin{enumerate}
+\item	Draw in the resulting equilibria or tangencies and join up all of these points. You have just constructed a price-consumption curve for good $X$. Can you understand why the curve is so called?
+\item	Now repeat part (a), but keep the price of $X$ constant and permit the price of $Y$ to vary. The resulting set of equilibrium points will form a price consumption curve for good $Y$.
+\end{enumerate}
+\begin{econsolution}
+See the figure below. Part (b) will see the rotation point stay at the $X$ intercept.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+\draw [thick,name path=L0] (0,13.55) -- (13,0);
+\draw [thick,name path=L2] (0,13.55) -- (6.99032,0);
+\draw [thick,name path=L1] (0,13.55) -- (25,1.9);
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=I2] (3,10) to [out=270,in=180] (13,1);
+\draw [indiffcolour,ultra thick,name path=I0] (4,13) to [out=270,in=180] (13,4);
+\draw [indiffcolour,ultra thick,name path=I1] (5,17) to [out=270,in=180] (14,8);
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {$Y$} -- (0,0) -- (25,0) node (xaxis) [right] {$X$};
+\draw [ultra thick] (1,5) to[out=20,in=220] (16,13) node [mynode,above] {Price consumption curve for $X$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch6ex11}
+Suppose that movies are a normal good, but public transport is inferior. Draw an indifference map with a budget constraint and initial equilibrium. Now let income increase and draw a plausible new equilibrium, noting that one of the goods is inferior.
+\begin{econsolution}
+With movies on the $Y$ axis and public transport on the $X$, the higher income equilibrium will lie to the north-west of the lower income equilibrium.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+\draw [thick,name path=L0] (0,7.6) -- (15.1,0);
+\draw [thick,name path=L1] (0,15.55) -- (23,0);
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=I0] (4,11.15) to [out=270,in=180] (13,2.15);
+\draw [indiffcolour,ultra thick,name path=I1] (2,19) to [out=270,in=180] (11,10);
+% axes
+\draw [thick] (0,20) node (yaxis) [above] {Movies} |- (25,0) node (xaxis) [mynode1,right] {Public\\transport};
+\draw [name intersections={of=L0 and I0, by=e0}]
+[<-,thick,shorten <=1mm] ([xshift=5em,yshift=3em]e0) -- +(5,5) node [mynode,right] {Initial equilibrium};
+\draw [name intersections={of=L1 and I1, by=e1}]
+[<-,thick,shorten <=1mm] (e1) -- +(5,5) node [mynode,right] {At higher income level less\\public transport is purchased};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

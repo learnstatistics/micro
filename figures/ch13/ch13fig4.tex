@@ -1,0 +1,98 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=19em,caption={Gini index Canada 1976-2010 \label{fig:giniindexcanada}},description={\textit{Source:} Statistics Canada, CANSIM Table 202-0709}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	ymin=0,ymax=0.5,
+	x=1.35cm/5,
+	y=1.35cm/0.1,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	y label style={at={(axis description cs:0.05,0.5)},anchor=south},
+	xlabel={Year},
+	ylabel={Gini Index},
+	legend entries={Market income,Post-tax disposable income},
+	legend style={at={(axis cs:1982,0.1)},anchor=south west},
+]
+\addplot[ultra thick,black,dashed,mark=none] table { % market income
+X			Y
+1976	0.384
+1977	0.368
+1978	0.375
+1979	0.365
+1980	0.37
+1981	0.369
+1982	0.388
+1983	0.403
+1984	0.401
+1985	0.395
+1986	0.395
+1987	0.392
+1988	0.391
+1989	0.388
+1990	0.403
+1991	0.422
+1992	0.429
+1993	0.429
+1994	0.432
+1995	0.43
+1996	0.439
+1997	0.438
+1998	0.446
+1999	0.437
+2000	0.439
+2001	0.44
+2002	0.439
+2003	0.437
+2004	0.442
+2005	0.435
+2006	0.434
+2007	0.434
+2008	0.436
+2009	0.442
+2010	0.445
+2011	0.436
+};
+\addplot[ultra thick,datasetcolourthree,mark=none] table { % after-tax income
+X			Y
+1976	0.3
+1977	0.286
+1978	0.291
+1979	0.286
+1980	0.286
+1981	0.285
+1982	0.288
+1983	0.296
+1984	0.293
+1985	0.29
+1986	0.29
+1987	0.287
+1988	0.282
+1989	0.281
+1990	0.286
+1991	0.292
+1992	0.291
+1993	0.289
+1994	0.29
+1995	0.293
+1996	0.301
+1997	0.304
+1998	0.311
+1999	0.31
+2000	0.317
+2001	0.318
+2002	0.318
+2003	0.316
+2004	0.322
+2005	0.317
+2006	0.316
+2007	0.315
+2008	0.318
+2009	0.318
+2010	0.317
+2011	0.313
+};
+\end{axis}
+\end{TikzFigure}

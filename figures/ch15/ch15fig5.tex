@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.35,yscale=0.3,descwidth=25em,caption={Subsidies and trade \label{fig:subsidytrade}},description={With a world supply price of $P$, a domestic supply curve $S$, and a domestic demand $D$, the amount $Q_D$ is purchased. Of this, $Q_s$ is supplied domestically and $(Q_D-Q_s)$ by foreign suppliers. A per-unit subsidy to domestic suppliers shifts their supply curve to $S'$, and increases their market share to $Q'_s$.}}
+% supply lines
+\draw [supplycolour,ultra thick,domain=0:17,name path=DomSup] plot (\x, {5+\x}) node [black,mynode,above right] {$S$ -- domestic supply};
+\draw [supplycolour,ultra thick,domain=0:19,name path=DomSupSub] plot (\x, {1+\x}) node [black,mynode,right] {$S'$ -- domestic supply\\with subsidy};
+\draw [supplycolour,ultra thick,name path=WorldSup] (0,10) node [black,mynode,left] {$P$} -- (24,10) node [black,mynode,right] {World supply\\curve};
+% demand line
+\draw [demandcolour,ultra thick,domain=5:25,name path=DomDem] (5,22) node [mynode,above,black] {$D$ -- domestic\\demand} -- (25,2);
+% axes
+\draw [thick, -] (0,25) node (yaxis) [mynode1,above] {Price} |- (25,0) node (xaxis) [mynode1,right] {Quantity};
+% intersection of WorldSup with other lines
+\draw [name intersections={of=WorldSup and DomSup, by=Qs},name intersections={of=WorldSup and DomSupSub, by=Qsprime},name intersections={of=WorldSup and DomDem, by=Q0}]
+	[dotted,thick] (Qs) -- (xaxis -| Qs) node [mynode,below] {$Q_s$}
+	[dotted,thick] (Qsprime) -- (xaxis -| Qsprime) node [mynode,below] {$Q_s'$}
+	[dotted,thick] (Q0) -- (xaxis -| Q0) node [mynode,below] {$Q_D$};
+\end{TikzFigure}

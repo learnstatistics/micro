@@ -1,0 +1,31 @@
+\begin{TikzFigure}{xscale=0.4,yscale=0.25,descwidth=25em,caption={Regulating a decreasing-cost supplier \label{fig:deccostsupplier}},description={The profit-maximizing output is $Q_m$, where $MR=MC$ and price is $P_m$. This output is inefficient because marginal benefit is greater than $MC$. $Q^*$ is the efficient output, but results in losses because $LATC>P$ at that output. A regulated price that covers costs is where $LATC=DQ_r$. This is closer to the efficient output $Q^*$ than the monopoly output $Q_m$.}}
+% Demand line
+\draw [demandcolour,ultra thick,name path=D] (0,24) -- (24,0) node [black,mynode,above right,pos=0.9] {$D$};
+% MR line
+\draw [dashed,mrcolour,ultra thick,name path=MR] (0,24) -- (12,0) node [black,mynode,above right,pos=0.95] {$MR$};
+% MC line
+\draw [mccolour,ultra thick,name path=MC] (0,6) node [black,mynode,left] {$P^*$} -- (24,6) node [black,mynode,right] {$MC$};
+% LATC curve
+\draw [latccolour,ultra thick,name path=LATC] (5,18) to [out=-90,in=180] (24,8) node [black,mynode,right] {$LATC$};
+% axes
+\draw [thick, -] (0,25) node (yaxis) [mynode1,above] {\$} -- (0,0) node [mynode,below left] {0} -- (25,0) node (xaxis) [mynode1,right] {Quantity};
+% intersection of MR and MC
+\draw [name intersections={of=MR and MC, by=Qm}]
+	[dotted,thick] (Qm) -- (xaxis -| Qm) node [mynode,below] {$Q_m$};
+% path to create dotted lines from P_m -- Demand line -- Q_m
+\path [name path=Qmline] (xaxis -| Qm) -- +(0,25);
+% intersection of Qmline with D
+\draw [name intersections={of=D and Qmline, by=Pm}]
+	[dotted,thick] (yaxis |- Pm) node [mynode,left] {$P_m$} -| (Qm);
+% intersection of LATC and D
+\draw [name intersections={of=LATC and D, by=PrQr}]
+	[dotted,thick] (yaxis |- PrQr) node [mynode,left] {$P_r$} -| (xaxis -| PrQr) node [mynode,below] {$Q_r$};
+% intersection of MC and D
+\draw [name intersections={of=MC and D, by=PQstar}]
+	[dotted,thick] (PQstar) -- (xaxis -| PQstar) node [mynode,below] {$Q^*$};
+% path to create dotted line between c and PQstar
+\path [name path=PQstarline] (xaxis -| PQstar) -- +(0,25);
+% intersection of PQstarline and LATC
+\draw [name intersections={of=LATC and PQstarline, by=c}]
+	[dotted,thick] (c) node [mynode,above] {c} -- (PQstar);
+\end{TikzFigure}

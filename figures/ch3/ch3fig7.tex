@@ -1,0 +1,18 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,descwidth=25em,caption={Price floor -- minimum wage \label{fig:pricefloor}},description={In a free market the equilibrium is $E_0$. A minimum wage of $P_f$ raises the hourly wage, but reduces the hours demanded to $Q_f$. Thus $E_f$C is the excess supply.}}
+\draw [demandcolour,ultra thick,name path=demand] (0,12) -- node [mynode,black,above right,pos=0.9] {Demand} (12,0);
+\draw [supplycolour,ultra thick,name path=supply] (0,1) -- (13,14) node [black,mynode,right] {Supply};
+\draw [thick, -] (0,15) node (yaxis) [above] {Price=wage} |- (15,0) node (xaxis) [mynode1,right] {Quantity of\\labour=hours};
+% intersection of demand and supply
+\draw [name intersections={of=demand and supply,by=E0}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$P_0$} -- (E0) node [mynode,above] {$E_0$} -- (xaxis -| E0) node [mynode,below] {$Q_0$};
+% horizontal path from P_f
+\path [name path=Pfline] ([yshift=3cm]yaxis |- E0) -- +(15,0);
+% intersection of Pfline with demand and supply lines
+\draw [name intersections={of=Pfline and demand,by=Ef},name intersections={of=Pfline and supply,by=C}]
+	[dotted,thick] (yaxis |- Ef) node [mynode,left] {$P_f$} -- (Ef) node [mynode,above=0.15cm and 0cm] {$E_f$} -- (xaxis -| Ef) node [mynode,below] {$Q_f$}
+	[dotted,thick] (Ef) -- (C) node [mynode,above=0.15cm and 0cm] {C};
+% arrow between Ef and C
+\draw [<->,thick,shorten >=0.5mm,shorten <=0.5mm] ([yshift=0.5cm]Ef) -- coordinate[pos=0.65] (A) ([yshift=0.5cm]C);
+% arrow pointing to near middle of <-> arrow
+\draw [<-,thick,shorten >=1mm,shorten <=0.5mm] (A) to[out=-75,in=180] +(5,-5) node [mynode,right=0cm and -0.15cm] {Excess supply};
+\end{TikzFigure}

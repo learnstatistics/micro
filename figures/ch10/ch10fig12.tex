@@ -1,0 +1,28 @@
+\begin{TikzFigure}{xscale=0.26,yscale=0.14,descwidth=25em,caption={Pricing in segregated markets \label{fig:pricesegregatedmarket}},description={With two separate markets defined by $D_A$ and $D_B$, and their associated $MR$ curves $MR_A$ and $MR_B$, a profit maximizing strategy is to produce where $MC=MR_A=MR_B$, and \emph{discriminate} between the two markets by charging prices $P_A$ and $P_B$.}}
+% demand lines
+\draw [demandcolour,ultra thick,name path=DA] (0,40) -- node [mynode,black,above right,pos=0.15] {$D_A$} (40,0);
+\draw [demandcolour,ultra thick,name path=DB] (0,15) -- node [mynode,black,above right,pos=0.15] {$D_B$} (15,0);
+% MR lines
+\draw [dashed,mrcolour,ultra thick,name path=MRA] (0,40) -- (20,0) node [mynode,black,above right] {$MR_A$};
+\draw [dashed,mrcolour,ultra thick,name path=MRB] (0,15) -- (7.5,0) node [mynode,black,above right] {$MR_B$};
+% MC line
+\draw [dashed,mccolour,ultra thick,name path=MC] (0,5) -- (45,5) node [mynode,black,above] {$MC$};
+% axes
+\draw [thick, -] (0,45) node (yaxis) [above] {Price} |- (45,0) node (xaxis) [right] {Quantity};
+% intersection of MRA and MC
+\draw [name intersections={of=MRA and MC, by=QA}]
+	[dotted,thick] (QA) -- (xaxis -| QA) node [mynode,below] {$Q_A$};
+% path from QA up to DA
+\path [name path=QAline] (xaxis -| QA) -- +(0,45);
+% intersection of QAline and DA
+\draw [name intersections={of=QAline and DA, by=PA}]
+	[dotted,thick] (yaxis |- PA) node [mynode,left] {$P_A$} -| (QA);
+% intersection of MRB and MC
+\draw [name intersections={of=MRB and MC, by=QB}]
+	[dotted,thick] (QB) -- (xaxis -| QB) node [mynode,below] {$Q_B$};
+% path from QB up to DB
+\path [name path=QBline] (xaxis -| QB) -- +(0,45);
+% intersection of QBline and DB
+\draw [name intersections={of=QBline and DB, by=PB}]
+	[dotted,thick] (yaxis |- PB) node [mynode,left] {$P_B$} -| (QB);
+\end{TikzFigure}

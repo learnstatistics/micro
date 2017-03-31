@@ -1,0 +1,11 @@
+\begin{TikzFigure}{xscale=1.2,yscale=1.5,descwidth=25em,caption={The optimal quantity of pollution \label{fig:optimalpollution}},description={$Q^*$ represents the optimal amount of pollution. More than this would involve additional social costs because damages exceed abatement costs. Coversely, less than $Q^*$ would require an abatement cost that exceeds the reduction in damage.}}
+% supply line
+\draw [supplycolour,ultra thick,domain=0.4:5,name path=S] plot (\x, {1.5*(0.25*\x-0.1)}) node [black,mynode,above] {Marginal\\damage};
+% demand line
+\draw [demandcolour,ultra thick,domain=6:0.35,name path=D] plot (\x, {1/\x}) node [mynode,right,black] {Marginal\\abatement cost};
+% axes
+\draw [thick, -] (0,3) node (yaxis) [mynode1,above] {Pollution\\cost} |- (6,0) node (xaxis) [mynode1,right] {Pollution\\quantity};
+% intersection of S and D
+\draw [name intersections={of=S and D, by=E}]
+	[dotted,thick] (E) -- (xaxis -| E) node [mynode,below] {$Q^{*}$};
+\end{TikzFigure}

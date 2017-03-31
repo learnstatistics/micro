@@ -1,0 +1,13 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.33,descwidth=25em,caption={Price discrimination at the movies \label{fig:pricedismovie}},description={At $P=12$, 50 prime-age individuals demand movie tickets. At $P=5$, 50 more seniors and youths demand tickets. Since the $MC$ is zero the efficient output is where the demand curve takes a zero value -- where all 100 customers purchase tickets. Thus, any scheme that results in all 100 individuals buying ticket is efficient. Efficient output is at point C.}}
+\draw [dotted,thick] (10,0) node [mynode,below] {50} node [mynode,above right] {D} -- (10,5);
+% demand line
+\draw [demandcolour,ultra thick,-] (0,12) node [black,mynode,left] {12} -- (10,12) node [black,mynode,midway,above] {Demand curve} -- (10,5) node [black,mynode,above right] {A} -- (20,5) node [black,mynode,above right] {B} -- (20,0) node [black,mynode,below] {100} node [black,mynode,above right] {C};
+% axes
+\draw [thick, -] (0,20) node [above] {\$} |- (25,0) node [right] {Quantity};
+% MC line
+\draw [dashed,mccolour,ultra thick] (0,0) -- coordinate [pos=0.2] (MCnamepoint) (25,0);
+% arrow to MC line
+\draw [<-,thick,shorten <=0.5mm] (MCnamepoint) -- +(0,3) node [mynode,above] {$MC$};
+% point of price axis
+\node [mynode,left] at (0,5) {5};
+\end{TikzFigure}

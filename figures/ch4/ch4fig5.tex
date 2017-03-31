@@ -1,0 +1,18 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.4,descwidth=25em,caption={The impact of elasticity on quantity fluctuations \label{fig:elastquantfluctuations}},description={In the lower part of the demand curve $D$, demand is inelastic: At the point A, a shift in supply from $S_1$ to $S_2$ induces a large percentage increase in price, and a small percentage decrease in quantity demanded. In contrast, for the demand curve $D'$ that goes through the original equilibrium, the region A is now an \emph{elastic} region, and the impact of the supply shift is contrary: The \%$\Delta P$ is smaller and the \%$\Delta Q$ is larger.}}
+% demand lines
+\draw [demandcolour,ultra thick,name path=demand] (4,15) node [black,mynode,left] {$D$} -- (10,0);
+\draw [demandcolour,ultra thick,name path=demandprime] (0,7) -- (15,3.25) node [black,mynode,above] {$D'$};
+% supply lines
+\draw [supplycolour,ultra thick,name path=supplytwo] (1,0) -- (8.5,15) node [black,mynode,right] {$S_2$};
+\draw [supplycolour,ultra thick,name path=supplyone] (5,0) -- (14,15) node [black,mynode,right] {$S_1$};
+\draw [thick] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of demand and supplyone
+\draw [name intersections={of=demand and supplyone, by=P1Q1}]
+	[dotted,thick] (yaxis |- P1Q1) node [mynode,left] {$P_1$} -- (P1Q1) node [mynode,above=0.25em and 0em] {A} -- (xaxis -| P1Q1) node [mynode,below] {$Q_1$};
+% intersection of demand and supplytwo
+\draw [name intersections={of=demand and supplytwo, by=P2Q2}]
+	[dotted,thick] (yaxis |- P2Q2) node [mynode,left] {$P_2$} -| (xaxis -| P2Q2) node [mynode,below] {$Q_2$};
+% intersection of demandprime and supplytwo
+\draw [name intersections={of=demandprime and supplytwo, by=P3Q3}]
+	[dotted,thick] (yaxis |- P3Q3) node [mynode,left] {$P_3$} -| (xaxis -| P3Q3) node [mynode,below] {$Q_3$};
+\end{TikzFigure}

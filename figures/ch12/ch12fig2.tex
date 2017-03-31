@@ -1,0 +1,13 @@
+\begin{TikzFigure}{xscale=0.4,yscale=0.3,descwidth=25em,caption={Individual labour supply \label{fig:indlaboursupply}},description={A wage increase from $W_0$ to $W_1$ induces the individual to \emph{substitute} away from leisure, which is now more expensive, and work \emph{more}. But the higher wage also means the individual can work fewer hours for a given standard of living; therefore the income effect induces \emph{fewer hours}. On balance the substitution effect tends to dominate and the supply curve therefore slopes upward.}}
+% Supply curve
+\draw [supplycolour,ultra thick,domain=270:360,name path=S] plot ({5+10*cos(\x)},{15+10*sin(\x)}) node [mynode,above,black] {$S$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [mynode1,above] {Wage\\Rate} |- (20,0) node (xaxis) [right] {Hours};
+% paths for e0 and e1
+\path [name path=e0line] (10,0) -- +(0,20);
+\path [name path=e1line] (14.5,0) -- +(0,20);
+% intersection of S with paths
+\draw [name intersections={of=S and e0line, by=e0},name intersections={of=S and e1line, by=e1}]
+	[dotted,thick] (yaxis |- e0) node [mynode,left] {$W_0$} -- (e0) node [mynode,above left] {$e_0$} -- (xaxis -| e0) node [mynode,below] {$H_0$}
+	[dotted,thick] (yaxis |- e1) node [mynode,left] {$W_1$} -- (e1) node [mynode,above left] {$e_1$} -- (xaxis -| e1) node [mynode,below] {$H_1$};
+\end{TikzFigure}

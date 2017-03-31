@@ -1,0 +1,17 @@
+\begin{TikzFigure}{xscale=0.35,yscale=0.3,descwidth=25em,caption={Quotas and trade \label{fig:quotatrade}},description={At the world price $P$, plus a \emph{quota}, the supply curve becomes RCUV. This has three segments: (i) domestic suppliers who can supply below $P$; (ii) \emph{quota}; and (iii) domestic suppliers who can only supply at a price above $P$. The quota equilibrium is at T, with price $P_{dom}$ and quantity $Q'_D$; the free-trade equilibrium is at G. Of the amount $Q'_D$, \emph{quota} is supplied by foreign suppliers and the remainder by domestic suppliers. The quota increases the price in the domestic market.}}
+% Supply lines
+\draw [supplycolour,ultra thick,name path=SupQuota] (0,5) node [black,mynode,left] {R} -- (5,10) coordinate (C) node [black,mynode,above left] {C} -- (9,10) coordinate (U) node [black,mynode,above left] {U} -- (21,22) node [black,mynode,above] {Supply curve to domestic\\market under quota=RCUV} node [black,mynode,below right] {V};
+\draw [supplycolour,ultra thick,name path=WorldSup] (0,10) node [black,mynode,left] {$P$} -- (24,10) node [black,mynode,right] {World supply\\curve};
+% demand line
+\draw [demandcolour,ultra thick,domain=5:25,name path=DomDem] (5,22) node [mynode,above,black] {$D$ -- domestic\\demand} -- (25,2);
+% axes
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {Price} |- (25,0) node (xaxis) [mynode1,right] {Quantity};
+% intersection of WorldSup with DomDem, as well as intersection of DomDem and SupQuota
+\draw [name intersections={of=WorldSup and DomDem, by=G},name intersections={of=SupQuota and DomDem, by=T}]
+	[dotted,thick] (C |- T) node [mynode,above] {W} -- (xaxis -| C)
+	[dotted,thick] (U |- T) node [mynode,above] {Y} -- (xaxis -| U)
+	[dotted,thick] (yaxis |- T) node [mynode,left] {$P_{dom}$} -- (T) node [mynode,above] {T} -- (xaxis -| T) node [mynode,below] {$Q_D'$}
+	[dotted,thick] (G) node [mynode,above] {G} -- (xaxis -| G) node [mynode,below] {$Q_D$};
+% arrow for quota
+\draw [<->,thick,shorten <=0.5mm,shorten >=0.5mm] ([yshift=2cm]C |- xaxis) -- node [mynode,below,midway] {\textit{quota}} ([yshift=2cm]U |- xaxis);
+\end{TikzFigure}

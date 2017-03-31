@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.36,yscale=0.3,descwidth=25em,caption={Deriving industry supply \label{fig:industrysupply}},description={The marginal cost curves for firms A and B indicate that at any price below $P_1$ production is unprofitable and supply is therefore zero for both firms. At prices between $P_1$ and $P_2$ firm A is willing to supply, but not firm B. Consequently the market supply comes only from A. At prices above $P_2$ both firms are willing to supply. Therefore the market supply is the horizontal sum of each firm's supply.}}
+\draw [dotted,thick]
+	(0,6) node [mynode,left] {$P_1$} -- (5,6)
+	(0,8) node [mynode,left] {$P_2$} -- (8,8);
+% Market supply
+\draw [marketsupplycolour!60,ultra thick]
+(5,6) to [out=15,in=233] (8,8) -- (12,8) to [out=15,in=270] (17,16) node [black,below right,mynode,pos=0.5] {$S_{sum}=S_A+S_B$=market supply};
+% individual supply
+\draw [supplycolour,dashed,ultra thick]
+	(4,8) to [out=15,in=270] (7,15) node [black,above,rotate=45,mynode] {$S_B=MC_B$}
+	(5,6) to [out=15,in=270] (10,16) node [black,above,rotate=45,mynode] {$S_A=MC_A$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} |- (25,0) node (xaxis) [right] {Quantity};
+\end{TikzFigure}

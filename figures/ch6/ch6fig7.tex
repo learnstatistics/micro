@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Ranking consumption bundles \label{fig:rankconbundle}},description={L is preferred to R since more of each good is consumed at L, while points such as V are less preferred than R. Points W and T contain more of one good and less of the other than R. Consequently, we cannot say if they are preferred to R without knowing how the consumer trades the goods off -- that is, his preferences.}}
+% thick lines separating bundles
+\draw [budgetcolour,ultra thick,name path=BV] (7,2) -- (7,19);
+\draw [budgetcolour,ultra thick,name path=BH] (3,6) -- (23,6);
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Snowboarding} |- (25,0) node (xaxis) [right] {Jazz};
+% intersection of thick lines
+\draw [name intersections={of=BV and BH, by=R}];
+\node [mynode,above right] at (R) {R};
+\node [mynode,above left=2em and 1em] at (R) {W};
+\node [mynode,below left=1em and 1em] at (R) {V};
+\node [mynode,below right=1em and 2em] at (R) {T};
+\node [mynode,above right=3em and 3em] at (R) {L};
+\node [mynode,above right=4em and 4em] at (R) {Region preferred to R};
+\end{TikzFigure}

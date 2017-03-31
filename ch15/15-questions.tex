@@ -1,0 +1,262 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:internationaltrade}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:internationaltrade} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch15ex1}
+The following table shows the labour input requirements to produce a bushel of wheat and a litre of wine in two countries, Northland and Southland, on the assumption of constant cost production technology -- meaning that the production possibility curves in each are straight lines. You can answer this question either by analyzing the table or developing a graph similar to Figure~\ref{fig:compadvprod}, assuming each economy has 4 units of labour.
+\begin{Table}{}
+\begin{tabu} to 25em {|X[3,c]X[1,c]X[1,c]|} \hline 
+\multicolumn{3}{|c|}{\cellcolor{rowcolour}\textbf{Labour requirements per unit produced}} \\	\hline
+& Northland & Southland \\
+\rowcolor{rowcolour}Per bushel of wheat & 1 & 3 \\ 
+Per litre of wine & 2 & 4 \\ \hline 
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item  Which country has an absolute advantage in the production of both wheat and wine?
+\item  What is the opportunity cost of wheat in each economy? Of wine?
+\item  What is the pattern of comparative advantage here?
+\item  Suppose the country with a comparative advantage in wine reduces wheat production by one bushel and reallocates the labour involved to wine production. How much additional wine does it produce?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Northland has an absolute advantage in the production of both goods, as it has lower labour requirements for each.
+\item	The opportunity cost of 1 bushel of wheat is 1/2 litre of wine in Northland and 3/4 litre of wine in Southland.
+\item	Northland has a comparative advantage in wheat while Southland does in wine.
+\item	By reducing wheat production by 1 bushel, Southland can produce an additional 3/4 litre of wine.
+\item	Both countries can gain if Northland shifts production from wine to wheat and the countries trade wine for wheat at a rate between 1/2 litre of wine for 1 bushel of wheat and 3/4 litre of wine for one bushel of wheat.
+\item	By reducing wine production by 1/2 litre, Northland can increase wheat production by 1 bushel, which, at Southland's opportunity cost, exchanges for 3/4 litre of wine, giving Northland a gain of 1/4 litre of wine.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch15ex2}
+Canada and the United States can produce two goods, xylophones and yogourt. Each good can be produced with labour alone. Canada requires 60 hours to produce a ton of yogourt and 6 hours to produce a xylophone. The United States requires 40 hours to produce the ton of yogourt and 5 hours to produce a xylophone.
+\begin{enumerate}
+\item  Describe the state of absolute advantage between these economies in producing goods.
+\item  In which good does Canada have a comparative advantage? Does this mean the United States has a comparative advantage in the other good?
+\item  Draw the production possibility frontier for each economy to scale on a diagram, assuming that each economy has an endowment of 240 hours of labour, and that the PPFs are linear.
+\item  On the same diagram, draw Canada's consumption possibility frontier on the assumption that it can trade with the United States at the United States' rate of transformation. 
+\item  Draw the US consumption possibility frontier under the assumption that it can trade at Canada's rate of transformation.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The US has an absolute advantage in both goods.
+\item	Canada has a comparative advantage in xylophones. The US has a comparative advantage in yogourt.
+\item	See diagram below.
+\item	See diagram below.
+\item   See diagram below.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.2,yscale=0.5]
+\draw [dashed,ultra thick,name path=cdnconpos] (0,5.8333) --(35,0);
+\draw [dashed,ultra thick,name path=usconpos] (0,8) -- (48,0);
+\draw [ppfcolourthree,ultra thick,name path=ppfcan] (0,5) node [black,mynode,left] {4} -- (35,0) node [black,mynode,below] {40};
+\draw [ppfcolourthree,ultra thick,name path=ppfus] (0,8) node [black,mynode,left] {6} -- (40,0) node [black,mynode,below] {48};
+\draw [thick, -] (0,10) node [mynode1,above] {Yogourt} |- (50,0) node [mynode1,right] {Xylophone};
+\path [name path=arrowline] (0,4.5) -- +(50,-3);
+\draw [name intersections={of=arrowline and ppfcan, by=i1}]
+[<-,thick,shorten <=1mm] (i1) -- +(-1,-2) node [mynode,below] {$PPF_{\text{CAN}}$};
+\draw [name intersections={of=arrowline and ppfus, by=i2}]
+[<-,thick,shorten <=1mm] (i2) -- +(10,3) node [mynode,right] {$PPF_{\text{US}}$};
+\draw [name intersections={of=arrowline and cdnconpos, by=i3}]
+[<-,thick,shorten <=1mm] (i3) -- +(-1,-2) node [mynode,below] {$CPF_{\text{CAN}}$};
+\draw [name intersections={of=arrowline and usconpos, by=i4}]
+[<-,thick,shorten <=1mm] (i4) -- +(10,3) node [mynode,right] {$CPF_{\text{US}}$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch15ex3}
+The domestic demand for bicycles is given by $P=36-0.3Q$. The foreign supply is given by $P=18$ and domestic supply by $P=16+0.4Q$.
+\begin{enumerate}
+\item  Illustrate the market equilibrium on a diagram, and illustrate the amounts supplied by domestic and foreign suppliers in equilibrium.
+\item  If the government now imposes a tariff of \$6 per unit on the foreign good, illustrate the impact geometrically.
+\item  In the diagram, illustrate the area representing tariff revenue.
+\item  \textit{Optional}: Compute the price and quantity in equilibrium with free trade, and again in the presence of the tariff.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The diagram shows that the amount traded is 60 units; of which domestic producers supply 5 and 55 are imported.
+\item	In this case, the foreign supply curve SW shifts up from a price of \$18 to \$24. The amount traded is now 40 units, 20 of which are supplied domestically.
+\item	Tariff revenue is EFHI$=\$120$.
+\item	Equate the demand and supply curves to yield the above values.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.08,yscale=0.15]
+% supply
+\draw [supplycolour,dashed,ultra thick,domain=0:17,name path=DomSup] plot (\x, {3+\x}) node [black,mynode,above] {$S$};
+% demand
+\draw [demandcolour,ultra thick,name path=DomDem] (7,20) node [mynode,above,black] {$D$} -- (25,2);
+% supply with and without tariff
+\draw [supplycolour,ultra thick,name path=WorldSup] (0,10) node [black,mynode,left] {\$18} -- (24,10) node [black,mynode,right] {$S_W$};
+\draw [supplycolour,ultra thick,name path=WorldSupTariff] (0,12) node [black,mynode,left] {\$24} -- (24,12) node [black,mynode,right] {$S_W+\text{tariff}$};
+% axes
+\path (0,23) node (yaxis) {} |- (25,0) node (xaxis) {};
+% intersection of lines
+\path [name intersections={of=WorldSup and DomSup, by=C},name intersections={of=WorldSupTariff and DomSup, by=E},name intersections={of=WorldSup and DomDem, by=G},name intersections={of=WorldSupTariff and DomDem, by=F}];
+
+% paths to create points I and H on WorldSup line
+\path [name path=Iline] (xaxis -| E) -- +(0,23);
+\path [name path=Hline] (xaxis -| F) -- +(0,23);
+% name intersection of Iline and Hline with WorldSup and dotted lines
+\draw [name intersections={of=Iline and WorldSup, by=I},name intersections={of=Hline and WorldSup, by=H}];
+
+% coloured square
+\draw [fill=demandcolour!25,demandcolour!25] ([xshift=0.5mm,yshift=-0.75mm]E) -- ([xshift=-0.5mm,yshift=-0.75mm]F) -- ([xshift=-0.5mm,yshift=0.75mm]H) -- ([xshift=0.5mm,yshift=0.75mm]I);
+% Coloured triangles A (region enclosed by C-E-I) and B (region enclosed by F-G-H)
+\draw [fill=supplycolour!25,supplycolour!25] ([xshift=2.5mm,yshift=0.75mm]C) -- coordinate [midway] (Aarrow) ([xshift=-0.5mm,yshift=-2.5mm]E) -- ([xshift=-0.5mm,yshift=0.75mm]I);
+\draw [fill=supplycolour!25,supplycolour!25] ([xshift=0.5mm,yshift=-2.5mm]F) -- coordinate [midway] (Barrow) ([xshift=-2.5mm,yshift=0.75mm]G) -- ([xshift=0.5mm,yshift=0.75mm]H);
+
+% supply with and without tariff
+\draw [supplycolour,ultra thick] (0,10) node [black,mynode,left] {\$18} -- (24,10) node [black,mynode,right] {$S_W$};
+\draw [supplycolour,ultra thick] (0,12) node [black,mynode,left] {\$24} -- (24,12) node [black,mynode,right] {$S_W+\text{tariff}$};
+
+% draw intersection of Iline and Hline with WorldSup and dotted lines
+\draw [dotted,thick] (E) node [mynode,above] {E} -- (I) node [mynode,below left] {I} -- (xaxis -| I) node [mynode,below] {20}
+[dotted,thick] (F) node [mynode,above] {F} -- (H) node [mynode,below right] {H} -- (xaxis -| H) node [mynode,below] {40};
+% arrows to Aarrow and Barrow
+\draw [<-,thick,shorten <=-1.5mm] (Aarrow) -- +(-3,3) node [mynode,above] {A};
+\draw [<-,thick,shorten <=-1.5mm] (Barrow) -- +(3,3) node [mynode,above] {B};
+
+% dotted line from 5Q
+\path [name path=5Qline] (2,0) -- +(0,23);
+\draw [name intersections={of=5Qline and WorldSup, by=5Q}]
+[dotted,thick] (5Q) -- (xaxis -| 5Q) node [mynode,below] {5};
+% dotted line from 60Q
+\path [name path=60Qline] (21,0) -- +(0,23);
+\draw [name intersections={of=60Qline and WorldSup, by=60Q}]
+[dotted,thick] (60Q) -- (xaxis -| 60Q) node [mynode,below] {60};
+
+% axes
+\draw [thick, -] (yaxis) [mynode1,above] node {Price} |- (xaxis) [mynode1,right] node {Quantity};
+
+% arrow between SW and SW+tariff
+\path [name path=arrowpath] (23,0) -- +(0,23);
+\draw [name intersections={of=arrowpath and WorldSup, by=s1},name intersections={of=arrowpath and WorldSupTariff, by=s2}]
+[->,thick,shorten <=0.5mm,shorten >=0.5mm] (s1) -- (s2);
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch15ex4}
+\begin{enumerate}
+\item   In Exercise~\ref{ex:ch15ex3}, illustrate graphically the deadweight losses associated with the imposition of the tariff.
+\item	Illustrate on your diagram the additional amount of profit made by the domestic producer as a result of the tariff. [\textit{Hint}: Refer to Figure~\ref{fig:tarifftrade} in the text.]
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The deadweight losses correspond to the two triangles, A and B, in the diagram, and amount to \$105.
+\item	The amount of additional profit for domestic producers is given by the area above the supply curve between prices \$18 and \$24.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch15ex5}
+The domestic demand for office printers is given by $P=40-0.2Q$. The supply of domestic producers is given by $P=12+0.1Q$, and international supply by $P=20$. 
+\begin{enumerate}
+\item  Illustrate this market geometrically.
+\item  If the government gives a production subsidy of \$2 per unit to domestic suppliers in order to increase their competitiveness, illustrate the impact of this on the domestic supply curve. 
+\item  Illustrate geometrically the cost to the government of this scheme.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See figure below. The total quantity of trade is 100 units, of which 80 are supplied domestically.
+\item	The subsidy shifts the domestic supply curve down by \$2 at each quantity. This supply intersects the demand curve at $Q=100$. Foreign producers are squeezed out of the market completely.
+\item	Cost to the government is \$200 (100 units each with a \$2 subsidy.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.03,yscale=0.15]
+\draw [thick] (0,45) node (yaxis) [mynode1,above] {Price} |- (220,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,demandcolour,name path=D] (0,40) node [mynode,left,black] {40} -- node [mynode,above right,black,pos=0.2] {$D$} (200,0) node [mynode,below,black] {200};
+\draw [ultra thick,supplycolour,name path=SW] (0,20) node [mynode,left,black] {20} -- +(210,0) node [mynode,right,black] {$S_W$};
+\draw [ultra thick,dashed,supplycolour,name path=SD] (0,12) node [mynode,left,black] {12} -- (210,33) node [mynode,right,black] {$S_{\text{DOM}}$};
+\draw [ultra thick,supplycolour,name path=SDsub] (0,10) node [mynode,left,black] {10} -- (210,31) node [mynode,right,black] {$S_{\text{DOM}}$ with subsidy};
+\draw [name intersections={of=D and SD, by=80Q},name intersections={of=D and SDsub, by=100Q}]
+[dotted,thick] (80Q) -- (xaxis -| 80Q) node [mynode,below left=0cm and -0.2cm] {80}
+[dotted,thick] (100Q) -- (xaxis -| 100Q) node [mynode,below right=0cm and -0.2cm] {100};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch15ex6}
+Consider the data underlying Figure~\ref{fig:compadvprod}. Suppose, from the initial state of comparative advantage, where Canada specializes in fish and the US in vegetable, we have a technological change in fishing. The US invents the multi-hook fishing line, and as a result can now produce 64 units of fish with the same amount of labour, rather than the 40 units it could produce before the technological change. This technology does not spread to Canada however.
+\begin{enumerate}
+\item	Illustrate the new $PPF$ for the US in addition to the $PPF$ for Canada. 
+\item	What is the new opportunity cost (number of fish) associated with one unit of $V$?
+\item	Has comparative advantage changed here -- which economy should specialize in the production of each good?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See diagram below. The US PPF now has an X intercept of 64 units.
+\item	See diagram below.
+\item	Yes, the US should specialize in fish.
+\end{enumerate}
+
+% TODO: This diagram is wrong.  1) Labels of "DOM"?  2) Intercept is 54 in diagram but 64 in text above.
+% 3) Should the label for D_DOM be at the top of the line like S_DOM?
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.11,yscale=0.6]
+\draw [thick] (0,30) node (yaxis) [mynode1,above] {Price} |- (60,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,demandcolour,name path=D] (42,30) -- node [mynode,above right,black,pos=0.2] {$D_{\text{DOM}}$} (54,0) node [mynode,below,black] {54};
+\draw [ultra thick,supplycolour,name path=SW] (0,20) node [mynode,left,black] {20} -- +(60,0) node [mynode,right,black] {$S_W$};
+\draw [ultra thick,dashed,supplycolour,name path=PF] (0,28) node [mynode,above left=-0.2cm and 0cm,black] {28} -- +(60,0);
+\draw [ultra thick,supplycolour,name path=SD] (0,16) node [mynode,left,black] {16} -- (60,29) node [mynode,right,black] {$S_{\text{DOM}}$};
+\draw [name intersections={of=D and PF, by=i1},name intersections={of=SD and SW, by=i2},name intersections={of=D and SW, by=i3},name intersections={of=D and SD, by=i4}]
+[dotted,thick] (i1) -- (xaxis -| i1) node [mynode,below left=0cm and -0.2cm] {40}
+[dotted,thick] (i2) -- (xaxis -| i2) node [mynode,below] {16}
+[dotted,thick] (i3) -- (xaxis -| i3) node [mynode,below] {44}
+[dotted,thick] ([xshift=-4cm]yaxis |- i4) node [mynode,left] {26} -| ([yshift=-1cm]xaxis -| i4) node [mynode,below] {41};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch15ex7}
+The following are hypothetical (straight line) production possibilities tables for Canada and the United States. For each line required, plot any two or more points on the line.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[0.5,c]X[0.5,c]X[0.5,c]X[0.5,c]|X[1,c]X[0.5,c]X[0.5,c]X[0.5,c]X[0.5,c]|} \hline 
+\multicolumn{5}{|c|}{\cellcolor{rowcolour}\textbf{Canada}} & \multicolumn{5}{c|}{\cellcolor{rowcolour}\textbf{United States}} \\	\hline
+& A & B & C & D &  & A & B & C & D \\
+\rowcolor{rowcolour}	\textbf{Peaches} & 0 & 5 & 10 & 15 & \textbf{Peaches} & 0 & 10 & 20 & 30 \\
+\textbf{Apples} & 30 & 20 & 10 & 0 & \textbf{Apples} & 15 & 10 & 5 & 0 \\ \hline 
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item  Plot Canada's production possibilities curve. 
+\item  Plot the United States' production possibilities curve.
+\item  What is each country's cost ratio of producing peaches and apples?
+\item  Which economy should specialize in which product? 
+\item  Plot the United States' trading possibilities curve (by plotting at least 2 points on the curve) if the actual terms of the trade are 1 apple for 1 peach. 
+\item  Plot the Canada' trading possibilities curve (by plotting at least 2 points on the curve) if the actual terms of the trade are 1 apple for 1 peach.
+\item  Suppose that the optimum product mixes before specialization and trade were B in the United States and C in Canada. What are the gains from specialization and trade? 
+\end{enumerate}
+\begin{econsolution}
+The figure below illustrates parts (a) through (e).
+
+For part (f): Since the total production before trade was 20 of each, and after specialization it is 30 of each, the gain is 10 of each good.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.2,yscale=0.2]
+\draw [thick] (0,35) node (yaxis) [mynode1,above] {Apples} |- (35,0) node (xaxis) [mynode1,right] {Peaches};
+\draw [ultra thick,dashed,name path=ConPos] (0,30) node [mynode,left,black] {30} -- coordinate[midway] (ConPosCoord) (30,0) node [mynode,below,black] {30};
+\draw [ultra thick,ppfcolourone,name path=PPFCan] (0,30) coordinate (CanSpec) -- node [mynode,below left,black,pos=0.4] {$PPF_{\text{CAN}}$} (15,0) node [mynode,below,black] {15};
+\draw [ultra thick,ppfcolourtwo,name path=PPFUS] (0,15) node [mynode,left,black] {15} -- node [mynode,below left,black,pos=0.7] {$PPF_{\text{US}}$} (30,0) coordinate (USSpec);
+\draw [<-,thick,shorten <=1mm] (CanSpec) -- +(5,0) node [mynode,right] {Canada should\\specialize in apples};
+\draw [<-,thick,shorten <=1mm] (USSpec) -- +(0,5) node [mynode,above] {US should\\specialize\\in peaches};
+\draw [<-,thick,shorten <=1mm] (ConPosCoord) -- +(5,5) node [mynode,right] {Consumption\\possibilities for each\\economy with an\\exchange rate of 1:1};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

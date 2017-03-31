@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.33,descwidth=25em,caption={Total revenue and marginal revenue \label{fig:totalmarginalrevenue}},description={When the quantity sold increases total revenue/expenditure initially increases also. At a certain point, further sales require a price that not only increases quantity, but reduces revenue on units already being sold to such a degree that $TR$ declines -- where the demand elasticity equals $-1$ (the mid point of a linear demand curve). Here the midpoint occurs at $Q=4$. Where the $TR$ is a maximum the $MR=0$.}}
+% Total revenue function
+\draw [trcolour,ultra thick,domain=180:0,name path=TR] plot ({12.5+12.5*cos(\x)},{12.5*sin(\x)}) node [mynode,black,below] {8};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Revenue} |- (25,0) node (xaxis) [right] {Quantity};
+% paths to intersect TR curve at R=24 and R=32 (max)
+\path [name path=R24] (0,10.8253) -- +(10,0);
+\path [name path=R32] (0,12.5) -- +(25,0);
+% intersection of TR curve and R24 and R32
+\draw [name intersections={of=TR and R24, by=Q2},name intersections={of=TR and R32, by=Q4}]
+	[dotted,thick] (yaxis |- Q2) node [mynode,left] {24} -| (xaxis -| Q2) node [mynode,below] {2}
+	[dotted,thick] (yaxis |- Q4) node [mynode,left] {32} -| (xaxis -| Q4) node [mynode,below] {4};
+% arrow pointing to maximum of TR curve
+\draw [<-,thick,shorten <=1mm,shorten >=-1.5mm] (Q4) -- +(0,2) node [mynode,above] {$TR$ is a maximum, $MR=0$};
+\end{TikzFigure}

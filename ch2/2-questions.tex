@@ -1,0 +1,237 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:tmd}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:tmd} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch2ex1}
+An examination of a country's recent international trade flows yields the data in the table below.
+\begin{Table}{}
+	\begin{tabu} to 30em {|X[1,c]X[1,c]X[1,c]|}\hline
+		\rowcolor{rowcolour}	\textbf{Year}	&	\textbf{National Income (\$b)}	&	\textbf{Imports (\$b)}	\\	\hline
+								2011			&	1,500							&	550						\\
+		\rowcolor{rowcolour}	2012			&	1,575							&	573						\\
+								2013			&	1,701							&	610						\\
+		\rowcolor{rowcolour}	2014			&	1,531							&	560						\\
+								2015			&	1,638							&	591						\\	\hline
+	\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Based on an examination of these data do you think the national income and imports are not related, positively related, or negatively related?
+	\item	Plot each pair of observations in a two-dimensional line diagram to illustrate your view of the import/income relationship. Measure income on the horizontal axis and imports on the vertical axis. This can be done using graph paper or a spreadsheet-cum-graphics software.
+\end{enumerate}
+\begin{econsolution}
+	These variables are positively related.
+	
+	\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+		axis line style=thick,
+		every tick label/.append style={font=\footnotesize},
+		ymajorgrids,
+		grid style={dotted},
+		every node near coord/.append style={font=\scriptsize},
+		xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+		scaled y ticks=false,
+		yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+		xmin=1450,xmax=1750,ymin=540,ymax=620,
+		y=1.15cm/20,
+		x=1.65cm/50,
+		x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+		xlabel={Imports},
+		ylabel={National Income},
+	]
+	\addplot[datasetcolourone,ultra thick,mark=none] table {
+		X		Y
+		1500	550
+		1531	560
+		1575	573
+		1638	591
+		1701	610
+	};
+	\end{axis}
+	\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch2ex2}
+The average price of a medium coffee at \textit{Wakeup Coffee Shop} in each of the past ten years is given in the table below.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	2005	&	2006	&	2007	&	2008	&	2009	&	2010	&	2011	&	2012	&	2013	&	2014		\\
+						\$1.05	&	\$1.10	&	\$1.14	&	\$1.20	&	\$1.25	&	\$1.25	&	\$1.33	&	\$1.35	&	\$1.45	&	\$1.49		\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Construct an annual `coffee price index' for this time period using 2005 as the base year. [\textit{Hint}: follow the procedure detailed in the chapter -- divide each yearly price by the base year price.]
+	\item	Based on your price index, what was the percentage change in the price of a medium coffee from 2005 to 2012?
+	\item	Based on your index, what was the average annual percentage change in the price of coffee from 2005 to 2010?
+	\item	Assuming the inflation rate in this economy was 2\% every year, what was the real change in the price of coffee between 2007 and 2008; and between 2009 and 2010?
+\end{enumerate}
+\begin{econsolution}
+	For (b) the answer is 30\%, for (c) the answer is 4.0\%, and for (d) the answers are 3.5\% and -2.0\%.
+	\begin{Table}{}
+	\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}\hline
+	\rowcolor{rowcolour}\textbf{Year} & 2005	& 2006	& 2007	& 2008	& 2009	& 2010	& 2011	& 2012	& 2013	& 2014 	\\
+						\textbf{Index}& 100.0	& 105.0 & 109.0 & 115.0 & 120.0 & 120.0 & 127.0 & 130.0 & 139.0 & 142.0 \\ \hline
+	\end{tabu}
+	\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch2ex3}
+The following table shows hypothetical consumption spending by households and income of households in billions of dollars.
+\begin{Table}{}
+\begin{tabu} to 27em {|X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Year}	&	\textbf{Income}	&	\textbf{Consumption}	\\	\hline
+						2006			&	476				&	434						\\
+\rowcolor{rowcolour}	2007			&	482				&	447						\\
+						2008			&	495				&	454						\\
+\rowcolor{rowcolour}	2009			&	505				&	471						\\
+						2010			&	525				&	489						\\
+\rowcolor{rowcolour}	2011			&	539				&	509						\\
+						2012			&	550				&	530						\\
+\rowcolor{rowcolour}	2013			&	567				&	548						\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Plot the scatter diagram with consumption on the vertical axis and income on the horizontal axis.
+	\item	Fit a line through these points.
+	\item	Does the line indicate that these two variables are related to each other?
+	\item	How would you describe the \textit{causal relationship} between income and consumption?
+\end{enumerate}
+\begin{econsolution}
+	The scatter diagram plots observed combinations of income and consumption as follows. For parts (c) and (d): the variables are positively related and the causation runs from income to consumption.
+	
+	\begin{center*}
+		\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+		\begin{axis}[
+		axis line style=thick,
+		every tick label/.append style={font=\footnotesize},
+		extra y ticks={100,300,500},
+		ymajorgrids,
+		grid style={dotted},
+		every node near coord/.append style={font=\scriptsize},
+		xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+		scaled y ticks=false,
+		yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+		xmin=460,xmax=580,ymin=0,ymax=600,
+		y=0.8cm/100,
+		x=1.6cm/20,
+		x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+		xlabel={Income},
+		ylabel={Consumption},
+		]
+		\addplot[datasetcolourone,ultra thick,mark=none] table {
+			X		Y
+			476		434
+			482		447
+			495		454
+			505		471
+			525		489
+			539		509
+			550		530
+			567		548
+		};
+		\end{axis}
+		\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch2ex4}
+Using the data from Exercise~\ref{ex:ch2ex3}, compute the percentage change in consumption and the percentage change in income for each pair of adjoining years between 2006 and 2013.
+\begin{econsolution}
+	The percentage changes in income are:
+	\begin{Table}{}
+		\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+			\rowcolor{rowcolour} \textbf{Pct Inc} & 1.3 & 2.7 & 2.0 & 4.0 & 2.7 & 2.0 & 3.1 \\
+			\textbf{Pct Con} & 3.0 & 1.6 & 3.7 & 3.8 & 4.1 & 4.1 & 3.4 \\ \hline
+		\end{tabu}
+	\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch2ex5}
+You are told that the relationship between two variables, $X$ and $Y$, has the form $Y=10+2X$. By trying different values for $X$ you can obtain the corresponding predicted value for $Y$ (e.g., if $X=3$, then $Y=10+2\times 3=16$). For values of $X$ between 0 and 12, compute the matching value of $Y$ and plot the scatter diagram.
+\begin{econsolution}
+	The relationship given by the equation $Y=10+2X$ when plotted has an intercept on the vertical ($Y$) axis of 10 and the slope of the line is 2. The maximum value of $Y$ (where $X$ is 12) is 34.
+	\begin{center*}
+		\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.5,yscale=0.15]
+		\draw [thick] (0,40) node (yaxis) [mynode1,above] {$Y$} |- (15,0) node (xaxis) [mynode1,right] {$X$};
+		\draw [ultra thick,supplycolour,name path=Y102X] (0,10) node [mynode,left,black] {10} -- (13,36) node [mynode,above,black] {$Y=10+2X$};
+%		\draw [ultra thick,dashed,demandcolour,name path=Y1005X] (0,10) -- (15,2.5) node [mynode,right,black] {$Y=10-0.5X$};
+%		\draw [ultra thick,dashed,demandcolour,name path=Y4] (0,4) node [mynode,left,black] {4} -- (15,4);
+		\path [name path=Y22] (0,22) -- +(15,0);
+		\path [name path=Y34] (0,34) -- +(15,0);
+		\draw [name intersections={of=Y22 and Y102X, by=i1},name intersections={of=Y34 and Y102X, by=i2}]
+		[dotted,thick] (yaxis |- i1) node [mynode,left] {22} -| (xaxis -| i1) node [mynode,below] {6}
+		[dotted,thick] (yaxis |- i2) node [mynode,left] {34} -| (xaxis -| i2) node [mynode,below] {12};	
+		\end{tikzpicture}
+	\end{center*}
+	\begin{Table}{}
+		\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+			\rowcolor{rowcolour} \textbf{X} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+			\textbf{Y} & 10 & 12 & 14 & 16 & 18 & 20 & 22 & 24 & 26 & 28 & 30 & 32 & 34 \\ \hline
+		\end{tabu}
+	\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch2ex6}
+For the data below, plot a scatter diagram with variable $Y$ on the vertical axis and variable $X$ on the horizontal axis.
+\begin{Table}{}
+	\begin{tabu} to 27em {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+		\rowcolor{rowcolour}	\textbf{Y}	&	40	&	33	&	29	&	56	&	81	&	19	&	20	\\
+		\textbf{X}	&	5	&	7	&	9	&	3	&	1	&	11	&	10	\\	\hline
+	\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Is the relationship between the variables positive or negative?
+	\item	Do you think that a linear or non-linear line better describes the relationship?
+\end{enumerate}
+\begin{econsolution}
+	\begin{center*}
+		\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+		\begin{axis}[
+		axis line style=thick,
+		every tick label/.append style={font=\footnotesize},
+		ymajorgrids,
+		grid style={dotted},
+		every node near coord/.append style={font=\scriptsize},
+		xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+		scaled y ticks=false,
+		yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+		xmin=0,xmax=12,ymin=0,ymax=100,
+		y=0.6cm/10,
+		x=0.8cm/1,
+		x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+		xlabel={$X$},
+		ylabel={$Y$},
+		]
+		\addplot[datasetcolourtwo,ultra thick,only marks] table {
+			X	Y
+			1	81
+			3	56
+			5	40
+			7	33
+			9	29
+			10	20
+			11	19
+		};
+		\addplot [reglinecolour,ultra thick,no marks] expression[domain=1:11,samples=100] {0.5357*x^2 - 12.2197*x + 90.4753};
+		\end{axis}
+		\end{tikzpicture}
+	\end{center*}
+	\begin{enumerate}
+		\item	The relationship is negative.
+		\item	The relationship is non-linear.
+	\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

@@ -1,0 +1,39 @@
+\begin{TikzFigure}{xscale=1,yscale=1,caption={TU from jazz \label{fig:TUjazz}}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=9,ymin=0,ymax=275,
+	x=0.9cm/1,
+	y=1.15cm/50,
+	xlabel={Jazz club visits},
+	ylabel={Utils},
+]
+\addplot[datasetcolourthree,ultra thick,mark=+] coordinates {
+	(1,52)
+	(2,94)
+	(3,128)
+	(4,156)
+	(5,180)
+	(6,201)
+	(7,220)
+};
+\addplot[black,dashed,thick,mark=none] coordinates {
+	(2,94)
+	(3,94)
+	(3,128)
+};
+\node [mynode,below] at (axis cs:2.5,94) {1};
+\node [mynode,right] at (axis cs:3,111) {34};
+\addplot[black,dashed,thick,mark=none] coordinates {
+	(4,156)
+	(5,156)
+	(5,180)
+};
+\node [mynode,below] at (axis cs:4.5,156) {1};
+\node [mynode,right] at (axis cs:5,168) {24};
+\end{axis}
+\end{TikzFigure}

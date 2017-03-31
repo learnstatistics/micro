@@ -1,0 +1,197 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:welfare}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:welfare} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch5ex1}
+Four teenagers live on your street. Each is willing to shovel snow from one driveway each day. Their ``willingness to shovel'' valuations (supply) are: Jean, \$10; Kevin, \$9; Liam, \$7; Margaret, \$5. Several households are interested in having their driveways shoveled, and their willingness to pay values (demand) are: Jones, \$8; Kirpinsky, \$4; Lafleur, \$7.50; Murray, \$6.
+\begin{enumerate}
+\item	Draw the implied supply and demand curves as step functions.
+\item	How many driveways will be shoveled in equilibrium?
+\item	Compute the maximum possible sum for the consumer and supplier surpluses.
+\item	If a new (wealthy) family arrives on the block, that is willing to pay \$12 to have their driveway cleared, recompute the answers to parts (a), (b), and (c).
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The step functions are similar to those in Figure~\ref{fig:apartmentmarket}. In ascending order, Margaret is the first supplier, Liam the second, etc. You must also order the demanders in descending order.
+\item	Two: Margaret and Liam will supply, while Jones and Lafleur will purchase. The third highest demander (Murray) is willing to pay \$6, while the third supplier is willing to supply only if the price is \$9. Hence there is no third unit supplied.
+\item	The equilibrium price will lie in the range \$7.0-\$7.5. So	let us say it is \$7. The consumer surplus of each buyer is therefore \$1 and \$0.5. The supplier surpluses are zero and \$2.
+\item	Two driveways will still be cleared. The highest value buyers are now willing to pay \$12 and \$8. The third highest value buyer is willing to pay \$7.0. But on the supply side the third supplier still supplies only if he gets \$9. Therefore two units will be supplied. If the price remains at \$7 (it could fall in the range between \$7 and \$8) the consumer surpluses are now \$5 and \$1, and the	supplier surpluses remain the same.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex2}
+Consider a market where supply curve is horizontal at $P=10$ and the demand curve has intercepts $\{\$34,34\}$, and is defined by the relation $P=34-Q$. 
+\begin{enumerate}
+\item	Illustrate the market geometrically.
+\item	Impose a tax of \$2 per unit on the good so that the supply curve is now $P=12$. Illustrate the new equilibrium quantity.
+\item	Illustrate in your diagram the tax revenue generated.
+\item	Illustrate the deadweight loss of the tax.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The supply curve is horizontal at a price of \$10. The demand curve price intercept is \$34 and the quantity intercept is 34. The equilibrium quantity is 24.
+\item	The new supply curve is $P=12$, yielding an equilibrium $Q=22$.
+\item	Tax revenue is \$44: each of the 22 units sold yields \$2.
+\item	The DWL is \$2.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.17,yscale=0.15]
+	\draw [thick] (0,40) node (yaxis) [mynode1,above] {$P$} |- (40,0) node (xaxis) [mynode1,right] {$Q$};
+	\draw [ultra thick,demandcolour,name path=D] (0,34) node [mynode,black,left] {34} -- node [mynode,black,above right,midway] {$D$} (34,0) node [mynode,black,below] {34};
+	\draw [ultra thick,supplycolour,name path=S] (0,10) -- +(38,0) node [mynode,black,above] {$P=10$};
+	\draw [name intersections={of=D and S, by=e}]
+		[dotted,thick] (e) -- (xaxis -| e) node [mynode,below] {24};
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex3}
+Next, consider an example of DWL in the labour market. Suppose the demand for labour is given by the fixed gross wage $W=\$16$. The supply is given by $W=0.8L$, indicating that the supply curve goes through the origin with a slope of 0.8.
+\begin{enumerate}
+\item	Illustrate the market geometrically.
+\item	Calculate the supplier surplus, knowing that the equilibrium is $L=20$.
+\item	\textit{Optional}: Suppose a wage tax is imposed that produces a net-of-tax wage equal to $W=\$12$. This can be seen as a downward shift in the demand curve. Illustrate the new quantity supplied and the new supplier's surplus. 
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The supply curve goes through the origin and the demand curve is horizontal at $W=\$16$ -- see diagram below.
+\item	The equilibrium amount of labour supplied is 20 units. The supplier surplus is the area above the supply curve below the
+equilibrium price$=\$160$.
+\item	At a net wage of \$12, labour supplied falls to 15. The downward shift in the wage reduces the quantity supplied. The new supplier surplus is the triangular area bounded by $W=12$ and $L=15$. Its value is therefore \$90.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.5,yscale=0.55]
+\draw [thick] (0,10) node (yaxis) [mynode1,above] {Wage} |- (15,0) node (xaxis) [mynode1,right] {$L$};
+\draw [demandcolour,ultra thick,name path=W16] (0,5) -- +(14.5,0) node [black,mynode,right] {$W=16$};
+\draw [supplycolour,ultra thick,domain=0:13,name path=W08L] plot (\x, {0.8*\x}) node [black,mynode,right] {$W=0.8L$};
+\draw [name intersections={of=W16 and W08L, by=E}]
+[dotted,thick] (E) node [mynode,above] {E} node [mynode,below left=0.65em and 2.5em] {Supplier's\\surplus area} -- (xaxis -| E) node [mynode,below] {20};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex4}
+Governments are in the business of providing information to potential buyers. The first serious provision of information on the health consequences of tobacco use appeared in the United States Report of the Surgeon General in 1964.
+\begin{enumerate}
+\item	How would you represent this intervention in a supply and demand for tobacco diagram?
+\item	Did this intervention ``correct'' the existing market demand?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The demand curve shifts inwards.
+\item	Yes, because consumers previously did not have full information about the product.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex5}
+In deciding to drive a car in the rush hour, you think about the cost of gas and the time of the trip.
+\begin{enumerate}
+\item	Do you slow down other people by driving?
+\item	Is this an externality, given that you yourself are suffering from slow traffic?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Yes.
+\item	Yes, because the congestion effect is not incorporated into the price of driving.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex6}
+Suppose that our local power station burns coal to generate electricity. The demand and supply functions for electricity are given by $P=12-0.5Q$ and $P=2+0.5Q$, respectively. The demand curve has intercepts $\{\$12,24\}$ and the supply curve intercept is at \$2 with a slope of one half. However, for each unit of electricity generated, there is an externality. When we factor this into the supply side of the market, the real social cost is increased by \$1 per unit. That is, the supply curve shifts upwards by \$1, and now takes the form $P=3+0.5Q$. \begin{enumerate}
+\item	Illustrate the free-market equilibrium.
+\item	Illustrate the efficient (i.e. socially optimal) level of production.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The free market equilibrium is obtained by equating demand and private-cost supply curves: $Q=10$, $P=\$7$.
+\item	The true supply is above the private supply. The social optimum involves a lower output and higher price.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.22,yscale=0.25]
+	\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (30,0) node (xaxis) [mynode1,right] {$Q$};
+	\draw [ultra thick,demandcolour,name path=D] (0,12) node [mynode,black,left] {12} -- node [mynode,black,above right,midway] {$D$} (24,0) node [mynode,black,below] {24};
+	\draw [ultra thick,supplycolour,name path=S] (0,2) node [mynode,black,left] {2} -- (24,14) node [mynode,black,right] {$S$};
+	\draw [name intersections={of=D and S, by=e}]
+		[dotted,thick] (yaxis |- e) node [mynode,left] {7} -- (e) -- (xaxis -| e) node [mynode,below] {10};
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex7}
+Your local dry cleaner, Bleached Brite, is willing to launder shirts at its cost of \$1.00 per shirt. The neighbourhood demand for this service is $P=5-0.005Q$, knowing that the demand intercepts are $\{\$5,1000\}$.
+\begin{enumerate}
+\item	Illustrate the market equilibrium.
+\item	Suppose that, for each shirt, Bleached Brite emits chemicals into the local environment that cause \$0.25 damage per shirt. This means the full cost of each shirt is \$1.25. Illustrate graphically the socially optimal number of shirts to be cleaned.
+\item	\textit{Optional}: Calculate the socially optimal number of shirts to be cleaned.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The supply curve is horizontal at $P=\$1$. The demand curve has	a price intercept of 5 and a quantity intercept of 1000. The equilibrium quantity is 800.
+\item	The socially optimal quantity is obtained by recognizing that the social cost is \$1.25 rather than \$1.0. The supply curve that includes social costs is now horizontal at $P=\$1.25$.
+\item	$Q^{*}=750$.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex8}
+The supply curve for agricultural labour is given by $W=6+0.1L$, where $W$ is the wage (price per unit) and $L$ the quantity traded. Employers are willing to pay a wage of \$12 to all workers who are willing to work at that wage; hence the demand curve is $W=12$.
+\begin{enumerate}
+\item	Illustrate the market equilibrium, if you are told that the equilibrium occurs where $L=60$.
+\item	Compute the supplier surplus at this equilibrium.
+\end{enumerate}
+\begin{econsolution}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.065,yscale=0.25]
+	\draw [thick] (0,20) node (yaxis) [mynode1,above] {\$} |- (100,0) node (xaxis) [mynode1,right] {$L$};
+	\draw [ultra thick,demandcolour,name path=D] (0,12) node [mynode,black,left] {12} -- (95,12) node [mynode,black,right] {$D$};
+	\draw [ultra thick,supplycolour,name path=S] (0,6) node [mynode,black,left] {6} -- (95,15.5) node [mynode,black,right] {$S$};
+	\draw [name intersections={of=D and S, by=e}]
+	[dotted,thick] (e) -- (xaxis -| e) node [mynode,below] {60};
+	\end{tikzpicture}
+\end{center*}
+\begin{enumerate}
+\item	The demand curve is horizontal at $P=\$12$. The supply curve slopes upwards with a price intercept of \$6. Equilibrium is $L=60$.
+\item	Surplus is the area beneath the demand curve above the supply curve$=\$180$.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch5ex9}
+\textit{Optional}: The market demand for vaccine XYZ is given by $P=36-Q$ and the supply conditions are $P=20$; so \$20 represents the true cost of supplying a unit of vaccine. There is a positive externality associated with being vaccinated, and the real societal value is known and given by $P=36-(1/2)Q$. This new demand curve represents the true value to society of each vaccination. This is reflected in the private value demand curve rotating upward around the price intercept of \$36.
+\begin{enumerate}
+\item	Illustrate the private and social demand curves on a diagram, with intercept values calculated. 
+\item	What is the market solution to this supply and demand problem?
+\item	What is the socially optimal number of vaccinations?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the diagram below.
+\item	The market solution is obtained by equating the market demand and supply. This yields $Q=16$ and $P=\$20$.
+\item	The socially optimal amount takes account of the fact that there are positive externalities. The demand curve that reflects these externalities is above the private demand curve. Hence the socially optimal equilibrium is at a greater output $Q=32$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.17,yscale=0.15]
+	\draw [thick] (0,40) node (yaxis) [mynode1,above] {$P$} |- (40,0) node (xaxis) [mynode1,right] {$Q$};
+	\draw [ultra thick,demandcolour,name path=D] (0,36) node [mynode,black,left] {36} -- node [mynode,black,above right,pos=0.8] {$D$} (36,0) node [mynode,black,below] {36};
+	\draw [ultra thick,supplycolour,name path=S] (0,20) -- +(38,0) node [mynode,black,right] {$S$};
+	\draw [ultra thick,supplycolour,name path=Dprime] (0,36) -- (36,18) node [mynode,black,right] {$D^{\prime}$};
+	\draw [name intersections={of=D and S, by=e},name intersections={of=S and Dprime, by=eprime}]
+		[dotted,thick] (e) -- (xaxis -| e) node [mynode,below] {16}
+		[dotted,thick] (eprime) -- (xaxis -| eprime) node [mynode,below] {32};
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

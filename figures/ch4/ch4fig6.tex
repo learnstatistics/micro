@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.4,descwidth=25em,caption={Income elasticity and shifts in demand \label{fig:incomeelastdemandshift}},description={At the price $P_0$, the income elasticity measures the percentage horizontal shift in demand caused by some percentage income increase. A shift from A to B reflects a lower income elasticity than a shift to C. A leftward shift in the demand curve in response to an income increase would denote a negative income elasticity -- an inferior good.}}
+% price line
+\draw [name path=price] (0,8) node [mynode,left] {$P_0$} -- (14,8);
+% demand functions
+\draw [demandcolour,ultra thick,name path=D] (1,14) node [black,mynode,above] {$D$} -- (7.5,1);
+\draw [demandcolour,ultra thick,name path=D1] (4,14) node [black,mynode,above] {$D_1$} -- (10.5,1);
+\draw [demandcolour,ultra thick,name path=D2] (7,14) node [black,mynode,above] {$D_2$} -- (13.5,1);
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of price line with demand functions
+\draw [name intersections={of=price and D, by=A},name intersections={of=price and D1, by=B},name intersections={of=price and D2, by=C}]
+	[dotted,thick] (A) node [mynode,above right] {A} -- (xaxis -| A) node [mynode,below] {$Q_0$}
+	[dotted,thick] (B) node [mynode,above right] {B} -- (xaxis -| B) node [mynode,below] {$Q_1$}
+	[dotted,thick] (C) node [mynode,above right] {C} -- (xaxis -| C) node [mynode,below] {$Q_2$};
+\end{TikzFigure}

@@ -1,0 +1,11 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.5,descwidth=24em,caption={The taxi market \label{fig:taximarketA}},description={Consumer surplus is the area ABE, supplier surplus is the area BCE.}}
+% axes
+\draw [thick] (0,11) node (yaxis) [above,mynode1] {Price (fee\\per hour)} |- (12,0) node (xaxis) [right,mynode1] {Quantity (thousands\\of hours of rides)};
+% demand line
+\draw [demandcolour,thick,name path=D] (0,9) node [mynode,left,black] {90} node [mynode,above right,black] {A} -- node [mynode,above right,black,pos=0.25] {$D$} (9,0);
+% supply line
+\draw [supplycolour,thick,name path=S] (0,3) node [mynode,left,black] {30} node [mynode,below right,black] {C} -- (12,6) node [mynode,right,black] {$S$};
+% intersection of S and D
+\draw [name intersections={of=D and S, by=E}]
+	[thick,dotted] (yaxis |- E) node [mynode,left] {42} node [mynode,above right] {B} -- (E) node [mynode,above] {E} -- (xaxis -| E) node [mynode,below] {48};
+\end{TikzFigure}

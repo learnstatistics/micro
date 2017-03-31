@@ -1,0 +1,10 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.34,descwidth=25em,caption={The monopolist's choice of plant size \label{fig:monopolyplantsize}},description={With constant returns to scale and constant prices per unit of labour and capital, a doubling of output involves exactly a doubling of costs. Thus, per unit costs, or average costs, are constant in the LR. Hence $LAC=LMC$, and each is constant.}}
+\draw [dashed,mccolour,ultra thick]
+	(4,6) to [out=15,in=270] (9,14) node [black,mynode,above] {$MC_1$}
+	(15,6) to [out=15,in=270] (20,14) node [black,mynode,above] {$MC_2$};
+% AC curves
+\draw [atccolour,ultra thick,domain=180:360] plot ({7+4*cos(\x)},{12+4*sin(\x)}) node [mynode,above,black] {$AC_1$};
+\draw [atccolour,ultra thick,domain=180:360] plot ({18+4*cos(\x)},{12+4*sin(\x)}) node [mynode,above,black] {$AC_2$};
+\draw [latccolour,ultra thick,-] (0,8) -- (25,8) node [black,mynode,below] {$LAC=LMC$};
+\draw [thick, -] (0,20) node [above] {\$} |- (25,0) node [right] {Quantity};
+\end{TikzFigure}

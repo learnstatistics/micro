@@ -1,0 +1,17 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,descwidth=25em,caption={Elasticity variation with linear demand \label{fig:elasticitylineardemand}},description={In the high-price region of the demand curve the elasticity takes on a high value. At the midpoint of a linear demand curve the elasticity takes on a value of one, and at lower prices the elasticity value continues to fall.}}
+% demand line
+\draw [demandcolour,ultra thick,name path=demand] (0,10) node [black,mynode,left] {$P=10$} -- node [mynode,above right, pos=0.2,black] {High elasticity range (elastic)} node [mynode,above right,pos=0.8,black] {Low elasticity range (inelastic)} (10,0) node [black,mynode,below] {$Q=10$};
+% paths to intersect with demand and create dotted lines
+\path [name path=price8] (0,8) -- (10,8);
+\path [name path=price5] (0,5) -- (10,5);
+\path [name path=price2] (0,2) -- (10,2);
+% axes
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of paths and demand
+\draw [name intersections={of=price8 and demand, by=HighE},name intersections={of=price5 and demand, by=MidE},name intersections={of=price2 and demand, by=LowE}]
+	[dotted,thick] (yaxis |- HighE) node [mynode,left] {8} -| (xaxis -| HighE) node [mynode,below] {2}
+	[dotted,thick] (yaxis |- MidE) node [mynode,left] {5} -| (xaxis -| MidE) node [mynode,below] {5}
+	[dotted,thick] (yaxis |- LowE) node [mynode,left] {2} -| (xaxis -| LowE) node [mynode,below] {8};
+% arrow pointing to MidE
+\draw [<-,thick,shorten <=1mm] (MidE) -- +(2,2) node [mynode,right] {Midpoint of $D$: $\varepsilon=-1$};
+\end{TikzFigure}

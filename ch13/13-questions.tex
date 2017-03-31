@@ -1,0 +1,270 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:humancapital}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:humancapital} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch13ex1}
+Georgina is contemplating entering the job market after graduating from high school. Her future lifespan is divided into two phases: An initial one during which she may go to university, and a second when she will work. Since dollars today are worth more than dollars in the future she discounts the future by 20\%, that is the value today of that future income is the income divided by 1.2. By going to university and then working she will earn (i) -\$60,000; (ii) \$600,000. The negative value implies that she will incur costs in educating herself in the first period. In contrast, if she decides to work for both periods she will earn \$30,000 in the first period and \$480,000 in the second. 
+\begin{enumerate}
+\item	If her objective is to maximize her lifetime earnings, should she go to university or enter the job market immediately?
+\item	If instead of discounting the future at the rate of  20\%, she discounts it at the rate of 50\%, what should she do?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The present value of going to university is higher at an interest rate of 10\%. If you discount the first stream of values you will obtain $-20,000$, 36,360 and 41,320 yielding a net present value of 57,680. With 20,000 dollars each period in contrast, the net present value is 54,710 dollars.
+\item	By performing the same set of calculations using the 2\% discount rate, you will find that university is still preferred.
+\item	At an interest rate above 15\% the `no university' option will yield a higher net present value. Try discounting the two income streams using a rate of 16\% and you will see.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch13ex2}
+Imagine that you have the following data on the income distribution for two economies.
+\begin{Table}{}
+\begin{tabu} to 30em {|X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}								&	\multicolumn{2}{c|}{\textbf{Quintile share of total income}}	\\
+\textbf{First quintile}		&	4.1		&	3.0		\\
+\rowcolor{rowcolour}	\textbf{Second quintile}	&	9.6		&	9.0		\\
+\textbf{Third quintile}		&	15.3	&	17.0	\\
+\rowcolor{rowcolour}	\textbf{Fourth quintile}	&	23.8	&	29.0	\\
+\textbf{Fifth quintile}		&	47.2	&	42.0	\\
+\rowcolor{rowcolour}	\textbf{Total}				&	100		&	100		\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	On graph paper, or in a spreadsheet program, plot the Lorenz curves corresponding to the two sets of quintile shares. You must first compute the cumulative shares as we did for Figure~\ref{fig:ginilorenzcurve}.
+\item	Can you say, from a visual analysis, which distribution is more equal?
+\end{enumerate}
+\begin{econsolution}
+These two distributions have intersecting Lorenz curves, so it is difficult to say which is more unequal without further analysis.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=0,xmax=1,ymin=0,ymax=1,
+y=1cm/0.15,
+x=1cm/0.1,
+x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+xlabel={Population share},
+ylabel={Income share},
+]
+\addplot[datasetcolourone,ultra thick,mark=square*] table {
+	X	Y
+	0	0
+	0.2	0.041
+	0.4	0.138
+	0.6	0.294
+	0.8	0.531
+	1	1
+};
+\addplot[datasetcolourtwo,ultra thick,mark=triangle*] table {
+	X	Y
+	0	0
+	0.2	0.03
+	0.4	0.12
+	0.6	0.29
+	0.8	0.58
+	1	1
+};
+\end{axis}
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch13ex3}
+The distribution of income in the economy is given in the table below. The first numerical column represents the dollars earned by each quintile. Since the numbers add to 100 you can equally think of the dollar values as shares of the total pie. In this economy the government changes the distribution by levying taxes and distributing benefits.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[0.5,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Quintile}	&	\textbf{Gross income \$m}	&	\textbf{Taxes \$m}	&	\textbf{Benefits \$m}	\\
+\textbf{First}		&	4							&	0					&	9						\\
+\rowcolor{rowcolour}	\textbf{Second}		&	11							&	1					&	6						\\
+\textbf{Third}		&	19							&	3					&	5						\\
+\rowcolor{rowcolour}	\textbf{Fourth}		&	26							&	7					&	3						\\
+\textbf{Fifth}		&	40							&	15					&	3						\\
+\rowcolor{rowcolour}	\textbf{Total}		&	100							&	26					&	26						\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	Plot the Lorenz curve for gross income to scale.
+\item	Now subtract the taxes paid and add the benefits received by each quintile. Check that the total income is still \$100. Calculate the cumulative income shares and plot the resulting Lorenz curve. Can you see that taxes and benefits reduce inequality?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The coordinates on the vertical axis measured in percentages are: 4, 15, 34, 60, 100. See the figure below for the graphic.
+\item	The new coordinates are: 5.4, 18.9, 40.5, 66.2, 100.
+\item	The coordinates for post government income are: 13, 29, 50, 72, 100. The three Lorenz curves are plotted below.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=0,xmax=1,ymin=0,ymax=1,
+y=1cm/0.15,
+x=1cm/0.1,
+x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+xlabel={Population share},
+ylabel={Income share},
+legend style={at={(axis cs:0.025,0.95)},anchor=north west},
+]
+\addplot[datasetcolourone,ultra thick,mark=square*] table {
+	X	Y
+	0	0
+	0.2	0.04
+	0.4	0.15
+	0.6	0.34
+	0.8	0.60
+	1	1
+};\addlegendentry {Gross income}
+\addplot[datasetcolourtwo,ultra thick,mark=triangle*] table {
+	X	Y
+	0	0
+	0.2	0.054
+	0.4	0.189
+	0.6	0.405
+	0.8	0.662
+	1	1
+};\addlegendentry {Income net of taxes}
+\addplot[datasetcolourthree,ultra thick,mark=*] table {
+	X	Y
+	0	0
+	0.2	0.13
+	0.4	0.29
+	0.6	0.50
+	0.8	0.72
+	1	1
+};\addlegendentry {Income net of taxes and benefits}
+\end{axis}
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch13ex4}
+Consider two individuals, each facing a 45 year horizon at the age of 20. Ivan decides to work immediately and his earnings path takes the following form: Earnings $=20,000+1,000t-10t^2$, where the $t$ is time, and it takes on values from 1 to 25, reflecting the working lifespan.
+\begin{enumerate}
+\item	In a spreadsheet enter values 1\dots 25 in the first column and then compute the value of earnings in each of the 25 years in the second column using the earnings equation.
+\item	John decides to study some more and only earns a part-time salary in his first few years. He hopes that the additional earnings in future years will compensate for that. His function is given by $10,000+2,000t-12t^2$. In the same spreadsheet compute his annual earnings for 25 years.
+\item	Plot the two earnings functions you have computed using the `charts' feature of Excel. Does your graph indicate that John passes Ivan between year 10 and year 11?
+\end{enumerate}
+\begin{econsolution}
+The profiles are shown in the figure below. John passes Ivan about year ten.
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=0,xmax=30,ymin=0,ymax=60000,
+y=1cm/9000,
+x=1cm/4,
+x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+y label style={at={(axis description cs:-0.05,0.5)},anchor=south},
+xlabel={Population share},
+ylabel={Income share},
+legend style={at={(axis cs:1,58000)},anchor=north west},
+]
+\addplot[datasetcolourone,ultra thick,domain=0:25] {20000 + 1000 * x - 10 * x^(2)};\addlegendentry {Ivan}
+\addplot[datasetcolourtwo,ultra thick,domain=0:25]  {10000 + 2000 * x - 12 * x^(2)};\addlegendentry {John}
+\end{axis}
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch13ex5}
+In the short run one half of the labour force has high skills and one half low skills (in terms of Figure~\ref{fig:edskillpremium} this means that the short-run supply curve is vertical at 0.5). The relative demand for the high-skill workers is given by $W=40\times (1-f)$, where $W$ is the wage premium and $f$ is the fraction that is skilled. The premium is measured in percent and $f$ has a maximum value of 1. The $W$ function thus has vertical and horizontal intercepts of $\{40,1\}$.
+\begin{enumerate}
+\item	Illustrate the supply and demand curves graphically, and illustrate the skill premium going to the high-skill workers in the short run by determining the value of $W$ when $f=0.5$. 
+\item	If demand increases to $W=60\times (1-f)$ what is the new premium? Illustrate your answer graphically.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Solving the demand and supply involves equating $Q=40-40f$ to $f=0.5$. Thus the equilibrium premium is 20, which is interpreted in percentage terms. See figure below.
+\item	If demand shifts upwards to $W=60-60f$, the new equilibrium is 30 percent, as illustrated in the figure below again.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch13ex6}
+Consider the foregoing problem in a long-run context, when the fraction of the labour force that is high-skilled is more elastic with respect to the premium. Let this long-run relative supply function be $W=40\times f$.
+\begin{enumerate}
+\item	Graph this long-run supply function and verify that it goes through the same initial equilibrium as in Exercise~\ref{ex:ch13ex5}.
+\item	Illustrate the long run and short run on the same diagram. 
+\item	What is the numerical value of the premium in the long run after the increase in demand? Illustrate graphically.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See diagram below.
+\item	See diagram below.
+\item	In the long run the relative supply is $W=40f$, and equating this with demand yields a 24 percent premium rather than a 30 percent premium and $f=0.6$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=1,ymin=0,ymax=65,
+	y=1cm/8,
+	x=1cm/0.1,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Fraction of Labour Force},
+	ylabel={Wage},
+	]
+	\addplot[datasetcolourone,ultra thick] table {
+		X	Y
+		0	60
+		1	0
+	};
+	\addplot[datasetcolourtwo,ultra thick] table {
+		X	Y
+		0	40
+		1	0
+	};
+	\addplot[datasetcolourthree,ultra thick] table {
+		X	Y
+		0	0
+		1	40
+	};
+	\addplot[datasetcolourfour,ultra thick] table {
+		X	Y
+		0.5	0
+		0.5	65
+	};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

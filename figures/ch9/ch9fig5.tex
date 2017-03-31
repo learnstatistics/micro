@@ -1,0 +1,20 @@
+\begin{TikzFigure}{xscale=0.36,yscale=0.3,descwidth=25em,caption={Short-run profits for the firm \label{fig:shortrunprofits}},description={At the price $P_E$, determined by the intersection of market demand and market supply, an individual firm produces the amount $Q_E$. The $ATC$ of this output is k and therefore profit per unit is mk. Total profit is therefore $P_E$mkh$=0q_E\times$mk$=TR-TC$.}}
+% MC curve
+\draw [dashed,mccolour,ultra thick,domain=3:18,name path=MC] plot (\x, {0.25*pow(1.25,\x)+4}) node [mynode,black,right] {$MC$};
+% AVC curve
+\draw [avccolour,ultra thick,domain=3:17,name path=AVC] plot (\x, {-1*sqrt(16-(\x-10)*(\x-10)/4)+10.32831}) node [black,mynode,right] {$AVC$};
+% ATC curve
+\draw [atccolour,ultra thick,domain=11.5:18.5,name path=ATC] plot (\x, {-2*sqrt(16-(\x-15)*(\x-15))+19.1054}) node [black,mynode,right] {$ATC$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} -- (0,0) node [mynode,left] {0} -- (25,0) node (xaxis) [right] {Quantity};
+% path to intersect with MC
+\path [name path=PEmpath] (0,14) -- +(25,0);
+% intersection of PEmpath with MC
+\draw [name intersections={of=MC and PEmpath, by=m}]
+	[dotted,thick] (yaxis |- m) node [mynode,left] {$P_E$} -- (m) node [mynode,above left] {m} -- (xaxis -| m) node [mynode,below] {$q_E$};
+% path to create dotted line from h to k
+\path [name path=mkline] (xaxis -| m) -- (m);
+% intersection of mkline with ATC
+\draw [name intersections={of=ATC and mkline, by=k}]
+	[dotted,thick] (yaxis |- k) node [mynode,left] {h} -- (k) node [mynode,below right] {k};
+\end{TikzFigure}

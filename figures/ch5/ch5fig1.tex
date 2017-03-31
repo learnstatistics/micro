@@ -1,0 +1,19 @@
+\begin{TikzFigure}{xscale=0.6,yscale=0.6,descwidth=25em,caption={The apartment market \label{fig:apartmentmarket}},description={Demanders and suppliers are ranked in order of the value they place on an apartment. The market equilibrium is where the marginal demand value of Evan equals the marginal supply value of Kirin at \$500. Five apartments are rented in equilibrium.}}
+\draw [demandcolour,ultra thick,-]
+	(0,9) node [black,mynode,left] {\$900} -- (2,9) node [black,mynode,midway,above] {Alex}
+	(2,8) -- (4,8) node [black,mynode,midway,above] {Brian}
+	(4,7) -- (6,7) node [black,mynode,midway,above] {Cathy}
+	(6,6) -- (8,6) node [black,mynode,midway,above] {Don}
+	(10,4) -- (12,4) node [black,mynode,midway,above] {Frank};
+\draw [supplycolour,ultra thick,-]
+	(0,3) node [black,mynode,left] {\$300} -- (2,3) node [black,mynode,midway,below] {Gladys}
+	(2,3.5) -- (4,3.5) node [black,mynode,midway,below] {Heward}
+	(4,4) -- (6,4) node [black,mynode,midway,below] {Ian}
+	(6,4.5) -- (8,4.5) node [black,mynode,midway,below] {Jeff}
+	(10,5.5) -- (12,5.5) node [black,mynode,midway,above] {Lynn};
+\draw [ultra thick] (8,5) coordinate (Eq) -- (10,5) node [mynode,midway,above] {Evan} node [mynode,midway,below] {Kirin};
+% axes
+\draw [thick, -] (0,10) node (yaxis) [above] {Rent} |- (15,0) node (xaxis) [right] {Quantity};
+% dotted line to equilibrium point
+\draw [dotted,thick] (yaxis |- Eq) -- +(15,0) node [mynode,right] {Equilibrium\\price=\$500.};
+\end{TikzFigure}

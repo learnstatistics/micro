@@ -1,0 +1,21 @@
+\begin{TikzFigure}{xscale=1.25,yscale=0.3,descwidth=25em,caption={Cartelizing a competitive industry \label{fig:cartelindustry}},description={A cartel is formed when individual suppliers come together and act like a monopolist in order to increase profit. If $MC$ is the joint supply curve of the cartel, profits are maximized at the output $Q_m$, where $MC=MR$. In contrast, if these firms operate competitively output increases to $Q_c$.}}
+% MC line
+\draw [dashed,mccolour,ultra thick,name path=MC] (0,1) -- (8,17) node [black,mynode,above] {$MC=S$};
+% MR line
+\draw [dashed,mrcolour,ultra thick,name path=MR] (0,16) -- (4,0) node [pos=0.9,black,mynode,above right] {$MR$};
+% Demand line
+\draw [demandcolour,ultra thick,name path=D] (0,16) -- (8,0) node [pos=0.9,black,mynode,above right] {$D$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {\$} |- (8,0) node (xaxis) [right] {Quantity};
+% intersection of MC and D
+\draw [name intersections={of=MC and D, by=B}]
+	[dotted,thick] (yaxis |- B) node [mynode,left] {$P_c$} -- (B) node [mynode,above] {B} -- (xaxis -| B) node [mynode,below] {$Q_c$};
+% intersection of MC and MR
+\draw [name intersections={of=MC and MR, by=F}]
+	[dotted,thick] (F) node [mynode,right=0cm and 0.15cm] {F} -- (xaxis -| F) node [mynode,below] {$Q_m$};
+% path to create dotted line from P_m -- A -- F
+\path [name path=Fline] (xaxis -| F) -- +(0,20);
+% intersection of Fline with D
+\draw [name intersections={of=D and Fline, by=A}]
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_m$} -- (A) node [mynode,above] {A} -- (F);
+\end{TikzFigure}

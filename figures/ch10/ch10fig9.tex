@@ -1,0 +1,29 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.33,descwidth=25em,caption={Plant size in the long run \label{fig:plantsizeLR}},description={With demand conditions defined by $D$ and $MR$, the optimal plant size is one corresponding to the point where $MR=MC$ in the long run. Therefore $Q_2$ is the optimal output and the optimal plant size corresponds to $ATC_2$. If the current plant is defined by $ATC_1$, then optimal SR production is $Q_1$.}}
+% MC curves
+\draw [dashed,mccolour,ultra thick,name path=MC1] (9,6) node [black,mynode,below] {$MC_1$} to [out=15,in=270] (14,14);
+\draw [dashed,mccolour,ultra thick,name path=MC2] (15,6) node [black,mynode,below] {$MC_2$} to [out=15,in=270] (20,14);
+% ATC curves
+\draw [atccolour,ultra thick,domain=360:180,name path=ATC1] plot ({12+4*cos(\x)},{12+4*sin(\x)}) node [mynode,left,black] {$ATC_1$};
+\draw [atccolour,ultra thick,domain=225:360,name path=ATC2] plot ({18+4*cos(\x)},{12+4*sin(\x)}) node [mynode,right,black] {$ATC_2$};
+% LAC
+\draw [latccolour,ultra thick,name path=LAC] (0,8) node [black,mynode,below right] {$LAC=LMC$} -- (25,8);
+% Demand line
+\draw [demandcolour,ultra thick,domain=0:23,name path=D] (0,20) -- (23,8.5) node [mynode,above right,black,pos=0.2] {$D$};
+% MR line
+\draw [dashed,mrcolour,ultra thick,domain=0:23,name path=MR] (0,20) -- (23,4.6667) node [mynode,below left,black,pos=0.2] {$MR$};
+% axes
+\draw [thick, -] (0,25) node (yaxis) [above] {\$} |- (25,0) node (xaxis) [right] {Quantity};
+% intersection of MR and MC1
+\draw [name intersections={of=MR and MC1, by=Q1}]
+	[dotted,thick] (Q1) -- (xaxis -| Q1) node [mynode,below] {$Q_1$};
+% intersection of MR and MC2
+\draw [name intersections={of=MR and MC2, by=Q2}]
+	[dotted,thick] (Q2) -- (xaxis -| Q2) node [mynode,below] {$Q_2$};
+% paths to connect Q1 and Q2 to Demand line
+\path [name path=Q1line] (xaxis -| Q1) -- +(0,25);
+\path [name path=Q2line] (xaxis -| Q2) -- +(0,25);
+% intersection of Demand line with Q1line and Q2line
+\draw [name intersections={of=D and Q1line, by=P1},name intersections={of=D and Q2line, by=P2}]
+	[dotted,thick] (yaxis |- P1) node [mynode,left] {$P_1$} -| (Q1)
+	[dotted,thick] (yaxis |- P2) node [mynode,left] {$P_2$} -| (Q2);
+\end{TikzFigure}

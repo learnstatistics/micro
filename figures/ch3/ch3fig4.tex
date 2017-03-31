@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,descwidth=25em,caption={Supply shift and new equilibrium \label{fig:supplyshift}},description={The supply curve shifts due to lower production costs. A new equilibrium $E_1$ is attained in the market at a lower price.}}
+\draw [demandcolour,ultra thick,name path=demand] (0,10) node [black,mynode,left] {10} -- (10,0) node [black,mynode,below] {10};
+\draw [supplycolour,ultra thick,name path=supply0] (0,1) node [black,mynode,left] {1} -- (10,6) node [black,mynode,right] {Supply};
+\draw [supplycolour,ultra thick,name path=supply1] (0,1) -- (11,4) node [black,mynode,right] {New supply};
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of supply lines with demand line
+\draw [name intersections={of=demand and supply0, by=E0},name intersections={of=demand and supply1,by=E1}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {4} -- (E0) node [mynode,above] {$E_0$} -- (xaxis -| E0) node [mynode,below] {6}
+	[dotted,thick] (yaxis |- E1) -- (E1) node [mynode,above] {$E_1$} -- (xaxis -| E1);
+% arrow from old to new supply line
+\path [name path=line1] (6,15) -- (12,0);
+\draw [name intersections={of=line1 and supply0, by=S0},name intersections={of=line1 and supply1, by=S1}]
+	[->,thick,shorten >=1mm,shorten <=1mm] (S0) -- (S1);
+\end{TikzFigure}

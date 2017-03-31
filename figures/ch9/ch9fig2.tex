@@ -1,0 +1,25 @@
+\begin{TikzFigure}{xscale=0.36,yscale=0.3,descwidth=25em,caption={Short-run supply for the competitive firm \label{fig:shortrunsupply}},description={A price below $P_1$ does not cover variable costs, so the firm should shut down. Between prices $P_1$ and $P_3$, the producer can cover variable, but not total, costs and therefore should produce in the short run if fixed costs are `sunk'. In the long run the firm must close if the price does not reach $P_3$. Profits are made if the price exceeds $P_3$. The short-run supply curve is the quantity supplied at each price. It is therefore the $MC$ curve above $P_1$.}}
+% MC curve
+\draw [dashed,mccolour,ultra thick,domain=3:18,name path=MC] plot (\x, {0.25*pow(1.25,\x)+4}) node [mynode,right,black] {$MC$};
+% AVC curve
+\draw [avccolour,ultra thick,domain=3:16,name path=AVC] plot (\x, {-1*sqrt(16-(\x-10)*(\x-10)/4)+10.32831}) node [black,mynode,right] {$AVC$};
+% ATC curve
+\draw [atccolour,ultra thick,domain=8:22,name path=ATC] plot (\x, {-1*sqrt(16-(\x-15)*(\x-15)/4)+15.1054}) node [black,mynode,right] {$ATC$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} |- (25,0) node (xaxis) [right] {Quantity};
+% intersection of MC with AVC and ATC
+\draw [name intersections={of=MC and AVC, by=P1},name intersections={of=MC and ATC, by=P3}]
+	[dotted,thick] (yaxis |- P1) node [mynode,left] {$P_1$} -- (P1)
+	[dotted,thick] (yaxis |- P3) node [mynode,left] {$P_3$} -- (P3);
+% paths for P2 and P4
+\path [name path=P2line] (0,9) -- +(25,0);
+\path [name path=P4line] (0,14) -- +(25,0);
+% intersection of paths with MC
+\draw [name intersections={of=MC and P2line, by=P2},name intersections={of=MC and P4line, by=P4}]
+	[dotted,thick] (yaxis |- P2) node [mynode,left] {$P_2$} -- (P2)
+	[dotted,thick] (yaxis |- P4) node [mynode,left] {$P_4$} -- (P4);
+% arrow for Shut down point
+\draw [<-,thick,shorten <=1mm,shorten >=-2mm] (P1) -- +(2,-2) node [mynode,below right] {Shut-down\\point};
+% arrow for Break even point
+\draw [<-,thick,shorten <=2mm] ([xshift=5pt]P3) -- +(4,4) node [mynode,right] {Break-even\\point};
+\end{TikzFigure}

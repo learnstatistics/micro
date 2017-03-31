@@ -1,0 +1,17 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Subsidy-transfer comparison \label{fig:subsidytransfercomp}},description={A price subsidy to the targeted good induces the individual to move from $E_1$ to $E_2$, facing a budget constraint $I_2$. An income transfer that permits him to consume $E_2$ is given by $I'_1$; but it also permits him to attain a higher level of satisfaction, denoted by $E'$ on the indifference curve $U_3$.}}
+% black lines tangent to indiff curves
+\draw [thick,name path=Iprime] (1.48661,19) -- (19.7154,0) node [mynode,above right] {$I_1'$};
+\draw [thick,name path=I2] (0,13.55) -- (24,2.32023) node [mynode,above right] {$I_2$};
+\draw [thick,name path=I1] (0,13.55) -- (13,0) node [mynode,above right] {$I_1$};
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=U1] (4,13) node [black,mynode,above left=0cm and -0.25cm] {$U_1$} to [out=270,in=180] (13,4);
+\draw [indiffcolour,ultra thick,name path=U2] (7,16) node [black,mynode,above left=0cm and -0.2cm] {$U_2$} to [out=270,in=180] (16,7);
+\draw [indiffcolour,ultra thick,name path=U3] (7.45,16.4) node [black,mynode,above right=0cm and -0.2cm] {$U_3$} to [out=270,in=180] (16.45,7.4);
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Other goods} |- (25,0) node (xaxis) [right] {Daycare};
+% intersection of black lines with indiff curves
+\draw [name intersections={of=I1 and U1, by=E1},name intersections={of=I2 and U2, by=E2},name intersections={of=Iprime and U3, by=Eprime}]
+	[dotted,thick] (yaxis |- E1) -- (E1) node [mynode,below left] {$E_1$} -- (xaxis -| E1)
+	[dotted,thick] (yaxis |- E2) -- (E2) node [mynode,below left] {$E_2$} -- (xaxis -| E2);
+\node [mynode,right=0cm and 0.25cm] at (Eprime) {$E'$};
+\end{TikzFigure}

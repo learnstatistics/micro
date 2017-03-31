@@ -1,0 +1,320 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:elasticities}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:elasticities} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch4ex1}
+Consider the information in the table below that describes the demand for movie rentals from your on-line supplier Instant Flicks.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Price per movie (\$)}	&	\textbf{Quantity demanded}	&	\textbf{Total revenue}	&	\textbf{Elasticity of demand}	\\	\hline
+2	&	1200	&	&	\\
+\rowcolor{rowcolour}	3	&	1100	&	&	\\
+4	&	1000	&	&	\\
+\rowcolor{rowcolour}	5	&	900		&	&	\\
+6	&	800		&	&	\\
+\rowcolor{rowcolour}	7	&	700		&	&	\\
+8	&	600		&	&	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	Either on graph paper or a spreadsheet, map out the demand curve.
+\item	In column 3, insert the total revenue generated at each price.
+\item	At what price is total revenue maximized?
+\item	In column 4, compute the elasticity of demand corresponding to each \$1 price reduction, using the average price and quantity at each state.
+\item	Do you see a connection between your answers in parts (c) and (d)?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The intercepts for this straight line demand curve are $P=\$14$, $Q=1400$.
+\item	Total revenue is this product of price times quantity. Compute it!
+\item	At $P=\$7$, total revenue is \$4,900.
+\item	Elasticities, in descending order, are 0.22, 0.33, 0.47, 0.65, 0.87, 1.15.
+\item	Elasticity becomes greater than one in magnitude at one point where total revenue is maximized.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.245]
+\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+\draw [ultra thick,demandcolour] (0,14) node [mynode,left,black] {14} -- coordinate [midway] (arrowpoint) node [mynode,black,above right,pos=0.2] {$\varepsilon>1$ at $P>\$7$} (23,0) node [mynode,below,black] {1400};
+\draw [<-,thick,shorten <=1mm] (arrowpoint) -- +(3,3) node [mynode,right] {$\varepsilon=1$ at the mid-point of\\the demand curve: $P=\$7$.};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex2}
+Your fruit stall has 100 ripe bananas that must be sold today. Your supply curve is therefore vertical. From past experience, you know that these 100 bananas will all be sold if the price is set at 40 cents per unit.
+\begin{enumerate}
+\item	Draw a supply and demand diagram illustrating the market equilibrium price and quantity.
+\item	The demand elasticity is -0.5 at the equilibrium price. But you now discover that 10 of your bananas are rotten and cannot be sold. Draw the new supply curve and calculate the percentage price increase that will be associate with the new equilibrium, on the basis of your knowledge of the demand elasticity.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The supply curve is vertical at a quantity of 100.
+\item	We are told $-0.5=\%\Delta Q/\%\Delta P$. The percentage change of quantity is $-10/95$; therefore the percentage change in price must be: $\%\Delta P=-(10/95)/-0.5=20/95=21\%$. The new price is therefore $0.4\times 1.21=0.48$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.245]
+\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+\draw [ultra thick,demandcolour,name path=D] (5,17) -- (23,5) node [mynode,right,black] {$D$};
+\draw [ultra thick,supplycolour,name path=S90] (9,0) -- +(0,20) node [mynode,above,black] {$S=90$};
+\draw [ultra thick,supplycolour,name path=S100] (14,0) -- +(0,20) node [mynode,above,black] {$S=100$};
+\draw [name intersections={of=S100 and D, by=E}]
+[dotted,thick] (yaxis |- E) node [mynode,left] {0.4} -- (E);
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex3}
+University fees in the State of Nirvana have been frozen in real terms for 10 years. During this period enrolments increased by 20 percent, reflecting an increase in demand. This means the supply curve is horizontal at a given price.
+\begin{enumerate}
+\item	Draw a supply curve and two demand curves to represent the two equilibria described. 
+\item	Can you estimate a price elasticity of demand for university education in this market?
+\item	In contrast, during the same time period fees in a neighbouring state (where supply is also horizontal) increased by 60 percent and enrolments increased by 15 percent. Illustrate this situation in a diagram, where supply is again horizontal.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Since the price is fixed the supply curve is horizontal. See figure below.
+\item	You cannot estimate a demand elasticity value since there has been no price change.
+\item	Here the (adjoining) horizontal supply curve shifts upwards by 60\%. If enrolment has increased the demand curve must also have shifted upwards. Draw an additional supply curve representing a 60\% upward shift, and find an intersection between the new demand and new supply such that the percentage increase in quantity is 15\% (this diagram is not included here).
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.23]
+\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+\draw [ultra thick,demandcolour,name path=D0] (3,19) -- (16,3);
+\draw [ultra thick,demandcolour,name path=D1] (10,19) -- (23,3);
+\draw [ultra thick,supplycolour,name path=S] (0,11) -- coordinate[midway] (A) +(24,0) node [mynode,right,black] {$S$};
+\draw [name intersections={of=S and D0, by=i0},name intersections={of=S and D1, by=i1}]
+[dotted,thick] (i0) -- (xaxis -| i0)
+[dotted,thick] (i1) -- (xaxis -| i1);
+\draw [<-,thick,shorten <=1mm] (A) -- +(5,5) node [mynode,right] {$\%\Delta Q=20\%$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex4}
+Consider the demand curve defined by the information in the table below.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Price of movies}	&	\textbf{Quantity demanded}	&	\textbf{Total revenue}	&	\textbf{Elasticity of demand}	\\	\hline
+2	&	200	&	&	\\
+\rowcolor{rowcolour}	3	&	150	&	&	\\
+4	&	120	&	&	\\
+\rowcolor{rowcolour}	5	&	100	&	&	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	Plot the demand curve to scale and note that it is non-linear.
+\item	Compute the total revenue at each price.
+\item	Compute the arc elasticity of demand for each of the three  price segments.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The demand curve is nonlinear.
+\item	Total revenue is price times quantity.
+\item	Elasticity values are 0.71, 0.78, and 0.82 respectively.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=0,xmax=250,ymin=0,ymax=6,
+y=1cm/1,
+x=1.5cm/50,
+x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+xlabel={Quantity Demanded},
+ylabel={Price of Movies},
+]
+\addplot[datasetcolourone,ultra thick,mark=none] table {
+	X		Y
+	200		2
+	150		3
+	120		4
+	100		5
+};
+\end{axis}
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex5}
+Waterson Power Corporation's regulator has just allowed a rate increase from 9 to 11 cents per kilowatt hour of electricity. The short-run demand elasticity is -0.6 and the long-run demand elasticity is -1.2 at the current price..
+\begin{enumerate}
+\item	What will be the percentage reduction in power demanded in the short run (use the midpoint `arc' elasticity formula)?
+\item	What will be the percentage reduction in power demanded in the long run?
+\item	Will revenues increase or decrease in the short and long runs?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	There has been a 20\% increase in price. Feeding this into the elasticity formula yields $-0.6=\%\Delta Q/20\%$. Hence the percentage change (reduction) in quantity is 12\%.
+\item	Following the same reasoning as in part (a) the result is 24\%.
+\item	In the short run revenue rises since demand is inelastic (less than one in absolute value); in the long run it falls since demand is elastic (greater than one in absolute value).
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex6}
+Consider the own- and cross-price elasticity data in the table below.
+\begin{Table}{}
+\begin{tabu} to \linewidth {X[1.5,c]X[1,c]|X[1,c]X[1,c]X[1,c]|}	\hhline{~~---}
+&	&	\multicolumn{3}{c|}{\cellcolor{rowcolour}\textbf{\% change in price}}	\\
+&	&	\multicolumn{1}{c}{\textbf{CDs}}	&	\textbf{Magazines}	&	\textbf{Cappuccinos}	\\	\hline
+\multicolumn{1}{|c}{\cellcolor{rowcolour}}	&	\textbf{CDs}	&	\cellcolor{rowcolour}-0.25	&	\cellcolor{rowcolour}0.06	&	\cellcolor{rowcolour}0.01	\\[-0.25em]
+\multicolumn{1}{|c}{\cellcolor{rowcolour}}	&	\textbf{Magazines}	&	\cellcolor{rowcolour}-0.13	&	\cellcolor{rowcolour}-1.20	&	\cellcolor{rowcolour}0.27	\\[-0.25em]
+\multicolumn{1}{|c}{\multirow{-3}{*}{\cellcolor{rowcolour}\textbf{\% change in quantity}}}	&	\textbf{Cappuccinos}	&	\cellcolor{rowcolour}0.07	&	\cellcolor{rowcolour}0.41	&	\cellcolor{rowcolour}-0.85	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	For which of the goods is demand elastic and for which is it inelastic?
+\item	What is the effect of an increase in the price of CDs on the purchase of magazines and cappuccinos? What does this suggest about the relationship between CDs and these other commodities; are they substitutes or complements?
+\item	In graphical terms, if the price of CDs or the price of cappuccinos increases, illustrate how the demand curve for magazines shifts.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	It is elastic for magazines and inelastic for CDs and Cappuccinos.
+\item	A reduction in magazines purchased and an increase in cappuccinos purchased. Magazines are complements and cappuccinos are substitutes for CDs.
+\item	The demand curve for magazines shifts down in response to an increase in the price of CDs and it increases in response to an increase in the price of cappuccinos.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex7}
+You are responsible for running the Speedy Bus Company and have information about the elasticity of demand for bus travel: The own-price elasticity is -1.4 at the current price. A friend who works in the competing railway company also tells you that she has estimated the cross-price elasticity of train-travel demand with respect to the price of bus travel to be 1.7.
+\begin{enumerate}
+\item	As an economic analyst, would you advocate an increase or decrease in the price of bus tickets if you wished to increase revenue for Speedy?
+\item	Would your price decision have any impact on train ridership?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Reduce the price, because the elasticity is greater than one.
+\item	Yes, it would reduce train ridership because the positive cross-price elasticity indicates that these goods are substitutes.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex8}
+A household's income and restaurant visits are observed at different points in time. The table below describes the pattern.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Income (\$)}	&	\textbf{Restaurant visits}	&	\textbf{Income elasticity of demand}	\\	\hline
+16,000	&	10	&		\\
+\rowcolor{rowcolour}	24,000	&	15	&		\\
+32,000	&	18	&		\\
+\rowcolor{rowcolour}	40,000	&	20	&		\\
+48,000	&	22	&		\\
+\rowcolor{rowcolour}	56,000	&	23	&		\\
+64,000	&	24	&		\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	Construct a scatter diagram showing quantity on the vertical axis and income on the horizontal axis.
+\item	Is there a positive or negative relationship between these variables?
+\item	Compute the income elasticity for each income increase, using midpoint values.
+\item	Are restaurant meals a normal or inferior good?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Plot the scatter.
+\item	The scatter is a positively sloping group of points indicating a positive relationship.
+\item	The elasticities estimated at mid values are 1.0, 0.64, 0.47, 0.52, 0.29 and 0.32. For example: the first pair of points yields a $\%\Delta P=5/12.5$ and $\%\Delta Q=8,000/20,000$. Hence, $\%\Delta Q/\%\Delta P=(8,000/20,000)/(5/12.5)=1.0$.
+\item	They are normal goods because the income elasticity is positive.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex9}
+The demand for bags of candy is given by $P=48-0.2Q$, and the supply by $P=Q$. The demand intercepts here are $P=\$48$ and $Q=240$; the supply curve is a 45 degree straight line through the origin.
+\begin{enumerate}
+\item	Illustrate the resulting market equilibrium in a diagram knowing that the demand intercepts are $\{\$48,240\}$, and that the supply curve is a 45 degree line through the origin.
+\item	If the government now puts a \$12 tax on all such candy bags, illustrate on a diagram how the supply curve will change.
+\item	Instead of the specific tax imposed in part (b), a percentage tax (ad valorem) equal to 30 percent is imposed. Illustrate how the supply curve would change.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The price intercept for the demand curve is 48 and the quantity intercept is 240. The supply curve goes through the origin with a slope of 1. The equilibrium price is \$40 and the equilibrium quantity is 40.
+\item	The supply curve shifts upwards everywhere by \$12.
+\item	The price will increase to \$42 and the quantity declines to 30.
+\item	The curve still goes through the origin but with a slope of 1.3 rather than 1.0 (not illustrated in the figure).
+\item	The equilibrium quantity is $Q=32$; corresponding price is $P=32\times 1.3=41.6$.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.27]
+\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+\draw [ultra thick,demandcolour,name path=D] (0,12) node [mynode,left,black] {48} -- node [mynode,above right,black,pos=0.7] {$D$} (24,0) node [mynode,below,black] {240};
+\draw [ultra thick,supplycolour,name path=S] (0,0) -- (6,19);
+\draw [ultra thick,dashed,supplycolour,name path=S1] (0,3) -- (5,19) coordinate (arrowpoint);
+\draw [name intersections={of=S and D, by=E}]
+[dotted,thick] (yaxis |- E) node [mynode,left,black] {40} -- (E);
+\draw [<-,thick,shorten <=1mm] (arrowpoint) to[out=75,in=180] +(4,1) node [mynode,right] {New $S$ curve has shifted\\upwards by \$12 (part (b))};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex10}
+\textit{Optional}: Consider the demand curve $P=100-2Q$. The supply curve is given by $P=30$.
+\begin{enumerate}
+\item	Draw the supply and demand curves to scale, knowing that the demand curve intercepts are \$100 and 50, and compute the equilibrium price and quantity in this market.
+\item	If the government imposes a tax of \$10 per unit, draw the new equilibrium and compute the new quantity traded and the amount of tax revenue generated. 
+\item	Is demand elastic or inelastic in this price range? [\textit{Hint}: you should be able to answer this without calculations, by observing the figure you have constructed.]
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The demand curve has a price intercept of 100 and a quantity intercept of 50. The supply curve is horizontal at a price of \$30. The equilibrium quantity is 35 units at this price.
+\item	The new, tax-inclusive, supply curve is horizontal at $P=\$40$ (not illustrated in the figure). The equilibrium price is \$40 and the	equilibrium quantity becomes 30. With 30 units sold, each generating a tax of \$10, total tax revenue is \$300.
+\item	Since the equilibrium is on the lower half of a linear demand curve the demand is inelastic.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.27]
+\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+\draw [ultra thick,demandcolour,name path=D] (0,15) node [mynode,left,black] {100} -- node [mynode,above right,black,pos=0.3] {$D$} (20,0) node [mynode,below,black] {50};
+\draw [ultra thick,supplycolour,name path=S] (0,5) -- +(23,0) node [mynode,right,black] {$P=30$};
+\draw [name intersections={of=D and S, by=E}]
+[dotted,thick] (E) -- (xaxis -| E) node [mynode,below] {35};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch4ex11}
+\textit{Optional}: The supply of Henry's hamburgers is given by $P=2+0.5Q$; demand is given by $Q=20$.
+\begin{enumerate}
+\item	Illustrate and compute the market equilibrium, knowing that the supply curve has an intercept of \$2 and a slope of 0.5.
+\item	A specific tax of \$3 per unit is subsequently imposed and that shifts the supply curve upwards and parallel by \$3, to become $P=5+0.5Q$. Solve for the equilibrium price and quantity after the tax. 
+\item	Insert the post-tax supply curve along with the pre-tax supply curve, and determine who bears the burden of the tax.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The supply and demand curves are illustrated below.
+\item	Solving the demand equations for $Q=20$ yields prices of \$12 and \$15 respectively.
+\item	The consumer bears the entire tax burden.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.2,yscale=0.25]
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {$P$} |- (40,0) node (xaxis) [mynode1,right] {$Q$};
+\draw [ultra thick,supplycolour,name path=S,domain=0:35] plot (\x,{2+0.5*\x}) node [mynode,right,black] {$P=2+0.5Q$};
+\draw [ultra thick,supplycolour,name path=S1,domain=0:35] plot (\x,{5+0.5*\x}) node [mynode,right,black] {$P=5+0.5Q$};
+\draw [ultra thick,demandcolour,name path=Q] (20,0) -- +(0,24) node [mynode,above,black] {$Q=20$};
+\draw [name intersections={of=Q and S, by=12},name intersections={of=Q and S1, by=15}]
+[dotted,thick] (yaxis |- 12) node [mynode,left] {12} -- (12)
+[dotted,thick] (yaxis |- 15) node [mynode,left] {15} -- (15);
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

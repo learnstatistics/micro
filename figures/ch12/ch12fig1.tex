@@ -1,0 +1,60 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=25em,caption={The demand for labour \label{fig:demandforlabour}},description={The optimal hiring decision is defined by the condition that the value of the $MP_L$ is greater than or equal to the wage paid. 9 workers are employed when the wage is \$1,000 and the price of output is \$70; 6 workers are employed when the wage is \$1,500 and the price of output is \$50.}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	x=1.1cm/1,
+	y=1cm/500,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=11,ymin=0,ymax=3100,
+	xlabel={Labour},
+	ylabel={Wage (\$)},
+]
+\addplot[thick,mark=none] coordinates {
+	(0,1500)
+	(11,1500)
+};
+\addplot[thick,mark=none] coordinates {
+	(0,1000)
+	(11,1000)
+};
+\addplot[dashed,thick,mark=none] coordinates {
+	(6,0)
+	(6,1500)
+};
+\addplot[dashed,thick,mark=none] coordinates {
+	(8,0)
+	(8,1400)
+};
+\addplot[dashed,thick,mark=none] coordinates {
+	(9,0)
+	(9,1050)
+};
+\addplot[ultra thick,vmpcolour,mark=none] coordinates { % when price is $70
+	(1,1050)
+	(2,1750)
+	(3,2100)
+	(4,2800)
+	(5,2450)
+	(6,2100)
+	(7,1750)
+	(8,1400)
+	(9,1050)
+	(10,350)
+} node [black,mynode,pos=0.5,above right] {$VMP_L$ at $P=\$70$};
+\addplot[ultra thick,vmpcolour!50,mark=none] coordinates { % when price is $50
+	(1,750)
+	(2,1250)
+	(3,1500)
+	(4,2000)
+	(5,1750)
+	(6,1500)
+	(7,1250)
+	(8,1000)
+	(9,750)
+	(10,250)
+} node [black,mynode,pos=0,below right] {$VMP_L$ at $P=\$50$};
+\end{axis}
+\end{TikzFigure}

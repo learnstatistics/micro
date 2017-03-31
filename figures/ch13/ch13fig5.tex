@@ -1,0 +1,87 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=20em,caption={Wealth inequality in Europe and the US, 1810-2010 \label{fig:wealthshareuseurope}},description={\textit{Source}: \url{http://piketty.pse.ens.fr/fr/capital21c}}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	extra y ticks={0.1,0.3,0.5,0.7,0.9},
+	grid style={dotted},
+	xmajorgrids,
+	ymajorgrids,
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel=\pgfmathparse{100*\tick}\pgfmathprintnumber{\pgfmathresult}\,\%,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=1810,xmax=2010,ymin=0,ymax=1,
+	y=0.8cm/0.1,
+	x=0.32cm/5,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	y label style={at={(axis description cs:0.02,0.5)},anchor=south},
+	xlabel={Year},
+	ylabel={Share of top decile or percentile in total wealth},
+	legend entries={Top 10\% wealth share: Europe,Top 10\% wealth share: United States,Top 1\% wealth share: Europe,Top 1\% wealth share: United States},
+	legend style={font=\footnotesize,at={(axis cs:1860,0.02)},anchor=south west},
+]
+\addplot[thick,mark=square,mark options=datasetcolourone] table { % Top 10\% wealth share: Europe
+	X			Y
+	1810	0.8222626056
+	1870	0.8535888259
+	1910	0.8954871102
+	1920	0.861154263
+	1930	0.8283620878
+	1950	0.7536215669
+	1960	0.6822420862
+	1970	0.6026666667
+	1980	0.5928092114
+	1990	0.6088738645
+	2000	0.6280333333
+	2010	0.6389
+};
+\addplot[thick,mark=square*,mark options=datasetcolourtwo] table { % Top 10\% wealth share: United States
+	X			Y
+	1810	0.58
+	1870	0.71
+	1910	0.8112975137
+	1920	0.7972690161
+	1930	0.7340596342
+	1940	0.6638948644
+	1950	0.6566553524
+	1960	0.67
+	1970	0.6418200114
+	1980	0.672
+	1990	0.687
+	2000	0.6965
+	2010	0.715
+};
+\addplot[thick,mark=o,mark options=datasetcolourone] table { % Top 1\% wealth share: Europe
+	X			Y
+	1810	0.5213105044
+	1870	0.5624027565
+	1910	0.6353315066
+	1920	0.5467479571
+	1930	0.483737867
+	1950	0.3780441862
+	1960	0.2973546921
+	1970	0.2076666667
+	1980	0.2040662782
+	1990	0.2173544448
+	2000	0.2366
+	2010	0.2437
+};
+\addplot[thick,mark=*,mark options=datasetcolourtwo] table { % Top 1\% wealth share: United States
+	X			Y
+	1810	0.25
+	1870	0.32
+	1910	0.4512975137
+	1920	0.4372690161
+	1930	0.3740596342
+	1940	0.3038948644
+	1950	0.2966553524
+	1960	0.314
+	1970	0.2818200114
+	1980	0.301
+	1990	0.329
+	2000	0.3305
+	2010	0.338
+};
+\end{axis}
+\end{TikzFigure}

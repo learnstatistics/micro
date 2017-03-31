@@ -1,0 +1,28 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=25em,caption={Non-linearity: Driver fatality rates Canada, 2009 \label{fig:drivermortality}},description={Fatality rates vary non-linearly with age: At first they decline, then increase again, relative to the youngest age group.}}
+\begin{axis}[
+	%axis lines=left,
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=10,xmax=80,ymin=0,ymax=12,
+	y=1.1cm/2,
+	x=1.1cm/10,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Average age},
+	ylabel={Fatality rate},
+]
+\addplot[datasetcolourtwo,only marks,mark=+] table {
+	X	Y
+	22	9.8
+	30	4.4
+	40	2.7
+	50	2.4
+	60	1.9
+	70	2.9
+};
+\addplot [reglinecolour,ultra thick,no marks] expression[domain=20:70,samples=100] {0.00721259*x^2 - 0.78274*x + 22.6908};
+\end{axis}
+\end{TikzFigure}

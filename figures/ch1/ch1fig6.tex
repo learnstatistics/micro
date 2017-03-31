@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.32,yscale=0.32,descwidth=25em,caption={Booms and recessions \label{fig:growthrecessions}},description={Economic recessions leave the economy below its normal capacity; the economy might be driven to a point such as Z. Economic expansions, or booms, may drive capacity above its normal level, to a point such as W.}}
+\draw [ppfcolourthree,ultra thick,name path=ppf] (0,16) node [black,mynode,left] {$S_{max}$} node [black,mynode,above right] {a} to [out=0,in=90] node [mynode,above right,black,pos=0.15] {$PPF$} (16,0) node [black,mynode,below] {$G_{max}$} node [black,mynode,above right] {b};
+\draw [thick, -] (0,20) node (yaxis) [above] {Services} |- (25,0) node (xaxis) [right] {Goods};
+% path to intersect with ppf curve
+\path [name path=Xpath] (0,0) -- (20,20);
+% intersection of Xpath with ppf
+\draw [name intersections={of=Xpath and ppf, by=X}]
+	[dotted,thick] (yaxis |- X) node [mynode,left] {$S_0$} -- (X) node [mynode,above] {X} -- (xaxis -| X) node [mynode,below] {$G_0$} % dotted line to X and axes
+	[dotted,thick] ([yshift=-2.5cm]yaxis |- X) -- ([xshift=-2.5cm,yshift=-2.5cm]X) node [mynode,below left] {Z} -- ([xshift=-2.5cm]xaxis -| X) % dotted line to Z and axes
+	[dotted,thick] ([yshift=2.5cm]yaxis |- X) -- ([xshift=2.5cm,yshift=2.5cm]X) node [mynode,above right] {W} -- ([xshift=2.5cm]xaxis -| X); % dotted line to W and axes
+% arrow from X to Z
+\draw [->,thick,shorten >=1mm,shorten <=1mm] (X) -- ([xshift=-2.5cm,yshift=-2.5cm]X);
+% arrow from X to W
+\draw [->,thick,shorten >=1mm,shorten <=1mm] (X) -- ([xshift=2.5cm,yshift=2.5cm]X);
+\end{TikzFigure}

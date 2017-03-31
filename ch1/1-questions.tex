@@ -1,0 +1,151 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:intro}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:intro} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch1ex1}
+An economy has 100 identical workers. Each one can produce four cakes or three shirts, regardless of the number of other individuals producing each good.
+\begin{enumerate}
+	\item	How many cakes can be produced in this economy when all the workers are cooking?
+	\item	How many shirts can be produced in this economy when all the workers are sewing? 
+	\item	On a diagram with cakes on the vertical axis, and shirts on the horizontal axis, join these points with a straight line to form the $PPF$.
+	\item	Label the inefficient and unattainable regions on the diagram.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	If all 100 workers make cakes their output is $100\times 4=400$.
+	\item	If all workers make shirts their output is $100\times 3=300$.
+	\item	The diagram shows the $PPF$ for this economy.
+	\item	As illustrated in the diagram.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.27,yscale=0.27]
+	\draw [thick] (0,20) node (yaxis) [mynode1,above] {Cakes} |- (20,0) node (xaxis) [mynode1,right] {Shirts};
+	\draw [ultra thick,ppfcolourone] (0,16) node [mynode,left,black] {400} -- node [mynode,above right,pos=0.8,black] {$PPF$} node [mynode,midway,below left=1em and 0em,black] {inefficient} node [mynode,midway,above right=1em and 1.5em,black] {unattainable} (12,0) node [mynode,below,black] {300};
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch1ex2}
+In the table below are listed a series of points that define an economy's production possibility frontier for goods $Y$ and $X$.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}\hline
+	\rowcolor{rowcolour}	$Y$	&	1000	&	900		&	800		&	700		&	600		&	500		&	400		&	300		&	200		&	100		&	0			\\
+	$X$	&	0			&	1600	&	2500	&	3300	&	4000	&	4600	&	5100	&	5500	&	5750	&	5900	&	6000	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Plot these pairs of points to scale, on graph paper, or with the help of a spreadsheet.
+	\item	Given the shape of this $PPF$ is the economy made up of individuals who are similar or different in their production capabilities?
+	\item	What is the opportunity cost of producing 100 more $Y$ at the combination $(X=5500,Y=300)$.
+	\item	Suppose next there is technological change so that at every output level of good $Y$ the economy can produce 20 percent more $X$. Enter a new row in the table containing the new values, and plot the new $PPF$.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	The $PPF$ is curved outwards with intercepts of 1000 on the Thinkpod axis and 6000 on the iPad axis. Each point on the $PPF$ shows one combination of outputs.
+	\item	Different.
+	\item	400 $X$.
+	\item	The new $PPF$ in the diagram has the same Thinkpod intercept, 1000, but a new iPad intercept of 7200.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.23,yscale=0.23]
+	\draw [thick] (0,20) node (yaxis) [mynode1,above] {Thinkpods} |- (30,0) node (xaxis) [mynode1,right] {iPads};
+	\draw [ultra thick,dashed,ppfcolourtwo,name path=ppf2] (0,18) to[out=0,in=105] (28,0) node [mynode,below,black] {7200};
+	\draw [ultra thick,ppfcolourone,name path=ppf1] (0,18) node [mynode,left,black] {1000} to[out=0,in=105] (24,0) node [mynode,below,black] {6000};
+	\path [name path=combo] (0,10.8) -- +(30,0);
+	\path [name path=arrow] (0,3) -- +(30,0);
+	\draw [name intersections={of=combo and ppf1, by=E}]
+	[dotted,thick] (yaxis |- E) node [mynode,left] {600} -| (xaxis -| E) node [mynode,below] {4000};
+	\draw [name intersections={of=arrow and ppf1, by=i1},name intersections={of=arrow and ppf2, by=i2}]
+	[->,thick,shorten >=1mm,shorten <=1mm] (i1) -- (i2);
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch1ex3}
+Using the $PPF$ that you have graphed using the data in Exercise~\ref{ex:ch1ex2}, determine if the following combinations are attainable or not: $(X=3000,Y=720)$, $(X=4800,Y=480)$.
+\begin{econsolution}
+	By examining the opportunity cost in the region where the combinations are defined, and by assuming a linear trade-off between each set of combinations, it can be seen that the first combination in the table is feasible, but not the second combination.
+	
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch1ex4}
+You and your partner are highly efficient people. You can earn \$20 per hour in the workplace; your partner can earn \$30 per hour.
+\begin{enumerate}
+	\item	What is the opportunity cost of one hour of leisure for you?
+	\item	What is the opportunity cost of one hour of leisure for your partner?
+	\item	Now consider what a $PPF$ would look like: You can produce/consume two things, leisure and income. Since income buys things you can think of the $PPF$ as having these two 'products' -- leisure and consumption goods/services. So, with leisure on the horizontal axis and income in dollars is on the vertical axis, plot your $PPF$. You can assume that you have 12 hours per day to allocate to either leisure or income. [\textit{Hint}: the leisure axis will have an intercept of 12 hours. The income intercept will have a dollar value corresponding to where all hours are devoted to work.]
+	\item	Draw the $PPF$ for your partner.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	\$20.
+	\item	\$30.
+	\item	See lower curve on diagram.
+	\item	See upper curve on diagram.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.27,yscale=0.27]
+	\draw [thick] (0,20) node (yaxis) [mynode1,above] {\$ Inc} |- (20,0) node (xaxis) [mynode1,right] {Leisure};
+	\draw [ultra thick,ppfcolourone] (0,10) node [mynode,left,black] {\$240} -- (15,0);
+	\draw [ultra thick,ppfcolourtwo] (0,15) node [mynode,left,black] {\$360} -- (15,0) node [mynode,below,black] {12};
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch1ex5}
+Louis and Carrie Anne are students who have set up a summer business in their neighbourhood. They cut lawns and clean cars. Louis is particularly efficient at cutting the grass -- he requires one hour to cut a typical lawn, while Carrie Anne needs one and one half hours. In contrast, Carrie Anne can wash a car in a half hour, while Louis requires three quarters of an hour.
+\begin{enumerate}
+	\item If they decide to specialize in the tasks, who should cut the grass and who should wash cars?
+	\item If they each work a twelve hour day, how many lawns can they cut and how many cars can they wash if they each specialize in performing the task where they are most efficient?
+	\item Illustrate the $PPF$ for each individual where lawns are on the horizontal axis and car washes on the vertical axis, if each individual has twelve hours in a day.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	Louis has an advantage in cutting the grass while Carrie Anne should wash cars.
+	\item	If they each work a twelve-hour day, between them they can cut 12 lawns and wash 24 cars.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch1ex6}
+Continuing with the same data set, suppose Carrie Anne's productivity improves so that she can now cut grass as efficiently as Louis; that is, she can cut grass in one hour, and can still wash a car in one half of an hour.
+\begin{enumerate}
+	\item	In a new diagram draw the $PPF$ for each individual.
+	\item	In this case does specialization matter if they are to be as productive as possible as a team?
+	\item	Draw the PPF for the whole economy, labelling the intercepts and the `kink' point coordinates.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	Carrie Anne's lawn intercept is now 12 rather than 8.
+	\item	Yes, specialization still matters because C.A. is more efficient at cars.
+	\item	The new coordinates will be 39 on the vertical axis, 24 on the horizontal axis and the kink point is the same.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch1ex7}
+Going back to the simple $PPF$ plotted for Exercise~\ref{ex:ch1ex1} where each of 100 workers can produce either four cakes or three shirts, suppose a recession reduces demand for the outputs to 220 cakes and 129 shirts.
+\begin{enumerate}
+	\item	Plot this combination of outputs in the diagram that also shows the $PPF$.
+	\item	How many workers are needed to produce this output of cakes and shirts?
+	\item	What percentage of the 100 worker labour force is unemployed?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	220 cakes requires 55 workers, the remaining 45 workers can produce 135 shirts. Hence this combination lies inside the $PPF$ described in Exercise~\ref{ex:ch1ex1}.
+	\item	98 workers.
+	\item	2\%.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

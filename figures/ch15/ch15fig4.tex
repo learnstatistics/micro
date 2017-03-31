@@ -1,0 +1,29 @@
+\begin{TikzFigure}{xscale=0.35,yscale=0.35,descwidth=25em,caption={Tariffs and trade \label{fig:tarifftrade}},description={At a world price of \$10 the domestic quantity demanded is $Q_D$. Of this amount $Q_s$ is supplied by domestic producers and the remainder by foreign producers. A tariff increases the world price to \$12. This reduces demand to $Q'_D$; the domestic component of supply increases to $Q'_s$. Of the total loss in consumer surplus (LFGJ), tariff revenue equals EFHI, increased surplus for domestic suppliers equals LECJ, and the deadweight loss is therefore the sum of the triangular areas CEI and HFG.}}
+% Filled in triangles
+\draw [fill,supplycolour!25] (7,10) -- (9,12) -- (9,10);
+\draw [fill,demandcolour!25] (15,10) -- (15,12) -- (17,10);
+% Domestic supply
+\draw [supplycolour,ultra thick,domain=0:17,name path=DomSup] plot (\x, {3+\x}) node [black,mynode,above] {Domestic\\supply};
+% 
+\draw [demandcolour,ultra thick,name path=DomDem] (7,20) node [mynode,above,black] {Domestic\\demand} -- (25,2);
+% World supplies
+\draw [supplycolour,ultra thick,name path=WorldSup] (0,10) node [black,mynode,left] {$P$=\$10} node [black,mynode,above right] {J} -- (24,10) node [black,mynode,below right,pos=0.9] {World supply\\curve};
+\draw [supplycolour,ultra thick,name path=WorldSupTariff] (0,12) node [black,mynode,left] {$P$=\$12} node [black,mynode,above right] {L} -- (24,12) node [black,mynode,above right,pos=0.9] {World supply curve\\including tariff};
+% axes
+\draw [thick, -] (0,23) node (yaxis) [mynode1,above] {Price} |- (25,0) node (xaxis) [mynode1,right] {Quantity};
+% intersection of lines
+\draw [name intersections={of=WorldSup and DomSup, by=C},name intersections={of=WorldSupTariff and DomSup, by=E},name intersections={of=WorldSup and DomDem, by=G},name intersections={of=WorldSupTariff and DomDem, by=F}];
+% paths to create points I and H on WorldSup line
+\path [name path=Iline] (xaxis -| E) -- +(0,23);
+\path [name path=Hline] (xaxis -| F) -- +(0,23);
+% intersection of Iline and Hline with WorldSup and dotted lines
+\draw [name intersections={of=Iline and WorldSup, by=I},name intersections={of=Hline and WorldSup, by=H}]
+	[dotted,thick] (C) node [mynode,above] {C} -- (xaxis -| C) node [mynode,below] {$Q_s$}
+	[dotted,thick] (E) node [mynode,above] {E} -- (I) node [mynode,below right] {I} -- (xaxis -| I) node [mynode,below] {$Q_s'$}
+	[dotted,thick] (F) node [mynode,above] {F} -- (H) node [mynode,below left] {H} -- (xaxis -| H) node [mynode,below] {$Q'_D$}
+	[dotted,thick] (G) node [mynode,above] {G} -- (xaxis -| G) node [mynode,below] {$Q_D$};
+% legend square
+%\draw [fill=white,thick] (22,18) rectangle (26,23);
+%\draw [fill=supplycolour!25,thick] (23,21) rectangle (24,22) node [mynode,midway,right] {\textbf{ A}};
+%\draw [fill=demandcolour!25,thick] (23,19) rectangle (24,20) node [mynode,midway,right] {\textbf{ B}};
+\end{TikzFigure}

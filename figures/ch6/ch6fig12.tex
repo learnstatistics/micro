@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.3,descwidth=25em,caption={Price subsidy \label{fig:pricesubsidy}},description={A subsidy to the targeted good, by reducing its price, rotates the budget constraint from $I_1$ to $I_2$. This induces the consumer to direct expenditure more towards daycare and less towards other goods than an income transfer that does not change the relative prices.}}
+% thick black lines tangent to the indiff curves
+\draw [thick,name path=I2] (0,13.55) -- (24,2.32023) node [mynode,above right] {$I_2$};
+\draw [thick,name path=I1] (0,13.55) -- (13,0) node [mynode,above right] {$I_1$};
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=U1] (4,13) node [black,mynode,above left] {$U_1$} to [out=270,in=180] (13,4);
+\draw [indiffcolour,ultra thick,name path=U2] (7,16) node [black,mynode,above left] {$U_2$} to [out=270,in=180] (16,7);
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Other goods} |- (25,0) node (xaxis) [right] {Daycare};
+% intersection of I lines with indifference curves
+\draw [name intersections={of=I1 and U1, by=E1},name intersections={of=I2 and U2, by=E2}]
+	[dotted,thick] (yaxis |- E1) -- (E1) node [mynode,below left] {$E_1$} -- (xaxis -| E1)
+	[dotted,thick] (yaxis |- E2) -- (E2) node [mynode,below left] {$E_2$} -- (xaxis -| E2);
+\end{TikzFigure}

@@ -1,0 +1,20 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.4,descwidth=25em,caption={Limiting cases of price elasticity \label{fig:limitingcasepriceelasticity}},description={When the demand curve is vertical ($D_v$), the elasticity is zero: A change in price from $P_1$ to $P_2$ has no impact on the quantity demanded because the numerator in the elasticity formula has a zero value. When $D$ becomes more horizontal the elasticity becomes larger and larger at $P_1$, eventually becoming infinite.}}
+% axes
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% demand lines
+\draw [demandcolour,ultra thick,name path=demandv] (7,0) node [black,mynode,below] {$Q_0$} -- (7,14) node [black,mynode,above] {$D_v$};
+\draw [demandcolour,ultra thick,name path=demandh] (0,5) node [black,mynode,left] {$P_1$} -- (14,5) node [black,mynode,right] {$D_h$};
+\draw [demandcolour,ultra thick,dashed,name path=demandprime] (0,6) -- (14,4) node [black,mynode,right] {$D'$};
+% path for P_2 and intersection with D_v for dotted line
+\path [name path=p2line] (0,10) -- (15,10);
+\draw [name intersections={of=p2line and demandv, by=Q0}]
+	[dotted,thick] (yaxis |- Q0) node [mynode,left] {$P_2$} -- (Q0);
+% path to draw arrows to D_h and D'
+\path [name path=Eline] (11,0) -- (11,15);
+% arrows from Infinite elasticity and Large elasticity to D_h and D', respectively
+\draw [name intersections={of=Eline and demandh, by=arrowh},name intersections={of=Eline and demandprime, by=arrowprime}]
+	[<-,thick,shorten <=1mm,shorten >=-1mm] (arrowh) -- +(0,1) node [mynode,above] {Infinite\\elasticity};
+\draw [<-,thick,shorten <=1mm,shorten >=-1mm] (arrowprime) -- +(0,-1) node [mynode,below] {Large\\elasticity};
+% arrow from Zero elasticity to D_v line
+\draw [<-,thick,shorten <=1mm] ([yshift=2cm]Q0) -- +(3,0) node [mynode,right] {Zero\\elasticity};
+\end{TikzFigure}

@@ -1,0 +1,23 @@
+\begin{TikzFigure}{xscale=1.25,yscale=0.34,descwidth=25em,caption={The monopoly equilibrium \label{fig:monopolyeq}},description={The profit maximizing output is $Q_E$, where $MC=MR$. This output can be sold at a price $P_E$. The cost per unit of $Q_E$ is read from the $ATC$ curve, and equals B. Per unit profit is therefore AB and total profit is $P_E$AB$C_E$.}}
+% MC curve
+\draw [dashed,mccolour,ultra thick,name path=MC] (0.5,6) to [out=60,in=270] (3.5,18) node [black,mynode,above] {$MC$};
+% ATC curve
+\draw [atccolour,ultra thick,domain=1:4,name path=ATC] plot (\x, {16-4*sqrt(2.25-(\x-2)*(\x-3))}) node [mynode,black,above] {$ATC$};
+% MR line
+\draw [dashed,demandcolour,ultra thick,name path=MR] (0,16) -- (4,0) node [pos=0.9,black,mynode,above right] {$MR$};
+% demand line
+\draw [demandcolour,ultra thick,name path=D] (0,16) -- coordinate[midway] (MidD) (8,0) node [pos=0.9,black,mynode,above right] {$D$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {\$} |- (8,0) node (xaxis) [right] {Quantity};
+% intersection of MC and MR
+\draw [name intersections={of=MC and MR, by=E}]
+	[dotted,thick] (E) -- (xaxis -| E) node [mynode,below] {$Q_E$};
+% path to intersect with ATC and D along same x value as point E
+\path [name path=Eline] (xaxis -| E) -- +(0,20);
+% intersection of Eline with ATC and D
+\draw [name intersections={of=Eline and ATC, by=B},name intersections={of=Eline and D, by=A}]
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_E$} -- (A) node [mynode,above right=-0.1cm and 0cm] {A} -- (E)
+	[dotted,thick] (yaxis |- B) node [mynode,left] {$C_E$} -- (B) node [mynode,above right=-0.1cm and 0cm] {B};
+% arrow to midpoint of demand
+\draw [<-,thick,shorten <=1mm] (MidD) -- +(1,3) node [mynode,right] {Midpoint of Demand\\Demand elasticity$=-1$};
+\end{TikzFigure}

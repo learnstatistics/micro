@@ -1,0 +1,16 @@
+\begin{TikzFigure}{xscale=0.2,yscale=0.58,descwidth=25em,caption={Comparative advantage -- consumption \label{fig:compadvcons}},description={Post specialization the economies trade 1$V$ for 6$F$. Total production is 35$F$ plus 8$V$. Hence one consumption possibility would be (18,5) for the US and (17,3) for Canada. Here Canada exchanges 18$F$ in return for 3$V$.}}
+\draw [dashed,ultra thick,name path=cdnconpos] (0,6) node [mynode,left,black] {6} -- (35,0);
+\draw [dashed,ultra thick,name path=usconpos] (0,8) -- (48,0) node [mynode,below,black] {48};
+\draw [ppfcolourthree,ultra thick,-]
+	(0,5) node [black,mynode,left] {5} -- (35,0) node [black,mynode,below] {35\\Canada\\specializes}
+	(0,8) node [black,mynode,left] {8 US\\specializes} -- (40,0) node [black,mynode,below] {40};
+\draw [fill] (18,5) circle [radius=0.1] node [mynode,above] {(18,5)};
+\draw [fill] (17,3) circle [radius=0.1] node [mynode,above] {(17,3)};
+\draw [thick, -] (0,10) node [mynode1,above] {Vegetable} -- (0,0) node [mynode,below left] {0} -- (50,0) node [mynode1,right] {Fish};
+% path used to create arrows to dotted lines
+\path [name path=arrowline] (25,0) -- +(0,10);
+% intersection of arrowline path and consumption possibilities (dotted) lines
+\draw [name intersections={of=arrowline and cdnconpos, by=I1},name intersections={of=arrowline and usconpos, by=I2}]
+	[<-,thick,shorten >=1mm,shorten <=1mm] (I1) -- +(5,2) node [mynode,right] {Canada consumption\\possibilities};
+\draw [<-,thick,shorten >=1mm,shorten <=1mm] (I2) -- +(5,2) node [mynode,right] {US consumption\\possibilities};
+\end{TikzFigure}

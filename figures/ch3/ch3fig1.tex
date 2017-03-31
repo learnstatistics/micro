@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.62,yscale=0.52,caption={Measuring price \& quantity \label{fig:measurepricequantity}}}
+% axis and axis marks
+\draw [thick, -] (0,12) node (yaxis) [above] {Price} |- (12,0) node (xaxis) [right] {Quantity};
+\draw \foreach \p in {0,2,4,6,8,10,12} {(\p,0) -- +(0,-0.25) node [below,mynode] {\p} (0,\p) -- +(-0.25,0) node [left,mynode] {\p}};
+\draw \foreach \p in {1,3,5,7,9,11} {(\p,0) -- +(0,-0.125) (0,\p) -- +(-0.125,0)};
+% circles at certain points
+\draw [demandcolour,mark options={fill=demandcolour},only marks] plot[mark=*,mark size=+4pt] coordinates {(0,10) (1,9) (2,8) (3,7) (4,6) (5,5) (6,4) (7,3) (8,2) (9,1) (10,0)};
+% line through points
+\draw [thick,demandcolour,name path=D] (0,10) -- coordinate[pos=0.85] (Dpoint) (10,0);
+\draw [thick,<-,shorten <=0.5mm,shorten >=-1mm] (Dpoint) -- +(1.5,1.5) node [mynode,above right] {$D$};
+% nodes at (2,8) and (7,3)
+\node [mynode,above right] at (2,8) {$h$};
+\node [mynode,above right] at (7,3) {$l$};
+\end{TikzFigure}

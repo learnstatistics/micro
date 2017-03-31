@@ -1,0 +1,11 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Market equilibrium \label{fig:marketeq}},description={The market supply curve $S$ is the sum of each firm's supply or $MC$ curve above the shut-down price. $D$ is the sum of individual demands. The market equilibrium price and quantity are defined by $P_E$ and $Q_E$.}}
+% supply curve
+\draw [supplycolour,ultra thick,domain=3:18,name path=S] plot (\x, {0.25*pow(1.25,\x)+4}) node [black,mynode,above right] {$S$=Sum of firm\\$MC$ curves};
+% demand curve
+\draw [demandcolour,ultra thick,domain=5:20,name path=D] plot (\x, {0.5*pow(1.25,-1*\x+20)+4}) node [black,mynode,right] {$D$=Sum of\\individual demands};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} |- (25,0) node (xaxis) [right] {Quantity};
+% intersection of demand and supply
+\draw [name intersections={of=S and D, by=E}]
+	[dotted,thick] (yaxis |- E) node [mynode,left] {$P_E$} -| (xaxis -| E) node [mynode,below] {$Q_E$};
+\end{TikzFigure}

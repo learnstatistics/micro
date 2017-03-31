@@ -1,0 +1,415 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:prodcost}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:prodcost} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch8ex1}
+The relationship between output $Q$ and the single variable input $L$ is given by the form $Q=5\sqrt{L}$. Capital is fixed. This relationship is given in the table below for a range of $L$ values.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	$L$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ 
+						$Q$ & 5 & 7.07 & 8.66 & 10 & 11.18 & 12.25 & 13.23 & 14.14 & 15 & 15.81 & 16.58 & 17.32	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Add a row to this table and compute the $MP$.
+	\item	Draw the total product ($TP$) curve to scale, either on graph paper or in a spreadsheet.
+	\item	Inspect your graph to see if it displays diminishing $MP$.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	The $MP$ is the difference in output at different labour levels: 5, 2.07, 1.59, 1.34, 1.18,\ldots
+	\item	See the figure below.
+	\item	Note that total output increases at a diminishing rate -- the $MP$ is declining.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=10,ymin=0,ymax=16,
+	y=1cm/2.5,
+	x=1cm/1.2,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Labour},
+	ylabel={Quantity},
+	]
+	\addplot[datasetcolourone,ultra thick,domain=1:10] table {
+		X	Y
+		1	5.0
+		2	7.07
+		3	8.66
+		4	10.0
+		5	11.18
+		6	12.25
+		7	13.23
+		8	14.14
+		9	15.0
+	};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}	
+\end{econex}
+
+\begin{econex}\label{ex:ch8ex2}
+The $TP$ for different output levels for Primitive Products is given in the table below.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[2,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	$Q$	&	1 & 6 & 12 & 20 & 30 & 42 & 53 & 60 & 66 & 70 \\
+						$L$	&	1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Graph the TP curve to scale.
+	\item	Add a row to the table and enter the values of the $MP$ of labour. Graph this in a separate diagram.
+	\item	Add a further row and compute the $AP$ of labour. Add it to the graph containing the $MP$ of labour.
+	\item	By inspecting the $AP$ and $MP$ graph, can you tell if you have drawn the curves correctly? How?
+\end{enumerate}
+\begin{econsolution}
+For each level of labour used, its $AP$ is: 1.0, 3.0, 4.0, 5.0, 6.0, 7.0, 7.57, 7.5, 7.33, 7.0. and the $MP$ is: 1, 5, 6, 8, 10, 12, 11, 7, 6, 4. The $AP$ and $MP$ are graphed below. If the $MP$ cuts the $AP$ at the latter's maximum, your graph is likely correct.
+
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=10,ymin=0,ymax=80,
+	y=1cm/15,
+	x=1cm/1.4,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Labour},
+	ylabel={Quantity},
+	]
+	\addplot[datasetcolourone,ultra thick,domain=1:10] table {
+		X	Y
+		1	1
+		2	6
+		3	12
+		4	20
+		5	30
+		6	42
+		7	53
+		8	60
+		9	66
+		10	70
+	};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=10,ymin=0,ymax=14,
+	y=1cm/2.3,
+	x=1cm/1.4,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Labour},
+	ylabel={Product},
+	]
+	\addplot[apcolour,ultra thick,domain=1:10] table {
+		X	Y
+		1	1.0
+		2	3.0
+		3	4.0
+		4	5.0
+		5	6.0
+		6	7.0
+		7	7.57
+		8	7.5
+		9	7.33
+		10	7.0
+	};
+	\addlegendentry{$AP$}
+	\addplot[mpcolour,ultra thick,domain=1:10] table {
+		X	Y
+		1	1
+		2	5
+		3	6
+		4	8
+		5	10
+		6	12
+		7	11
+		8	7
+		9	6
+		10	4
+	};
+	\addlegendentry{$MP$}
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch8ex3}
+A short-run relationship between output and total cost is given in the table below.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[2.5,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Output}		&	0	&	1	&	2	&	3	&	4	&	5	&	6	&	7	&	8	&	9	\\
+						\textbf{Total Cost}	&	12	&	27	&	40	&	51	&	61	&	70	&	80	&	91	&	104	&	120	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	What is the total fixed cost of production in this example?
+	\item	Add four rows to the table and compute the $TVC$, $AFC$, $AVC$ and $ATC$ values for each level of output.
+	\item	Add one more row and compute the $MC$ of producing additional output levels.
+	\item	Graph the $MC$ and $AC$ curves using the information you have developed.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	Fixed cost is \$12.
+	\item	See below.
+	\item	See below.
+	\begin{Table}{}
+	\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+		\rowcolor{rowcolour}\textbf{$Q$} & \textbf{$TC$} & \textbf{$AFC$} & \textbf{$AVC$} & \textbf{$ATC$} & \textbf{$MC$}	\\
+		0	&	12	&		&		&		&		\\
+		\rowcolor{rowcolour}1	&	27	&	12.00	&	15.00	&	27.00	&	15	\\
+		2	&	40	&	6.00	&	14.00	&	20.00	&	13	\\
+		\rowcolor{rowcolour}3	&	51	&	4.00	&	13.00	&	17.00	&	11	\\
+		4	&	61	&	3.00	&	12.25	&	15.25	&	10	\\
+		\rowcolor{rowcolour}5	&	70	&	2.40	&	11.60	&	14.00	&	9	\\
+		6	&	80	&	2.00	&	11.33	&	13.33	&	10	\\
+		\rowcolor{rowcolour}7	&	91	&	1.71	&	11.29	&	13.00	&	11	\\
+		8	&	104	&	1.50	&	11.50	&	13.00	&	13	\\
+		\rowcolor{rowcolour}9	&	120	&	1.33	&	12.00	&	13.33	&	16 	\\	\hline
+	\end{tabu}
+	\end{Table}
+	\item	See below.
+	\begin{center}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+		\begin{axis}[
+		axis line style=thick,
+		every tick label/.append style={font=\footnotesize},
+		ymajorgrids,
+		grid style={dotted},
+		every node near coord/.append style={font=\scriptsize},
+		xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+		scaled y ticks=false,
+		yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+		xmin=0,xmax=10,ymin=0,ymax=30,
+		y=1.1cm/5,
+		x=1cm/1.3,
+		x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+		xlabel={Labour},
+		ylabel={},
+		]
+		\addplot[afccolour,ultra thick,domain=1:9] table {
+			X	Y
+			1	12.00
+			2	6.00
+			3	4.00
+			4	3.00
+			5	2.40
+			6	2.00
+			7	1.71
+			8	1.50
+			9	1.33
+		};
+		\addlegendentry{$AFC$}
+		\addplot[avccolour,ultra thick,domain=1:9] table {
+			X	Y
+			1	15.00
+			2	14.00
+			3	13.00
+			4	12.25
+			5	11.60
+			6	11.33
+			7	11.29
+			8	11.50
+			9	12.00
+		};
+		\addlegendentry{$AVC$}
+		\addplot[atccolour,ultra thick,domain=1:9] table {
+			X	Y
+			1	27.00
+			2	20.00
+			3	17.00
+			4	15.25
+			5	14.00
+			6	13.33
+			7	13.00
+			8	13.00
+			9	13.33
+		};
+		\addlegendentry{$ATC$}
+		\addplot[mccolour,ultra thick,domain=1:9] table {
+			X	Y
+			1	15
+			2	13
+			3	11
+			4	10
+			5	9
+			6	10
+			7	11
+			8	13
+			9	16
+		};
+		\addlegendentry{$MC$}
+		\end{axis}
+	\end{tikzpicture}
+	\end{center}
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch8ex4}
+Consider the long-run total cost structure for the two firms A and B below.
+\begin{Table}{}
+\begin{tabu} to 35em {|X[2.5,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Output} & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 
+						\textbf{Total cost A} & 40 & 52 & 65 & 80 & 97 & 119 & 144 \\ 
+\rowcolor{rowcolour}	\textbf{Total cost B} & 30 & 40 & 50 & 60 & 70 & 80 & 90 \\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Compute the long-run $ATC$ curve for each firm.
+	\item	Plot these curves and examine the type of scale economies each firm experiences at different output levels.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	The costs are given in the table below.
+	\item	Firm A experiences decreasing returns to scale at high outputs, whereas B does not.
+\end{enumerate}
+\begin{Table}{}
+	\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+		\rowcolor{rowcolour} $Q$ & $TC_A$ & $LAC_A$ & $TC_B$ & $LAC_B$ \\
+		1	&	40	&	40.00	&	30.00	&	30.00	\\
+		\rowcolor{rowcolour}2	&	52	&	26.00	&	40.00	&	20.00	\\
+		3	&	65	&	21.67	&	50.00	&	16.67	\\
+		\rowcolor{rowcolour}4	&	80	&	20.00	&	60.00	&	15.00	\\
+		5	&	97	&	19.40	&	70.00	&	14.00	\\
+		\rowcolor{rowcolour}6	&	119	&	19.83	&	80.00	&	13.33	\\
+		7	&	144	&	20.57	&	90.00	&	12.86 	\\	\hline
+	\end{tabu}
+\end{Table}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=8,ymin=0,ymax=45,
+	y=0.95cm/5,
+	x=1cm/1.1,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Quantity},
+	ylabel={Cost},
+	]
+	\addplot[latccolour,ultra thick,domain=1:10] table {
+		X	Y
+		1	40
+		2	26
+		3	21.67
+		4	20
+		5	19.4
+		6	19.83
+		7	20.57
+	};
+	\addlegendentry{$LAC_A$}
+	\addplot[latccolour,dashed,ultra thick,domain=1:10] table {
+		X	Y
+		1	30
+		2	20
+		3	16.67
+		4	15
+		5	14
+		6	13.33
+		7	12.86
+	};
+	\addlegendentry{$LAC_B$}
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch8ex5}
+Use the data in Exercise~\ref{ex:ch8ex4},
+\begin{enumerate}
+	\item	Calculate the long-run $MC$ at each level of output for the two firms.
+	\item	Verify in a graph that these $LMC$ values are consistent with the $LAC$ values.
+\end{enumerate}
+\begin{econsolution}
+	$MC$ curve data are given in the table below. Firm B has constant marginal costs in the LR; hence never encounters decreasing returns to scale. Firm A's LR $MC$ intersects its LR $ATC$ at an output between 5 and 6 units, where the $ATC$ is at a minimum. Firm B's $MC$ lies everywhere below its $ATC$.
+	\begin{Table}{}
+	\begin{tabu} to \linewidth {|X[2,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+		\rowcolor{rowcolour} \textbf{Output}	&	1	&	2	&	3	&	4	&	5	&	6	&	7	\\
+		\textbf{$MC$ Firm A}	&	40	&	12	&	13	&	15	&	17	&	22	&	25	\\
+		\rowcolor{rowcolour}\textbf{$MC$ Firm B}	&	30	&	10	&	10	&	10	&	10	&	10	&	10	\\	\hline
+	\end{tabu}
+	\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch8ex6}
+\textit{Optional}: Suppose you are told that a firm of interest has a long-run average total cost that is defined by the relationship $LATC=4+48/q$.
+\begin{enumerate}
+	\item	In a table, compute the $LATC$ for output values ranging from $1\ldots24$. Plot the resulting $LATC$ curve.
+	\item	What kind of returns to scale does this firm never experience?
+	\item	By examining your graph, what will be the numerical value of the $LATC$ as output becomes very large?
+	\item	Can you guess what the form of the long-run $MC$ curve is?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	See graphic below.
+	\item	Decreasing returns to scale.
+	\item	As $q$ becomes infinitely large the second term tends to zero, hence $ATC$ tends to \$4.
+	\item	$LMC=4$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=20,ymin=0,ymax=60,
+	y=1cm/9,
+	x=1cm/2.2,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Quantity},
+	ylabel={LR $ATC$},
+	]
+	\addplot[atccolour,ultra thick,domain=1:20] {4+48/x};
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

@@ -1,0 +1,21 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Long-run dynamics \label{fig:lrdynamics}},description={The LR equilibrium price $P_E$ is disturbed by a shift in demand from $D_1$ to $D_2$. With a fixed number of firms, $P_2$ results. Profits accrue at this price and entry occurs. Therefore the SR supply shifts outwards until these profits are eroded and the new equilibrium output is $Q_2$. If, instead, $D$ falls to $D_3$ then firms exit because they make losses, $S$ shifts back until the price is driven up sufficiently to restore normal profits. Different outputs are supplied in the long run at the same price $P_E$, therefore the long-run supply is horizontal at $P_E$.}}
+% supply curves
+\draw [supplycolour,ultra thick,domain=0.75:5,name path=S3] plot (\x, {pow(1.5,\x)+8}) node [black,mynode,above right] {$S_3$};
+\draw [supplycolour,ultra thick,domain=5:10.91,name path=S1] plot (\x, {pow(1.5,\x-5)+8}) node [black,mynode,above right] {$S_1$=Initial short-run supply};
+\draw [supplycolour,ultra thick,domain=10:15,name path=S2] plot (\x, {pow(1.5,\x-10)+8}) node [black,mynode,above right] {$S_2$=New short-run supply};
+% demand lines
+\draw [demandcolour,ultra thick,name path=D3] (1,14) -- (10,5) node [black,mynode,below] {$D_3$};
+\draw [demandcolour,ultra thick,name path=D1] (6,14) -- (15,5) node [black,mynode,below] {$D_1$};
+\draw [demandcolour,ultra thick,name path=D2] (7,18) -- (20,5) node [black,mynode,below] {$D_2$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} |- (25,0) node (xaxis) [right] {Quantity};
+% intersection of S1-D1, S1-D2, S2-D2, S3-D3, and S1-D3
+\draw [name intersections={of=S1 and D1, by=E},name intersections={of=S1 and D2, by=P2},name intersections={of=S2 and D2, by=Q2},name intersections={of=S3 and D3, by=Q3},name intersections={of=S1 and D3, by=P3}]
+	[dotted,thick] (yaxis |- E) node [mynode,left] {$P_E$} -- +(25,0) node [mynode,above] {$S_L$} node [mynode,below] {Equilibrium long-run price\\$=$ minimum of long-run $AC$\\$=$ long-run supply curve} (E) -- (xaxis -| E) node [mynode, below] {$Q_1$}
+	[dotted,thick] (yaxis |- P2) node [mynode,left] {$P_2$} -- (P2)
+	[dotted,thick] (Q2) -- (xaxis -| Q2) node [mynode,below] {$Q_2$}
+	[dotted,thick] (Q3) -- (xaxis -| Q3) node [mynode,below] {$Q_3$}
+	[dotted,thick] (yaxis |- P3) node [mynode,left] {$P_3$} -- (P3);
+% arrow for Temporary Price pointing to P2
+\draw [<-,thick,shorten <=1mm] (P2) -- +(5,3.3) node [mynode,right] {Temporary Price};
+\end{TikzFigure}

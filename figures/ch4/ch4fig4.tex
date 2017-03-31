@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.48,yscale=0.48,descwidth=25em,caption={Total revenue and elasticity \label{fig:totalrevenueelasticity}},description={Based upon the data in Table~\ref{table:gaselastrev}, revenue increases with quantity sold up to sales of 5 units. Beyond this output, the decline in price that must accompany additional sales causes revenue to decline.}}
+% Total revenue function
+\draw [trcolour,ultra thick,name path=TR] (0,0) to [out=90,in=180] (7.5,7.5) to [out=0,in=90] (15,0);
+% axes
+\draw [thick, -] (0,12) node (yaxis) [above] {Revenue} |- (15,0) node (xaxis) [right] {Quantity};
+% paths for "rev=$16" and "rev=$25" dotted lines
+\path [name path=rev16] (5,5.3033) -- (15,5.3033);
+\path [name path=rev25] (0,7.5) -- (15,7.5);
+% intersection of paths with TR
+\draw [name intersections={of=rev16 and TR, by=Q8},name intersections={of=rev25 and TR, by=Q5}]
+	[dotted,thick] (yaxis |- Q8) node [mynode,left] {Rev$=\$16$} -| (xaxis -| Q8) node [mynode,below] {8}
+	[dotted,thick] (yaxis |- Q5) node [mynode,left] {Rev$=\$25$} -| (xaxis -| Q5) node [mynode,below] {5};
+% arrow to maximum point
+\draw [<-,thick,shorten <=1mm,shorten >=-1.5mm] (Q5) -- +(0,2) node [mynode,above] {Revenue a maximum\\where elasticity is unity};
+\end{TikzFigure}

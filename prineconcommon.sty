@@ -1,0 +1,673 @@
+% % % % % % % % % % % % %
+% % % % % % % %
+% %
+% % Style common to both Principles textbooks (Microeconomics & Macroeconomics)
+% %
+% % % % % % % %
+% % % % % % % % % % % % %
+
+
+
+
+
+% % % % % % % % % %
+% Colours common to both Principles textbooks
+% % % % % % % % % %
+%
+%Lyryx brand colours
+\definecolor{lyryxcolour}{HTML}{000033}
+\definecolor{lyryxlogoy}{HTML}{E2970A}
+\definecolor{titlemainboxcolour}{HTML}{4093A4}
+\definecolor{lscshdrboxcolour}{HTML}{006F86}
+
+%Sample text writing
+\definecolor{sampletextcolour}{HTML}{B18B45}
+
+% Title page colour
+\definecolor{titlepagecolour}{HTML}{006F86}
+\definecolor{titlepageboxbg}{HTML}{4093A4}
+
+% Colour for grey square in page headers
+\definecolor{headersquarecolour}{HTML}{BDBDBD}
+
+% Part page text colour
+\definecolor{parttextcolour}{HTML}{006F86}
+
+% Chapter name box (in chapter header)
+\definecolor{chapternameboxcolour}{HTML}{006F86}
+
+% LSCS box colours
+\definecolor{highlightoutlinecolour}{HTML}{006F86}
+\definecolor{highlightbkgdcolour}{HTML}{208195}
+
+% Definition box colours
+\definecolor{deffontcolour}{HTML}{006175}
+\definecolor{deflinecolour}{HTML}{006175}
+\definecolor{defbkgdcolour}{HTML}{FAFAFA}
+
+% Application (and Example) box colours
+\definecolor{applinecolour}{HTML}{006175}
+\definecolor{appbkgdcolour}{HTML}{DFEDF0}
+
+% Box shadow colour
+\definecolor{boxshadowcolour}{HTML}{D8D8D8}
+
+% Key terms box colours
+\definecolor{keytermslinecolour}{HTML}{006175}
+\definecolor{keytermsbkgdcolour}{HTML}{FAFAFA}
+
+% Links and urls colour
+\definecolor{linkcolour}{HTML}{004554}
+
+% Terminology colour
+\definecolor{terminologycolour}{HTML}{006175}
+
+% Table row colour
+\definecolor{rowcolour}{HTML}{DFEDF0}
+
+% Tikz figure background colour
+\definecolor{figurebkgdcolour}{HTML}{FAFAFA}
+
+%
+% % % % % % % % % %
+
+% A hack to do something like the center environment, but without spaces around it
+\newenvironment{center*}[0]{\bgroup \centering}
+{
+	
+	\egroup
+}
+
+
+
+% % % % % % % % % %
+% Page headers
+% % % % % % % % % %
+%
+% new commands used in section and page header format
+\newcommand\graysquare{\textcolor{headersquarecolour}{\rule{1ex}{1ex}}}
+
+%%%%%%
+% fancy page headers
+\pagestyle{fancy}
+\fancyhf{} % clears all predefined headers and footers
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[RO]{\rightmark\hspace{0.5em}\graysquare\hspace{0.5em}\thepage}
+\fancyhead[LE]{\thepage\hspace{0.5em}\graysquare\hspace{0.5em}\leftmark}
+\renewcommand{\headrulewidth}{0pt}
+%
+% % % % % % % % % %
+
+
+
+% % % % % % % % % %
+% Customized Chapter format and changes to section and subsection colours
+% % % % % % % % % %
+%
+
+% Custom command for parts since we don't want to reset chapter numbering
+\newcounter{continuouspartcount}
+
+
+\newcommand{\continuouspart}[1]{
+
+       \stepcounter{continuouspartcount}
+       % This is needed so that the text can be used in addcontentsline, otherwise
+       % we only get a blank string
+       \storeNumberstring{thecontinuouspart}{continuouspartcount}
+       
+       \cleardoublepage
+       \thispagestyle{empty}
+       \phantomsection
+       \markboth{}{}
+       \addcontentsline{toc}{part}{Part \FMCuse{thecontinuouspart}: #1}
+
+       \vspace{3cm}
+       
+       {\color{parttextcolour}\fontsize{1.25cm}{3em}\selectfont\textbf{Part \Numberstring{continuouspartcount}}} \\ \\
+       {\color{parttextcolour}\huge #1}
+       
+       \vspace{1cm}
+       {\color{partlinecolour}\rule{25em}{2pt}}
+       \vspace{1cm}
+       
+}
+
+
+%% Change name from 'Contents' to 'Table of Contents'
+\AtBeginDocument{\renewcommand\contentsname{Table of Contents}}
+
+% Chapter header formatting
+\titleformat{\chapter}{}{}{0pt}{
+	\phantomsection
+	\tikz[overlay,remember picture]
+	\fill[mainchapterboxcolour]
+	([yshift=-0.75cm,xshift=1.75cm]current page.north west) rectangle 
+	([yshift=-3cm,xshift=-1cm] current page.north east);
+	\begin{tikzpicture}[overlay,remember picture]
+	\node[anchor=south west,xshift=2cm,yshift=-2.2cm,font=\sffamily\bfseries\Huge,text=chaptertextcolour] 
+	at (current page.north west) 
+	{\chaptername\ \thechapter};
+	\node[rectangle,fill=chapternameboxcolour,text=white,font=\Large\bfseries,inner ysep=12pt,inner xsep=20pt,anchor=east,xshift=-2cm,yshift=-3cm] 
+	at (current page.north east) {#1};
+	\end{tikzpicture}
+}
+\titlespacing*{\chapter}{0pt}{0pt}{10mm}
+
+% Unnumbered chapters should show up in TOC, reset sections, and page headers
+\titleformat{name=\chapter,numberless}[display]{}{}{0pt}{
+	\phantomsection
+	\tikz[overlay,remember picture]
+	\fill[mainchapterboxcolour]
+	([yshift=-0.75cm,xshift=1.75cm]current page.north west) rectangle 
+	([yshift=-3cm,xshift=-1cm] current page.north east);
+	\begin{tikzpicture}[overlay,remember picture]
+	\node[rectangle,fill=chapternameboxcolour,text=white,font=\Large\bfseries,inner ysep=12pt,inner xsep=20pt,anchor=east,xshift=-2cm,yshift=-3cm] 
+	at (current page.north east) {#1};
+	\end{tikzpicture}
+}
+[
+	\addcontentsline{toc}{part}{#1}
+	\setcounter{section}{0}
+	\markboth{#1}{#1}
+]
+
+% Color section headings
+\titleformat{\section}
+{
+	\hypersetup{linkcolor=sectionheadercolour}
+	\Large\bfseries\color{sectionheadercolour}
+}
+{\thesection}{1em}{\phantomsection #1}
+[
+	\hypersetup{linkcolor=linkcolour}
+]
+\titlespacing*{\section}{0pt}{0pt}{-0.5em}
+
+% Unnumbered sections should show up in TOC and page headers
+\titleformat{name=\section,numberless}
+{
+	\hypersetup{linkcolor=sectionheadercolour}
+	\Large\bfseries\color{sectionheadercolour}
+}{}{0pt}{\phantomsection \textsc{#1}}
+[
+	\hypersetup{linkcolor=linkcolour}
+	\addcontentsline{toc}{section}{#1}
+	\markboth{#1}{#1}
+]
+
+%
+% % % % % % % % % %
+
+
+
+% % % % % % % % % %
+% The following modifies the subsubsection setup (which is not used anywhere else in the text) and is used only in the 'solutions.tex' file
+% Except for the addcontentsline command adding the subsubsection into the chapter level, the setup is the same as the numberless sections setup above
+%
+% Unnumbered subsubsections should show up in TOC and page headers
+\titleformat{name=\subsubsection,numberless}
+{
+	\hypersetup{linkcolor=sectionheadercolour}
+	\Large\bfseries\color{sectionheadercolour}
+}{}{0pt}{\phantomsection \textsc{#1}}
+[
+	\hypersetup{linkcolor=linkcolour}
+	\addcontentsline{toc}{chapter}{#1}
+	\markboth{#1}{#1}
+]
+
+% Color subsection headings
+\titleformat{\subsection}{\large\bfseries\color{subsectioncolour}}{\thesubsection}{0pt}{#1}
+\titlespacing*{\subsection}{0pt}{0pt}{-0.5em}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Semantic information
+\newcommand{\terminology}[1]{\textcolor{terminologycolour}{\textbf{#1}}}
+
+
+% % % % % % % % % %
+% Creates page on left side
+\newcommand*\cleartoleftpage{%
+	\clearpage
+	\ifodd\value{page}\hbox{}\newpage\fi
+}
+
+
+% % % % % % % % % %
+% Chapter topics box
+\newenvironment{topics}[0]
+{
+	\mdframed[style=topicsframe]
+}
+{
+	\endmdframed
+}
+
+\global\mdfdefinestyle{topicsframe}{userdefinedwidth=23em,linecolor=chaptopicsoutlinecolour,linewidth=2pt,backgroundcolor=chaptopicsbkgdcolour,shadow=true,shadowsize=8pt,shadowcolor=boxshadowcolour,innertopmargin=15pt,innerbottommargin=15pt,innerleftmargin=15pt,innerrightmargin=15pt,roundcorner=5pt}
+%
+% % % % % % % % % %
+
+%%Cover page box 
+% For the main box containing customization information
+\newtcolorbox{titlemainbox}{colback=titlepageboxbg,colframe=titlepageboxbg,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip},top=0em,bottom=1em, width=6in}
+
+
+% % % % % % % % % %
+% Boxes on title page
+%\newenvironment{titlepagebox}[0]
+%{
+%	\mdframed[style=titlepageboxstyle]
+%}{
+%\endmdframed
+%}
+%
+% TODO: Figure out why the innertopmargin & innerbottommargin have to be different between the marketing versions (or text and print cover) versus the regular (pdf) versions.
+\global\mdfdefinestyle{titlepageboxstyle}{linewidth=0pt,backgroundcolor=titlepageboxbg,linecolor=titlepageboxbg,innertopmargin=1mm,innerbottommargin=11mm,skipabove=2mm,skipbelow=2mm,roundcorner=5pt}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Highlight  box (for lscs)
+\newenvironment{lscshdrbox}[0]
+{
+	\mdframed[style=lscsheaderframe]
+	\bf
+}
+{
+	\endmdframed
+}
+
+\global\mdfdefinestyle{lscsheaderframe}{linecolor=lscshdrboxcolour,linewidth=0pt,fontcolor=white,backgroundcolor=lscshdrboxcolour,shadow=false,innertopmargin=3pt,innerbottommargin=3pt,innerleftmargin=8pt,innerrightmargin=2pt,roundcorner=5pt,skipabove=4mm,skipbelow=3mm,frametitleaboveskip=\baselineskip, userdefinedwidth=17.5em}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Definition box
+\newenvironment{DefBox}[0]
+{
+	\begin{mdframed}[style=definitionframe]
+	}
+	{
+	\end{mdframed}
+}
+
+\global\mdfdefinestyle{definitionframe}{fontcolor=deffontcolour,linecolor=deflinecolour,linewidth=2pt,backgroundcolor=defbkgdcolour,innermargin=1cm,outermargin=1cm,topline=false,bottomline=false,innertopmargin=2pt,innerbottommargin=2pt,innerleftmargin=2pt,innerrightmargin=2pt}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Box for Key Terms
+\newenvironment{keyterms}[0]
+{
+	\mdframed[style=keytermsframe]
+}
+{
+	\endmdframed
+}
+
+\global\mdfdefinestyle{keytermsframe}{linecolor=keytermslinecolour,linewidth=1.5pt,backgroundcolor=keytermsbkgdcolour,innertopmargin=10pt,innerbottommargin=10pt,innerleftmargin=10pt,innerrightmargin=10pt,roundcorner=5pt,splittopskip=2\topsep,splitbottomskip=2\topsep}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Application Box -- Stand-out boxes unique to Econ
+%
+% Arguments:
+%  caption={...} -- The caption/title to display (Required)
+
+\global\mdfdefinestyle{applicationboxframe}{fontcolor=black,linecolor=applinecolour,linewidth=1pt,backgroundcolor=appbkgdcolour,shadow=true,shadowsize=8pt,shadowcolor=boxshadowcolour,innertopmargin=12pt,innerbottommargin=12pt,innerleftmargin=12pt,innerrightmargin=12pt,roundcorner=5pt}
+
+\newcounter{applicationbox}[chapter]
+\renewcommand{\theapplicationbox}{\thechapter.\arabic{applicationbox}}
+
+\pgfkeys{%
+	/ApplicationBox/caption/.store in=\captionarg,
+	/ApplicationBox/caption/.value required
+}
+
+\newenvironment{ApplicationBox}[1]{
+	\pgfkeys{/ApplicationBox/.cd, #1}
+	\ifthenelse{\isundefined{\captionarg}}{\PackageError{cistyle}{The caption key has not been set to a value.}{}}{}
+	\refstepcounter{applicationbox}
+	\mdframed[style=applicationboxframe]
+	\textbf{Application Box \theapplicationbox: \captionarg}
+	\par
+}{
+	\endmdframed\par\medskip
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Example Box -- Stand-out boxes unique to Econ
+%
+% Arguments:
+%  caption={...} -- The caption/title to display (Required)
+
+\global\mdfdefinestyle{exampleboxframe}{fontcolor=black,linecolor=applinecolour,linewidth=1pt,backgroundcolor=appbkgdcolour,shadow=true,shadowsize=8pt,shadowcolor=boxshadowcolour,innertopmargin=12pt,innerbottommargin=12pt,innerleftmargin=12pt,innerrightmargin=12pt,roundcorner=5pt,splittopskip=2\topsep,splitbottomskip=2\topsep}
+
+\newcounter{examplebox}[chapter]
+\renewcommand{\theexamplebox}{\thechapter.\arabic{examplebox}}
+
+\pgfkeys{%
+	/ExampleBox/caption/.store in=\captionarg,
+	/ExampleBox/caption/.value required
+}
+
+\newenvironment{ExampleBox}[1]{
+	\pgfkeys{/ExampleBox/.cd, #1}
+	\ifthenelse{\isundefined{\captionarg}}{\PackageError{cistyle}{The caption key has not been set to a value.}{}}{}
+	\refstepcounter{examplebox}
+	\mdframed[style=exampleboxframe]
+	\textbf{Example Box \theexamplebox: \captionarg}
+	\par
+}{
+	\endmdframed\par\medskip
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Style of hyperlinks to sections in text and urls
+\hypersetup{
+	pdfborder=0 0 0,
+	colorlinks=true,
+	allcolors=linkcolour, % Default color
+	linkcolor=linkcolour, % Chapter/Section links, figures, tables, etc
+	urlcolor=linkcolour, % other urls
+	pdftitle={\booktitle},
+	pdfauthor={\bookauthor},
+	pdfcreator={Lyryx Learning Inc},
+	pdfdisplaydoctitle=true
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Table float with a caption and optional description
+%
+% Arguments:
+%  caption={...} -- The caption to display (Optional)
+%  description={...} -- A sub-caption to describe the table (Optional)
+%  descwidth=... -- Limit the width of the description to the given cm/em (Optional)
+
+\pgfkeys{%
+	/Table/caption/.store in=\captionarg,
+	/Table/caption/.value required,
+	/Table/description/.store in=\descriptionarg,
+	/Table/description/.value required,
+	/Table/descwidth/.store in=\widtharg,
+	/Table/descwidth/.value required,
+}
+
+\newenvironment{Table}[1]
+{
+	\pgfkeys{/Table/.cd, #1}
+	\table[H]
+	\centering
+	\ifthenelse{\isundefined{\captionarg}}{}{\caption{\captionarg}}
+}
+{
+	\ifthenelse{\isundefined{\descriptionarg}}
+	{}
+	{%
+		\ifthenelse{\isundefined{\widtharg}}
+		{%
+			{\par\centering \footnotesize \descriptionarg}
+		}
+		{%
+			\par\vspace{1em}\parbox[b]{\widtharg}{{\footnotesize \descriptionarg}\par}
+		}
+	}
+	\endtable
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Tikz graph as a figure, with text wrapping around the right side
+%
+% Arguments:
+%  width=... -- How wide the figure is in cm/em, so that the main paragraph text
+%               will wrap around this reserved area (Required)
+%  xscale=x  -- Passed to tikz's xscale parameter.  Uses 1 if not provided.
+%  yscale=y  -- Passed to tikz's yscale parameter.  Uses 1 if not provided.
+%  caption={...} -- The caption to display (Required)
+%  description={...} -- A sub-caption to describe the figure (Optional)
+
+\pgfkeys{%
+	/TikzFigureWrap/xscale/.store in=\xscalearg,
+	/TikzFigureWrap/xscale/.value required,
+	/TikzFigureWrap/xscale=1,
+	/TikzFigureWrap/yscale/.store in=\yscalearg,
+	/TikzFigureWrap/yscale/.value required,
+	/TikzFigureWrap/yscale=1,
+	/TikzFigureWrap/width/.store in=\widtharg,
+	/TikzFigureWrap/width=\textwidth,
+	/TikzFigureWrap/width/.value required,
+	/TikzFigureWrap/caption/.store in=\captionarg,
+	/TikzFigureWrap/caption/.value required,
+	/TikzFigureWrap/description/.store in=\descriptionarg,
+	/TikzFigureWrap/description/.value required,
+}
+
+\newenvironment{TikzFigureWrap}[1]
+{
+	\pgfkeys{/TikzFigureWrap/.cd, #1}
+	\ifthenelse{\isundefined{\widtharg}}{\PackageError{cistyle}{The width key has not been set to a value.}{}}{}
+	\ifthenelse{\isundefined{\captionarg}}{\PackageError{cistyle}{The caption key has not been set to a value.}{}}{}
+	\wrapfigure{l}{\widtharg}
+		\centering
+		\caption{\captionarg}
+			\tikzpicture[background color=figurebkgdcolour,use background,xscale=\xscalearg,yscale=\yscalearg]
+}
+{
+% To see the bounding box:
+%\draw (current bounding box.north east) rectangle (current bounding box.south west);
+			\endtikzpicture
+		\ifthenelse{\isundefined{\descriptionarg}}
+		{}
+		{\par\parbox[c]{\widtharg - 2cm}{\footnotesize \descriptionarg}}
+		\vspace*{-1cm}
+	\endwrapfigure
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Tikz graph as a figure, with a description on the right side
+%
+% Arguments:
+%  xscale=x  -- Passed to tikz's xscale parameter.  Uses 1 if not provided.
+%  yscale=y  -- Passed to tikz's yscale parameter.  Uses 1 if not provided.
+%  caption={...} -- The caption to display (Required)
+%  description={...} -- A sub-caption to describe the figure (Optional)
+%  descwidth=... -- If set, this is how wide to make the description box so
+%                   that it will fit on the right side of the tikz picture.
+%                   If not provided, then the description centers below tikz.
+
+\pgfkeys{%
+	/TikzFigure/xscale/.store in=\xscalearg,
+	/TikzFigure/xscale/.value required,
+	/TikzFigure/xscale=1,
+	/TikzFigure/yscale/.store in=\yscalearg,
+	/TikzFigure/yscale/.value required,
+	/TikzFigure/yscale=1,
+	/TikzFigure/caption/.store in=\captionarg,
+	/TikzFigure/caption/.value required,
+	/TikzFigure/description/.store in=\descriptionarg,
+	/TikzFigure/description/.value required,
+	/TikzFigure/descwidth/.store in=\widtharg,
+	/TikzFigure/descwidth={},
+}
+
+\newenvironment{TikzFigure}[1]
+{
+	\pgfkeys{/TikzFigure/.cd, #1}
+	\ifthenelse{\isundefined{\captionarg}}{\PackageError{cistyle}{The caption key has not been set to a value.}{}}{}
+%	\figure[ht!]
+        \figure[H]
+		\centering
+		\caption{\captionarg}
+			\tikzpicture[baseline=0,background color=figurebkgdcolour,use background,xscale=\xscalearg,yscale=\yscalearg]
+}
+{
+% To see the bounding box:
+%\draw (current bounding box.north east) rectangle (current bounding box.south west);
+			\endtikzpicture
+		\ifthenelse{\isundefined{\descriptionarg}}
+		{}
+		{%
+			\ifthenelse{\isundefined{\widtharg}}
+			{%
+				{\par\centering \footnotesize \descriptionarg}
+			}
+			{%
+				\par\vspace{1em}\parbox[b]{\widtharg}{{\footnotesize \descriptionarg}\par}
+			}
+		}
+	\endfigure
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % % % % % %
+% Define special Tikz environments
+% % % % % % % % % % % % % %
+% Tikz node with \scriptsize (very small) text, left aligned
+\tikzset{
+	mynode/.style={
+		font=\scriptsize,
+		align=left,
+		execute at begin node=\setlength{\baselineskip}{-1em} 	% reduces space between lines of text
+	}
+}
+
+%
+% Tikz node with \footnotesize text, center aligned, white font (Used for Lyryx icon text on titlepage and back cover)
+
+% Font used in componentnode
+\newcommand*{\cmpfont}{\robotocondensed\selectfont}
+
+% Font used for Logo type 
+\newcommand*{\logofont}{\robotocondensed\selectfont}
+
+\tikzset{
+	componentnode/.style={
+		font=\scriptsize\cmpfont,
+		align=center,
+		white,
+		execute at begin node=\setlength{\baselineskip}{1.25em} 	% increases space between lines of text
+	}
+}
+
+
+% Tikz node with regular sized text, left aligned
+\tikzset{
+	mynode1/.style={
+		align=left,
+		execute at begin node=\setlength{\baselineskip}{-1em} 	% reduces space between lines of text
+	}
+}
+
+
+% Key to change background color in Tikz and pgfplot
+\pgfkeys{/tikz/.cd,
+	background color/.initial=graphicbackground,
+	background color/.get=\backcol,
+	background color/.store in=\backcol,
+}
+\tikzset{background rectangle/.style={
+		fill=\backcol,
+	},
+	use background/.style={    
+		show background rectangle
+	}
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Convenient way to place a hidden coordinate anywhere in the text, which can be referenced
+% in tikz drawing commands later.
+\newcommand{\tikzcoordinate}[1]{\tikz[remember picture]{
+		\node[coordinate] (#1) {};
+	}}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Redefining enumerate styles for only part of the book
+% Changes all first level items in listed to (a),(b),(c),etc
+\newenvironment{enumialphparenastyle}{
+	\let\oldlabelenumi=\labelenumi
+	\renewcommand{\labelenumi}{\textrm{(\alph{enumi})}}
+}{
+	\let\labelenumi=\oldlabelenumi
+}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Table style adjustments
+% % % % % % % % % %
+%
+% Increase height of rows in tables
+\global\extrarowsep=1mm
+
+% increase border width in tables
+\tabulinestyle{1.2pt}
+%
+% % % % % % % % % %
+
+
+% % % % % % % % % %
+% Exercises and solutions
+% % % % % % % % % %
+%
+% Counter for exercises
+\newcounter{econex}[chapter]
+\renewcommand{\theeconex}{\thechapter.\arabic{econex}}
+
+% econex env
+% can \def\myeconextitle{#1} if we want to save the title for use in the solution
+\newenvironment{econex}{
+	\par\medskip\noindent\refstepcounter{econex}\textbf{Exercise \theeconex}
+}{
+	\par\medskip
+}
+
+% answers package will place solutions in an econsolout env
+\newenvironment{econsolout}[1]{
+	\par\medskip\noindent\textbf{Exercise #1}\par
+}{
+	\par\medskip
+}
+% answers package uses this command to copy params from exercise environment to econsolout
+\newcommand{\econsoloutparams}{{\theeconex}}
+
+% econexsolution env, where output is sent to exsolutions file and text placed in econexsolout envs
+\Newassociation{econsolution}{econsolout}{solutions}
+%
+% % % % % % % % % %
+
+\newcommand{\newhtmlpage}{}

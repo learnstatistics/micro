@@ -1,0 +1,30 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=25em,caption={Total product curve \label{fig:TPcurve}},description={Output increases with the amount of labour used. Initially the increase in output due to using more labour is high, subsequently it is lower. The initial phase characterizes increasing productivity, the later phase defines declining productivity.}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	x=0.9cm/1,
+	y=1cm/50,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=12,ymin=0,ymax=325,
+	xlabel={Labour},
+	ylabel={Output},
+]
+\addplot[ultra thick,tpcolour,mark=none] coordinates {
+	(0,0)
+	(1,15)
+	(2,40)
+	(3,70)
+	(4,110)
+	(5,145)
+	(6,175)
+	(7,200)
+	(8,220)
+	(9,235)
+	(10,240)
+	(11,235)
+};
+\end{axis}
+\end{TikzFigure}

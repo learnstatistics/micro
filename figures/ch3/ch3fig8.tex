@@ -1,0 +1,16 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,descwidth=25em,caption={The effect of a quota \label{fig:quota}},description={The government decides that the equilibrium price $P_0$ is too low. It decides to boost price by reducing supply from $Q_0$ to $Q_q$. It achieves this by requiring producers to have a production quota. This is equivalent to fixing supply at $S_q$.}}
+\draw [demandcolour,ultra thick,name path=demand] (2,14) -- node [mynode,black,above right,pos=0.9] {Demand} (9,0);
+\draw [supplycolour,ultra thick,name path=supplyquota] (3.5,0) node [black,mynode,below] {$Q_q$} -- +(0,14) node [black,mynode,above] {$S_q$=supply\\with quota};
+\draw [supplycolour,ultra thick,name path=supply] (0,1) -- (13,14) node [black,mynode,right] {Supply};
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of supply and demand
+\draw [name intersections={of=supply and demand,by=E0}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$P_0$} -- (E0) node [mynode,above] {$E_0$} -- (xaxis -| E0) node [mynode,below] {$Q_0$};
+% intersection of supplyquota and demand
+\draw [name intersections={of=supplyquota and demand,by=Eq}]
+	[dotted,thick] (yaxis |- Eq) node [mynode,left] {$P_q$} -- (Eq) node [mynode,above right] {$E_q$};
+% horizontal path used to draw dotted line to point C
+\path [name path=Cline] (yaxis |- Eq) -- +(15,0);
+\draw [name intersections={of=Cline and supply,by=C}]
+	[dotted,thick] (Eq) -- (C) node [mynode,above] {C};
+\end{TikzFigure}

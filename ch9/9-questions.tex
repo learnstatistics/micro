@@ -1,0 +1,369 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:perfectcompetition}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:perfectcompetition} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch9ex1}
+Wendy's Window Cleaning is a small local operation. Wendy presently cleans the outside windows in her neighbours' houses for \$36 per house. She does ten houses per day. She is incurring total costs of \$420, and of this amount \$100 is fixed. The cost per house is constant.
+\begin{enumerate}
+\item	What is the marginal cost associated with cleaning the windows of one house -- we know it is constant?
+\item	At a price of \$36, what is her break-even level of output (number of houses)?
+\item	If the fixed cost is `sunk' and she cannot increase her output in the short run, should she shut down?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The $MC$ is \$32.
+\item	Her break-even level of output is 25 units.
+\item	No, because she can cover her variable costs. $TVC=\$320$; $TR=\$360$.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex2}
+A manufacturer of vacuum cleaners incurs a constant variable cost of production equal to \$80. She can sell the appliances to a wholesaler for \$130. Her annual fixed costs are \$200,000.	How many vacuums must she sell in order to cover her total costs?
+\begin{econsolution}
+For total revenue to equal total cost it must be the case that $130\times Q=200,000+80\times Q$. Therefore $Q=4,000$.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex3}
+For the vacuum cleaner producer in Exercise~\ref{ex:ch9ex2}:
+\begin{enumerate}
+\item	Draw the $MC$ curve. 
+\item	Next, draw her $AFC$ and her $AVC$ curves. 
+\item	Finally, draw her $ATC$ curve. 
+\item	In order for this cost structure to be compatible with a perfectly competitive industry, what must happen to her $MC$ curve at some output level?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The $MC$ is horizontal at \$80.
+\item	See diagram below.
+\item	See diagram below.
+\item	The $MC$ would have to increase at some point.
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=1000,xmax=6000,ymin=0,ymax=300,
+y=1cm/40,
+x=1cm/600,
+x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+xlabel={Quantity},
+ylabel={Price},
+]
+\addplot[mccolour,dotted,ultra thick] table {
+	X	Y
+	1000	80
+	6000	80
+};\addlegendentry {$AVC$ and $MC$}
+\addplot[afccolour,ultra thick,domain=1000:6000,samples=100] {200 / x * 1000};\addlegendentry {Average fixed cost}
+\addplot[datasetcolourtwo,dashed,ultra thick,domain=1000:6000,samples=100] {280 / x * 1000};\addlegendentry {Average total cost}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex4}
+Consider the supply curves of two firms in a competitive industry: $P=q_A$ and $P=2q_B$.
+\begin{enumerate}
+\item	On a diagram, draw these two supply curves, marking their intercepts and slopes numerically (remember that they are really $MC$ curves). 
+\item	Now draw a supply curve that represents the combined supply of these two firms.
+\end{enumerate}
+\begin{econsolution}
+The market supply curve goes through the origin with a slope of	2/3. This follows from the fact that we can write the supply curves as $q_A=P$ and $q_B=0.5P$. Hence $Q=q_A+q_B=1.5P$; or $P=(2/3)Q$.
+
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=10,ymin=0,ymax=25,
+	y=1cm/4,
+	x=1cm/1.2,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Quantity},
+	ylabel={\$},
+	]
+	\addplot[supplycolour,dashdotted,ultra thick,domain=1:10] table {
+		X	Y
+		1	1
+		2	2
+		3	3
+		4	4
+		5	5
+		6	6
+		7	7
+		8	8
+		9	9
+		10	10
+	};
+	\addlegendentry{$P_A$}
+	\addplot[supplycolour,dashed,ultra thick,domain=1:10] table {
+		X	Y
+		1	2
+		2	4
+		3	6
+		4	8
+		5	10
+		6	12
+		7	14
+		8	16
+		9	18
+		10	20
+	};
+	\addlegendentry{$P_B$}
+	\addplot[marketsupplycolour,ultra thick,domain=1:10] table {
+		X	Y
+		1	0.67
+		2	1.33
+		3	2
+		4	2.67
+		5	3.33
+		6	4
+		7	4.67
+		8	5.33
+		9	6
+		10	6.67
+	};
+	\addlegendentry{Market supply}
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex5}
+Amanda's Apple Orchard Productions Limited produces 10,000 kilograms of apples per month. Her total production costs at this output level are \$8,000. Two of her many competitors have larger-scale operations and produce 12,000 and 15,000 kilos at total costs of \$9,500 and \$11,000 respectively. If this industry is competitive, on what segment of the $LAC$ curve are these producers producing? 
+\begin{econsolution}
+Since the costs per unit are declining with output, they are producing on the downward-sloping segment of the $LATC$. To see this we need just calculate $ATC$ at each output.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex6}
+Consider the data in the table below. $TC$ is total cost, $TR$ is total revenue, and $Q$ is output.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Q}	&	0	&	1	&	2	&	3	&	4	&	5	&	6	&	7	&	8	&	9	&	10	\\
+\textbf{TC}	&	10	&	18	&	24	&	31	&	39	&	48	&	58	&	69	&	82	&	100	&	120	\\
+\rowcolor{rowcolour}	\textbf{TR}	&	0	&	11	&	22	&	33	&	44	&	55	&	66	&	77	&	88	&	99	&	110	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	Add some extra rows to the table and for each level of output calculate the $MR$, the $MC$ and total profit.
+\item	Next, compute $AFC$, $AVC$, and $ATC$ for each output level, and draw these three cost curves on a diagram.
+\item	What is the profit-maximizing output?
+\item	How can you tell that this firm is in a competitive industry?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the table.
+\item	See the figure below.
+\item	$Q=7$. At this output $MC=MR$.
+\item	Price is fixed.
+\end{enumerate}
+\begin{Table}{}\footnotesize 
+\begin{tabu} to \linewidth {|X[0.8,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+	\rowcolor{rowcolour}	\textbf{Q}	&	0	&	1	&	2	&	3	&	4	&	5	&	6	&	7	&	8	&	9	&	10	\\
+	\textbf{TC}	&	10	&	18	&	24	&	31	&	39	&	48	&	58	&	69	&	82	&	100	&	120	\\
+	\rowcolor{rowcolour}	\textbf{TR}	&	0	&	11	&	22	&	33	&	44	&	55	&	66	&	77	&	88	&	99	&	110	\\
+	\textbf{Profit}	& $-10.00$ & $-7.00$ & $-2.00$ & 2.00 & 5.00 & 7.00 & 8.00 & 8.00 & 6.00 & $-1.00$ & $-10.00$ \\
+	\rowcolor{rowcolour}\textbf{MR} &  & 11.00 & 11.00 & 11.00 & 11.00 & 11.00 & 11.00 & 11.00 & 11.00 & 11.00 & 11.00 \\
+	\textbf{MC} &  & 8.00 & 6.00 & 7.00 & 8.00 & 9.00 & 10.00 & 11.00 & 13.00 & 18.00 & 20.00 \\
+	\rowcolor{rowcolour}\textbf{AFC} &  & 10.00 & 5.00 & 3.33 & 2.50 & 2.00 & 1.67 & 1.43 & 1.25 & 1.11 & 1.00 \\
+	\textbf{AVC} &  & 8.00 & 7.00 & 7.00 & 7.25 & 7.60 & 8.00 & 8.43 & 9.00 & 10.00 & 11.00 \\
+	\rowcolor{rowcolour}\textbf{ATC} &  & 18.00 & 12.00 & 10.33 & 9.75 & 9.60 & 9.67 & 9.86 & 10.25 & 11.11 & 12.00 \\ \hline
+\end{tabu}
+\end{Table}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=0,xmax=12,ymin=0,ymax=20,
+y=1cm/3.5,
+x=1cm/1.3,
+x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+xlabel={Quantity},
+ylabel={\$},
+]
+\addplot[afccolour,ultra thick,mark=*] table {
+	X	Y
+	1	10
+	2	5
+	3	3.33
+	4	2.5
+	5	2.0
+	6	1.67
+	7	1.43
+	8	1.25
+	9	1.11
+	10	1
+};\addlegendentry {$AFC$}
+\addplot[avccolour,ultra thick,mark=square*] table {
+	X	Y
+	1	8
+	2	7
+	3	7
+	4	7.25
+	5	7.6
+	6	8
+	7	8.43
+	8	9
+	9	10
+	10	11
+};\addlegendentry {$AVC$}
+\addplot[atccolour,ultra thick,mark=triangle*] table {
+	X	Y
+	1	18
+	2	12
+	3	10.33
+	4	9.75
+	5	9.6
+	6	9.67
+	7	9.86
+	8	10.25
+	9	11.11
+	10	12
+};\addlegendentry {$ATC$}
+\end{axis}
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex7}
+\textit{Optional}: The market demand and supply curves in a perfectly competitive industry are given by: $Q_d=30,000-600P$ and $Q_s=200P-2000$.
+\begin{enumerate}
+\item	Draw these functions on a diagram, and calculate the equilibrium price of output in this industry.
+\item	Now assume that an additional firm is considering entering. This firm has a short-run $MC$ curve defined by $MC=10+0.5q$, where $q$ is the firm's output. If this firm enters the industry and it knows the equilibrium price in the industry, what output should it produce?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The equilibrium price is \$40 and the equilibrium quantity is 6,000. The price intercept for the demand equation is 50, the quantity intercept 30,000. The price intercept for the supply equation is 10 and the quantity intercept -2,000.
+\item	With a perfectly competitive structure, this new firm cannot influence the price. Therefore it maximizes profit by setting $P=MC$. That is $40=10+0.5q$. Solving this equation yields a quantity value $q=60$.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch9ex8}
+\textit{Optional}: Consider two firms in a perfectly competitive industry. They have the same $MC$ curves and differ only in having higher and lower fixed costs. Suppose the $ATC$ curves are of the form: $400/q+10+(1/4)q$ and $225/q+10+(1/4)q$. The $MC$ for each is a straight line: $MC=10+(1/2)q$.
+\begin{enumerate}
+\item	In the first column of a spreadsheet enter quantity values of 1, 5, 10, 15, 20,\ldots, 50. In the following columns compute the $ATC$ curves for each quantity value.
+\item	Compute the $MC$ at each output in the next column, and plot all three curves.
+\item	Compute the break-even price for each firm.
+\item	Explain why both of these firms cannot continue to produce in the long run in a perfectly competitive market.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See the table below.
+\item	See the diagram below.
+\item	The break-even prices correspond to the minimum of each $ATC$ curve: \$30 and \$25.
+\item	The price in the market will be forced down to the level at which the most efficient producers can supply the market. Consequently the producer with the higher fixed cost will either have to adopt the technology of the lower-cost producer or exit the industry. 
+\end{enumerate}
+\begin{Table}{}
+	\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+		\rowcolor{rowcolour}	$Q$	&	$ATC_1$	&	$ATC_2$	&	$MC$	\\	\hline
+		5	&	91.25	&	56.25	&	12.5	\\
+		\rowcolor{rowcolour}	10	&	52.50	&	35.00	&	15	\\
+		15	&	40.42	&	28.75	&	17.5	\\
+		\rowcolor{rowcolour}	20	&	35.00	&	26.25	&	20	\\
+		25	&	32.25	&	25.25	&	22.5	\\
+		\rowcolor{rowcolour}	30	&	30.83	&	25.00	&	25	\\
+		35	&	30.18	&	25.18	&	27.5	\\
+		\rowcolor{rowcolour}	40	&	30.00	&	25.63	&	30	\\
+		45	&	30.14	&	26.25	&	32.5	\\
+		\rowcolor{rowcolour}	50	&	30.50	&	27.00	&	35 \\ \hline
+	\end{tabu}
+\end{Table}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+	\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	ymajorgrids,
+	grid style={dotted},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=55,ymin=0,ymax=100,
+	y=1cm/15,
+	x=1cm/5,
+	x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+	xlabel={Quantity},
+	ylabel={\$},
+	]
+	\addplot[atccolour,ultra thick,mark=none] table {
+		X	Y
+		5	91.25
+		10	52.5
+		15	40.42
+		20	35
+		25	32.25
+		30	30.83
+		35	30.18
+		40	30
+		45	30.14
+		50	30.50
+	};\addlegendentry {$ATC_1$}
+	\addplot[atccolour,ultra thick,mark=none] table {
+		X	Y
+		5	56.25
+		10	35
+		15	28.75
+		20	26.25
+		25	25.25
+		30	25
+		35	25.18
+		40	25.63
+		45	26.25
+		50	27
+	};\addlegendentry {$ATC_2$}
+	\addplot[mccolour,ultra thick,mark=none] table {
+		X	Y
+		5	12.5
+		10	15
+		15	17.5
+		20	20
+		25	22.5
+		30	25
+		35	27.5
+		40	30
+		45	32.5
+		50	35
+	};\addlegendentry {$MC$}
+	\end{axis}
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+
+\end{enumialphparenastyle}

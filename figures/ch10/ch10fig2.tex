@@ -1,0 +1,9 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.34,descwidth=25em,caption={Fixed cost and constant marginal cost \label{fig:fixedconstmarginalcost}},description={With a fixed cost of producing the first unit of output equal to F and a constant marginal cost thereafter, the long-run average total cost, $LATC$, declines indefinitely and becomes asymptotic to the marginal cost curve.}}
+\draw [dotted,thick] (2,0) node [mynode,below] {1} -- (2,18);
+\draw [latccolour,ultra thick,-]
+	(0,18) node [black,mynode,left] {F} -- (2,18) to [out=-90,in=180] (25,4.5) node [black,mynode,above] {$LATC$};
+\draw [dashed,mccolour,ultra thick,-]
+	(2,4) -- (25,4) node [black,mynode,below] {Constant $MC$};
+% axes
+\draw [thick, -] (0,20) node [above] {Cost (\$)} |- (25,0) node [right] {Quantity};
+\end{TikzFigure}

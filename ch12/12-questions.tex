@@ -1,0 +1,164 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:marketlabourcapital}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:marketlabourcapital} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch12ex1}
+Aerodynamics is a company specializing in the production of bicycle shirts. It has a fixed capital stock, and sells its shirts for \$20 each. It pays a weekly wage of \$400 per worker. Aerodynamics must maximize its profits by determining the optimal number of employees to hire. The marginal product of each worker can be inferred from the table below. Determine the optimal number of employees. [\textit{Hint}: You must determine the $VMP_L$ schedule, having first computed the $MP_L$.]
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[3,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Employment}		&	0	&	1	&	2	&	3	&	4	&	5	&	6	\\
+\textbf{Total output}	&	0	&	20	&	50	&	75	&	95	&	110	&	120	\\
+\rowcolor{rowcolour}	\textbf{$\mathbf{MP_L}$}			&		&		&		&		&		&		&		\\
+\textbf{$\mathbf{VMP_L}$}		&		&		&		&		&		&		&		\\	\hline
+\end{tabu}
+\end{Table}
+\begin{econsolution}
+At $L=4$ the $VMP$ of labour is \$400, which is also the wage rate. Therefore this is the profit maximizing output level (on the assumption that fixed costs are less than profits). The table below contains the calculations.
+\begin{Table}{}\small
+\begin{tabu} to \linewidth {|X[0.7,c]X[0.7,c]X[1,c]X[1,c]X[0.7,c]X[0.7,c]X[0.7,c]|}	\hline
+\rowcolor{rowcolour}\textbf{Labour} & \textbf{Output} & \textbf{$\mathbf{MP}$ Labour} & \textbf{$\mathbf{VMP}$ Labour} & \textbf{$\mathbf{TR}$} & \textbf{$\mathbf{TC}$} & \textbf{Profit}	\\
+0	&	0	&	&	&	&	&	\\
+\rowcolor{rowcolour}1	&	20	&	20	&	400	&	400	&	400	&	0	\\
+2	&	50	&	30	&	600	&	1000	&	800	&	200	\\
+\rowcolor{rowcolour}3	&	75	&	25	&	500	&	1500	&	1200	&	300	\\
+4	&	95	&	20	&	400	&	1900	&	1600	&	300	\\
+\rowcolor{rowcolour}5	&	110	&	15	&	300	&	2200	&	2000	&	200	\\
+6	&	120	&	10	&	200	&	2400	&	2400	&	0	\\	\hline
+\end{tabu}
+\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch12ex2}
+Suppose that, in Exercise~\ref{ex:ch12ex1} above, wages are not fixed. Instead the firm must pay \$50 more to employ each individual worker: The first worker is willing to work for \$250, the second for \$300, the third for \$350, etc. But once employed, each worker actually earns the same wage.  Determine the optimal number of workers to be employed. [\textit{Hint}: You must recognize that each worker earns the same wage; so when one additional worker is hired, the wage must increase to all workers employed.]
+\begin{econsolution}
+Here you must calculate the additional cost of each employee. The first costs \$250; the second \$350 (\$300 plus an additional \$50 to the first employee); the third \$450; the fourth \$550, etc. The additional revenue from each employee is the $VMP$ of labour. As long as this exceeds the $MC$ of hiring another employee then that employee should be hired. The answer is thus $L=3$.
+\begin{Table}{}\small
+\begin{tabu} to \linewidth {|X[0.5,c]X[0.5,c]X[0.8,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}\textbf{Labour}	&	\textbf{Output}	&	\textbf{$\mathbf{MP}$ Labour}	&	\textbf{$\mathbf{VMP}$ Labour}	&	\textbf{Marginal Wage}	&	\textbf{$\mathbf{MC}$ Labour}	\\
+0	&	0	&	&	&	&	\\
+\rowcolor{rowcolour}1	&	20	&	20	&	400	&	250	&	250	\\
+2	&	50	&	30	&	600	&	300	&	350	\\
+\rowcolor{rowcolour}3	&	75	&	25	&	500	&	350	&	450	\\
+4	&	95	&	20	&	400	&	400	&	550	\\
+\rowcolor{rowcolour}5	&	110	&	15	&	300	&	450	&	650	\\	\hline
+\end{tabu}
+\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch12ex3}
+Consider the following supply and demand equations for berry pickers. Demand: $W=22-0.4L$; supply: $W=10+0.2L$.
+\begin{enumerate}
+\item	For values of $L=1,5,10,15,\ldots,30$, calculate the corresponding wage in each of the supply and demand functions.
+\item	Using the data from part (a), plot and identify the equilibrium wage and quantity of labour.
+\item	Illustrate in the diagram the areas defining transfer earnings and rent.
+\item	Compute the transfer earnings and rent components of the total wage bill.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	In a spreadsheet, for each value of $L$, we can compute a supply price and a demand price. Those prices are equal at $L=20$, $W=\$14$.
+\item	See the diagram below.
+\item	See the diagram below.
+\item	Total wage bill is \$280, of which transfer earnings account for \$240 and rent \$40.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.13,yscale=0.23]
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {Wage} |- (60,0) node (xaxis) [mynode1,right] {Labour};
+\draw [ultra thick,demandcolour,name path=D] (0,22) node [mynode,left,black] {22} -- node [mynode,above right,black,pos=0.8] {Demand: $W=22-0.4L$} (55,0) node [mynode,below,black] {55};
+\draw [ultra thick,supplycolour,name path=S] (0,10) node [mynode,left,black] {10} -- (55,21) node [mynode,above,black] {Supply: $W=10+0.2L$};
+\draw [name intersections={of=D and S, by=E}]
+[dotted,thick] (yaxis |- E) node [mynode,left] {14} -- node [mynode,pos=0.25,below=0.15cm and 0.15cm] {Rent} (E) -- node [mynode,pos=0.5,left=0.5cm and 0.5cm] {Transfer\\earnings} (xaxis -| E) node [mynode,below] {20};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch12ex4}
+The rows of the following table describe the income stream for three different capital investments. The income flows accrue in years 1 and 2. Only year 2 returns need to be discounted. The rate of interest is the first entry in each row, and the project cost is the final entry.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Interest rate} & \textbf{Year 1} & \textbf{Year 2} & \textbf{Cost} \\ \hline
+8\% & 8,000 & 9,000 & 16,000 \\ 
+\rowcolor{rowcolour}	6\% & 0 & 1,000 & 900 \\ 
+10\% & 4,000 & 5,000 & 11,000	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+\item	For each investment calculate the present value of the stream of services.
+\item	Decide whether or not the investment should be undertaken.
+\end{enumerate}
+\begin{econsolution}
+The present values of the three streams are: \$16,333.3; \$943.4; \$8,545.5. Therefore only the first project should be adopted because it alone generates revenue in excess of costs.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch12ex5}
+Nihilist Nicotine is a small tobacco farm in south-western Ontario. It has three plots of land, each with a different productivity, in that the annual yield differs across plots. The output from each plot is given in the table below. Each plot is the same size and requires 3 workers and one machine to harvest the leaves. The cost of these inputs is \$10,000. If the price of each kilogram of leaves is \$4, how many plots should be planted?
+\begin{Table}{}
+\begin{tabu} to 25em {|X[1,c]X[1,c]|}	\hline
+\rowcolor{rowcolour}	\textbf{Land plot}	&	\textbf{Leaf yield in kilograms}	\\	\hline
+One					&	3,000								\\
+\rowcolor{rowcolour}	Two					&	2,500								\\
+Three				&	2,000								\\	\hline
+\end{tabu}
+\end{Table}
+\begin{econsolution}
+Only the first plot generates sufficient revenue to yield a profit.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch12ex6}
+The timing of wine sales is a frequent problem encountered by vintners. This is because many red wines improve with age. Let us suppose you own a particular vintage and you envisage that each bottle should increase in value by 10\% the first year, 9\% the second year, 8\% the third year, etc.
+\begin{enumerate}
+\item	Suppose the interest rate is 5\%, for how many years would you hold the wine if there is no storage cost?
+\item	If in addition to interest rate costs, there is a cost of storing the wine that equals 2\% of the wine's value each year, for how many years would you hold the wine before selling?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	You would hold it for 5 years because the wine is appreciating by more than the cost of borrowing for each of the first five years. The sixth year the wine grows in value by the same as the borrowing cost.
+\item	In this case the carrying has increased to 7\% per year. So it would be profitable to hold the wine for three years -- until the growth in the value of the wine equals the carrying cost.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch12ex7}
+\textit{Optional}: The industry demand for plumbers is given by the equation $W=50-0.08L$, and there is a fixed supply of 300 qualified plumbers.
+\begin{enumerate}
+\item	Draw a diagram illustrating the supply, demand and equilibrium, knowing that the quantity intercept for the demand equation is 625.
+\item	Solve the supply and demand equations for the equilibrium wage, $W$.
+\item	If the plumbers now form a union, and supply their labour at a wage of \$30 per hour, illustrate the new equilibrium on your diagram and calculate the new level of employment.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The demand curve has a regular downward-sloping form, while the supply curve is vertical at $L=300$. See figure below.
+\item	At $L=300$ the demand curve indicates that the wage is \$26.
+\item	At $W=\$30$, the corresponding demand is $L=250$.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.13,yscale=0.23]
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {Wage} |- (60,0) node (xaxis) [mynode1,right] {Labour};
+\draw [ultra thick,demandcolour,name path=D] (0,22) node [mynode,left,black] {50} -- node [mynode,above right,black,pos=0.8] {Demand$=VMP$ labour} (55,0) node [mynode,below,black] {625};
+\draw [ultra thick,supplycolour,name path=S] (26.4,0) node [mynode,below,black] {300} -- +(0,24) node [mynode,above,black] {Supply$=300$};
+\path [name path=L250] (22,0) -- +(0,24);
+\draw [name intersections={of=D and S, by=E},name intersections={of=L250 and D, by=U}]
+[dotted,thick] (yaxis |- E) node [mynode,left] {26} -- (E)
+[dotted,thick] (yaxis |- U) node [mynode,left] {30} -| (xaxis -| U) node [mynode,below] {250};
+\path [name path=W30] (U) -- +(30,0);
+\draw [name intersections={of=W30 and S, by=U1}]
+[dotted,thick] (U) -- (U1);
+\draw [<-,thick,shorten <=1mm] (U) -- +(-1,5) node [mynode,above] {Union\\equilibrium};
+\draw [<-,thick,shorten <=1mm] (E) -- +(10,3) node [mynode,right] {Equilibrium\\wage$=\$26$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex} 
+
+\end{enumialphparenastyle}

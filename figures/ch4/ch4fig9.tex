@@ -1,0 +1,18 @@
+\begin{TikzFigure}{xscale=0.42,yscale=0.32,descwidth=25em,caption={Identifying elasticities \label{fig:indentifyelast}},description={In order to establish that points such as A, B and C in Panel (a) lie on the same demand curve, we must know that the supply curve alone has shifted in such a way as to result in these equilibrium price-quantity combinations, as illustrated in Panel (b).}}
+\draw [supplycolour,ultra thick,-]
+	(15,0) -- (18,14) node [black,mynode,right] {$S_a$}
+	(16,0) -- (22.3,14) node [black,mynode,right] {$S_b$}
+	(18,0) -- (24,8) node [black,mynode,right] {$S_c$};
+\draw [demandcolour,ultra thick,-] (15,12) -- (24,0) node [mynode,above right,pos=0.95,black] {$D$};
+\draw [thick, -]
+	(0,15) node [above] {Price} |- (10,0) node [right] {Quantity}
+	(15,15) node [above] {Price} |- (25,0) node [right] {Quantity};
+\node [mynode1,below] at (5,-0.5) {(a)};
+\node [mynode1,below] at (20,-0.5) {(b)};
+\fill [black] (2,9.333) circle (5pt) node [mynode,right] {A};
+\fill [black] (17,9.333) circle (5pt) node [mynode,right] {A};
+\fill [black] (4,6.666) circle (5pt) node [mynode,right] {B};
+\fill [black] (19,6.666) circle (5pt) node [mynode,right] {B};
+\fill [black] (6,4) circle (5pt) node [mynode,right] {C};
+\fill [black] (21,4) circle (5pt) node [mynode,right] {C};
+\end{TikzFigure}

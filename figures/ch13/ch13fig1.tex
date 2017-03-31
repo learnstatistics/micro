@@ -1,0 +1,8 @@
+\begin{TikzFigure}{xscale=0.15,yscale=0.25,descwidth=25em,caption={Age-Earnings profiles by education level \label{fig:earningseducationlevel}},description={Individuals with a higher level of education earn more than individuals with a `standard' level of education. In addition, the differential grows over time.}}
+\draw [dotted,thick]
+	(18,0) node [mynode,below] {18 (High school grad)} -- +(0,25)
+	(65,0) node [mynode,below] {65 (Retirement)} -- +(0,25);
+\draw [datasetcolourthree,ultra thick] (18,5) -- (25,7) -- (35,8.5) -- (45,9.5) node [black,mynode,above left] {High school\\education} -- (55,10) -- (65,10.25);
+\draw [datasetcolourthree!50,ultra thick] (21,9) -- (25,11.5) -- (35,15) -- (45,17) node [black,mynode,above left] {Third level\\education} -- (55,18) -- (65,18.5);
+\draw [thick, -] (0,25) node [mynode1,above] {Average\\earnings\\in \$} -- (0,0) -- (70,0) node [mynode1,right] {Age};
+\end{TikzFigure}

@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.28,yscale=0.22,descwidth=27em,caption={Reaction functions and equilibrium \label{fig:reactioneq}},description={The reaction function for A ($R_A$) defines the optimal output response for A to any output choice by B. The reaction function for B is defined similarly. The equilibrium occurs at the intersection of $R_A$ and $R_B$. Any other combination will induce one firm to change its output, and therefore could not be an equilibrium.}}
+% RA line
+\draw [demandcolour,ultra thick,name path=RA] (0,12) node [black,mynode,left] {$q_{A0}$} -- (24,0) node [black,mynode,above right,pos=0.9] {$R_A$};
+% RB line
+\draw [supplycolour,ultra thick,name path=RB] (0,24) -- (12,0) node [black,mynode,above right,pos=0.9] {$R_B$};
+% axes
+\draw [thick, -] (0,25) node (yaxis) [above] {A's output} -- (0,0) node [mynode,below] {$q_{B0}$} -- (30,0) node (xaxis) [right] {B's output};
+% path used for dotted line from qA1 -| qB1
+\path [name path=qAB1line] (4,0) -- +(0,25);
+% intersection of RA and RB, as well as intersection of RA and qAB1line
+\draw [name intersections={of=RA and RB, by=E},name intersections={of=RA and qAB1line, by=RApoint}]
+	[dotted,thick] (yaxis |- E) node [mynode,left] {$q_{AE}$} -- (E) node [mynode,above right] {E} -- (xaxis -| E) node [mynode,below] {$q_{BE}$}
+	[dotted,thick] (yaxis |- RApoint) node [mynode,left] {$q_{A1}$} -| (xaxis -| RApoint) node [mynode,below] {$q_{B1}$};
+\end{TikzFigure}

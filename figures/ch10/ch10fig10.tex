@@ -1,0 +1,27 @@
+\begin{TikzFigure}{xscale=0.28,yscale=0.25,descwidth=25em,caption={Monopoly output inefficiency \label{fig:monopolyinefficiency}},description={A monopolist maximizes profit at $Q_M$. Here the value of marginal output exceeds cost. If output expands to $Q^*$ a gain arises equal to the area ABF. This is the deadweight loss associated with the output $Q_M$ rather than $Q^*$. If the monopolist's long-run $MC$ is equivalent to a competitive industry's supply curve, then the deadweight loss is the cost of having a monopoly rather than a perfectly competitive market.}}
+% MC curve
+\draw [dashed,mccolour,ultra thick,name path=MC] (15,6) node [black,mynode,below] {$MC$} to [out=15,in=270] (20,14);
+% ATC curve
+\draw [atccolour,ultra thick,domain=225:360,name path=ATC] plot ({18+4*cos(\x)},{12+4*sin(\x)}) node [mynode,right,black] {$ATC$};
+% LMC line
+\draw [lmccolour,ultra thick,name path=LMC] (0,8) node [black,mynode,left] {$P_{PC}$} -- (35,8) node [black,mynode,above] {$LMC$};
+% Demand line
+\draw [demandcolour,ultra thick,name path=D] (0,20) -- (34,3) node [mynode,above right,black,pos=0.2] {$D$};
+% MR line
+\draw [dashed,mrcolour,ultra thick,name path=MR] (0,20) -- (30,0) node [mynode,below left,black,pos=0.2] {$MR$};
+% axes
+\draw [thick, -] (0,25) node (yaxis) [above] {\$} |- (35,0) node (xaxis) [right] {Quantity};
+% intersection of MR and MC
+\draw [name intersections={of=MC and MR, by=F}]
+	[dotted,thick] (F) -- (xaxis -| F) node [mynode,below] {$Q_M$};
+% path to create dotted line from P_m--A--F
+\path [name path=Fline] (xaxis -| F) -- +(0,25);
+% intersection of Fline with D
+\draw [name intersections={of=D and Fline, by=A}]
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_M$} -- (A) node [mynode,above] {A} -- (F);
+% intersection of LMC and D
+\draw [name intersections={of=LMC and D, by=B}]
+	[dotted,thick] (B) node [mynode,above] {B} -- (xaxis -| B) node [mynode,below] {$Q^{*}$};
+% arrow to F
+\draw [<-,thick,shorten <=1.75mm] (F) -- +(1,-2.5) node [mynode,below] {F};
+\end{TikzFigure}

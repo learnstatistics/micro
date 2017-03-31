@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,descwidth=20em,caption={Demand shift and new equilibrium \label{fig:demandshift}},description={The outward shift in demand leads to a new equilibrium $E_1$.}}
+\draw [demandcolour,ultra thick,name path=demand1] (0,10) node [black,mynode,left] {10} -- (10,0) node [black,mynode,below] {10};
+\draw [demandcolour,ultra thick,name path=demand2] (0,13) -- (13,0);
+\draw [supplycolour,ultra thick,name path=supply] (0,1) node [black,mynode,left] {1} -- (10,6) node [black,mynode,right] {Supply};
+\draw [thick] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of demand lines with supply line
+\draw [name intersections={of=demand1 and supply, by=E0},name intersections={of=demand2 and supply, by=E1}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {4} -- (E0) node [mynode,below left=0.25cm and 0cm] {$E_0$} -- (xaxis -| E0) node [mynode,below] {6}
+	[dotted,thick] (yaxis |- E1) -- (E1) node [mynode,above] {$E_1$} -- (xaxis -| E1);
+% arrow between demand lines
+\path [name path=line1] (0,5) -- (8,15);
+\draw [name intersections={of=line1 and demand1, by=I1},name intersections={of=line1 and demand2, by=I2}]
+	[->,thick,shorten >=1mm,shorten <=1mm] (I1) -- (I2);
+\end{TikzFigure}

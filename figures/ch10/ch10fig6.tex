@@ -1,0 +1,23 @@
+\begin{TikzFigure}{xscale=0.63,yscale=0.53,caption={Market demand, the $MR$ curve, and the monopolist's $AC$ and $MC$ curves \label{fig:marketdemandmonopolistacmc}}}
+% axes
+\draw [thick, -] (0,13) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% demand
+\draw [ultra thick,demandcolour,name path=D] (0,12) -- node [mynode,above right,black,pos=0.25] {$D$} (14,5);
+% MR
+\draw [ultra thick,mrcolour,name path=MR] (0,12) -- node [mynode,above right,black,pos=0.4] {$MR$} (12,0);
+% MC
+\draw [ultra thick,mccolour,name path=MC] (0,0) -- (14,7) node [mynode,right,black] {$MC$};
+% AC
+\draw [atccolour,ultra thick,name path=AC] (0,0) -- (14,3.5) node [mynode,right,black] {$AC$};
+% intersection of MR and MC
+\draw [name intersections={of=MR and MC, by=promax}];
+\node [mynode,right=0cm and 0.25cm] at (promax) {Profit max};
+% y-axis nodes
+\foreach \y/\ytext in {2,4,6,8,10,12} \draw [thick] (-0.1,\y) node[mynode,left]{$\ytext$} -- +(0.2,0);
+% x-axis nodes
+\foreach \x/\xtext in {2,4,6,8,10,12,14} \draw [thick] (\x,-0.1) node[mynode,below] {$\xtext$} -- +(0,0.2);
+% dotted vertical line from q=8 to D line
+\path [name path=dottedlinepath] (8,0) -- +(0,13);
+\draw [name intersections={of=D and dottedlinepath, by=dottedlinetoD}]
+	[thick,dotted] (xaxis -| dottedlinetoD) -- (dottedlinetoD);
+\end{TikzFigure}

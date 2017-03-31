@@ -1,0 +1,23 @@
+\begin{TikzFigure}{xscale=1.5,yscale=2.1,descwidth=25em,caption={The efficiency cost of taxation \label{fig:efficiencycosttax}},description={The tax shifts $S$ to $S_t$ and reduces the quantity traded from $Q_0$ to $Q_t$. At $Q_t$ the demand value placed on an additional unit exceeds the supply valuation by $E_t$A. Since the tax keeps output at this lower level, the economy cannot take advantage of the additional potential surplus between $Q_t$ and $Q_0$. Excess burden = deadweight loss = A$E_tE_0$.}}
+% supply lines
+\draw [supplycolour,ultra thick,name path=S] (0,0.5) node [mynode,below right,black] {F} -- (4,1.5) node [mynode,right,black] {$S$};
+\draw [supplycolour,ultra thick,name path=St] (0,0.75)  -- (4,2.25) node [mynode,right,black] {$S_t$};
+% demand line
+\draw [demandcolour,ultra thick,domain=0:4,name path=D] (0,2) node [mynode,above right,black] {B} -- (4,0) node [black,mynode,above right,black] {$D$};
+% axes
+\draw [thick, -] (0,3) node (yaxis) [above] {Price} |- (5,0) node (xaxis) [right] {Quantity};
+% intersection of demand and supply lines
+\draw [name intersections={of=S and D, by=E0},name intersections={of=St and D, by=Et}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$P_0$} -- (E0) node [mynode,above] {$E_0$} -- (xaxis -| E0) node [mynode,below] {$Q_0$}
+	[dotted,thick] (yaxis |- Et) node [mynode,left] {$P_t$} -- (Et) node [mynode,above] {$E_t$} -- (xaxis -| Et) node [mynode,below] {$Q_t$};
+% path to create dotted line from P_ts to A
+\path [name path=PtsA] (xaxis -| Et) -- +(0,3);
+% intersection of S with PtsA
+\draw [name intersections={of=S and PtsA, by=A}]
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_{ts}$} -- (A) node [mynode,below right] {A};
+% path to create tax wedge
+\path [name path=taxwedge] (3.5,0) -- (3.5,3);
+% intersection of taxwedge with supply lines
+\draw [name intersections={of=S and taxwedge, by=notax},name intersections={of=St and taxwedge, by=withtax}]
+	[<->,thick,shorten >=1mm,shorten <=1mm] (notax) -- node [mynode,right,midway] {Tax\\wedge} (withtax);
+\end{TikzFigure}

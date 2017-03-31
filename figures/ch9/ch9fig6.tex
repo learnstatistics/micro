@@ -1,0 +1,13 @@
+\begin{TikzFigure}{xscale=0.36,yscale=0.3,descwidth=25em,caption={Entry of firms due to economic profits \label{fig:entryprofit}},description={If economic profits result from the price $P_E$ new firms enter the industry. This entry increases the market supply to $S'$ and the equilibrium price falls to $P'$. Entry continues as long as economic profits are present. Eventually the price is driven to a level where only normal profits are made, and entry ceases.}}
+% supply curves
+\draw [supplycolour,ultra thick,domain=1:14,name path=S] plot (\x, {0.5*pow(1.25,\x)+8}) node [black,mynode,right] {$S$=Sum of existing\\firms' $MC$ curves};
+\draw [supplycolour,ultra thick,domain=3:17,name path=Sprime] plot (\x, {0.25*pow(1.25,\x)+4}) node [black,mynode,right] {$S'$=Sum of new and existing\\firms' $MC$ curves};
+% demand curve
+\draw [demandcolour,ultra thick,domain=5:22,name path=D] plot (\x, {0.5*pow(1.25,-1*\x+20)+4}) node [black,mynode,right] {$D$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Price} |- (25,0) node (xaxis) [right] {Quantity};
+% intersection of supply and demand
+\draw [name intersections={of=S and D, by=E},name intersections={of=Sprime and D, by=prime}]
+	[dotted,thick] (yaxis |- E) node [mynode,left] {$P_E$} -| (xaxis -| E) node [mynode,below] {$q_E$}
+	[dotted,thick] (yaxis |- prime) node [mynode,left] {$P'$} -| (xaxis -| prime) node [mynode,below] {$q'$};	
+\end{TikzFigure}

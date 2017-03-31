@@ -1,0 +1,60 @@
+\begin{TikzFigure}{xscale=1,yscale=1,caption={LATC for two plants in \$000 \label{fig:ATCforTwoPlants}}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	x=1.4cm/50,
+	y=1.15cm/10,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=400,ymin=0,ymax=60,
+	xlabel={Quantity},
+	ylabel={Cost},
+]
+\addplot[ultra thick,atccolour,mark=none] coordinates { %
+	(20,80)
+	(40,55)
+	(60,46.67)
+	(80,42.5)
+	(100,40)
+	(120,38.33)
+	(140,37.14)
+	(160,36.25)
+	(180,35.56)
+	(200,35)
+	(220,34.55)
+	(240,34.17)
+	(260,33.85)
+	(280,33.57)
+	(300,33.333)
+	(320,33.125)
+	(340,32.941)
+	(360,32.778)
+	(380,32.632)
+	(400,32.5)
+} node [mynode,above,black,pos=0.8] {$ATC_1$};
+\addplot[ultra thick,atccolouralt,mark=none] coordinates { %
+	(20,125)
+	(40,75)
+	(60,58.33)
+	(80,50)
+	(100,45)
+	(120,41.67)
+	(140,39.29)
+	(160,37.5)
+	(180,36.11)
+	(200,35)
+	(220,34.09)
+	(240,33.33)
+	(260,32.69)
+	(280,32.14)
+	(300,31.667)
+	(320,31.25)
+	(340,30.882)
+	(360,30.556)
+	(380,30.263)
+	(400,30)
+} node [mynode,below,black,pos=0.8] {$ATC_2$};
+\end{axis}
+\end{TikzFigure}

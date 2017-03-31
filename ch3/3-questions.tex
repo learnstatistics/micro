@@ -1,0 +1,288 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:classical}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:classical} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch3ex1}
+The supply and demand for concert tickets are given in the table below.
+\begin{Table}{}
+\begin{tabu} to \linewidth {|X[7,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]|}	\hline
+\rowcolor{rowcolour}	\textbf{Price (\$)} & 0 & 4 & 8 & 12 & 16 & 20 & 24 & 28 & 32 & 36 & 40 \\ 
+						\textbf{Quantity demanded} & 15 & 14 & 13 & 12 & 11 & 10 & 9 & 8 & 7 & 6 & 5 \\ 
+\rowcolor{rowcolour}	\textbf{Quantity supplied} & 0 & 0 & 0 & 0 & 0 & 1 & 3 & 5 & 7 & 9 & 11	\\	\hline
+\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Plot the supply and demand curves to scale and establish the equilibrium price and quantity.
+	\item	What is the excess supply or demand when price is \$24? When price is \$36?
+	\item	Describe the market adjustments in price induced by these two prices.
+	\item	\textit{Optional}: The functions underlying the example in the table are linear and can be presented as $P=18+2Q$ (supply) and $P=60-4Q$ (demand). Solve the two equations for the equilibrium price and quantity values.
+\end{enumerate}
+\begin{econsolution}
+	\begin{enumerate}
+		\item	The diagram shows the supply and demand curves from the data in the table. These curves intersect at the equilibrium price \$32 and the equilibrium quantity 7.
+		\item	Excess demand is 6 and excess supply is 3.
+		\item	With excess demand the price is bid up, with excess supply the price is pushed down.
+		\item	Equate supply $P$ to demand: $18+2Q=60-4Q$, implying $6Q=42$, which is $Q=7$. Hence $P=32$.
+	\end{enumerate}
+	\begin{center*}
+		\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.5,yscale=0.15]
+		\draw [thick] (0,40) node (yaxis) [mynode1,above] {Price} |- (17,0) node (xaxis) [mynode1,right] {Quantity};
+		\draw [ultra thick,demandcolour,name path=D] (5,40) -- node [mynode,right,black,pos=0.9] {Demand} (15,0) node [mynode,below,black] {15};
+		\draw [ultra thick,supplycolour,name path=S] (0,18) -- (11,40) node [mynode,right,black] {Supply};
+		\path [name path=P24] (0,24) -- +(15,0);
+		\draw [name intersections={of=S and D, by=E},name intersections={of=P24 and S, by=Q3},name intersections={of=P24 and D, by=Q9}]
+		[dotted,thick] (yaxis |- E) node [mynode,left] {\$32} -| (xaxis -| E) node [mynode,below] {7}
+		[dotted,thick] (yaxis |- Q3) node [mynode,left] {\$24} -| (xaxis -| Q3) node [mynode,below] {3}
+		[dotted,thick] (Q3) -| (xaxis -| Q9) node [mynode,below] {9};
+		\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex2}
+Illustrate in a supply/demand diagram, by shifting the demand curve appropriately, the effect on the demand for flights between Calgary and Winnipeg as a result of:
+\begin{enumerate}
+	\item	Increasing the annual government subsidy to \textit{Via Rail}.
+	\item	Improving the Trans-Canada highway between the two cities.
+	\item	The arrival of a new budget airline on the scene.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	Demand curve facing \textit{Air Canada} shifts left and down. The price of the substitute \textit{Via Rail} has fallen and reduced the quantity of air transport services demanded at any price.
+	\item	Demand curve facing \textit{Air Canada} shifts left and down. The substitute car travel has improved in quality and perhaps declined in cost.
+	\item	Demand curve facing \textit{Air Canada} shifts left and down. A new budget air carrier is another substitute for \textit{Air Canada} that will divide the market for air transport.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex3}
+A new trend in US high schools is the widespread use of chewing tobacco. A recent survey indicates that 15 percent of males in upper grades now use it -- a figure not far below the use rate for cigarettes. This development came about in response to the widespread implementation by schools of regulations that forbade cigarette smoking on and around school property. Draw a supply-demand equilibrium for each of the cigarette and chewing tobacco markets before and after the introduction of the regulations.
+\begin{econsolution}
+	The market diagrams are drawn on the assumption that each product can be purchased for a given price, the supply curve in each market
+	segment is horizontal. A downward sloping demand should characterize each market. If the cigarette market is `quashed' the demand in
+	the market for chewing tobacco, a substitute, should shift outward, leading to higher consumption at the same price.
+	
+	\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.35,yscale=0.27]
+		\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} -- (0,0) -- node [mynode1,below=0.5cm and 0cm,midway] {Cigarettes} (20,0) node (xaxis) [mynode1,right] {$Q$};
+		\draw [ultra thick,demandcolour,name path=D] (10,19) node [mynode,above,black] {$D$} -- (16,0);
+		\draw [ultra thick,dashed,demandcolour,name path=D1] (4,19) node [mynode,above,black] {$D_1$} -- (10,0);
+		\draw [ultra thick,supplycolour,name path=S] (0,10) node [mynode,left,black] {$P_{cig}$} -- +(19,0) node [mynode,right,black] {$S$};
+		\draw [name intersections={of=D and S, by=Q0},name intersections={of=D1 and S, by=Q1}]
+			[dotted,thick] (Q0) -- (xaxis -| Q0) node [mynode,below] {$Q_0$}
+			[dotted,thick] (Q1) -- (xaxis -| Q1) node [mynode,below] {$Q_1$};
+		\path [name path=arrowline] (0,15) -- +(20,0);
+		\draw [name intersections={of=arrowline and D, by=d1},name intersections={of=arrowline and D1, by=d2}]
+			[->,thick,shorten >=1mm,shorten <=1mm] (d1) -- (d2);
+	\end{tikzpicture}
+	\end{center*}
+	\begin{center*}
+		\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.35,yscale=0.27]
+		\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} -- (0,0) -- node [mynode1,below=0.5cm and 0cm,midway] {Chewing Tobacco} (20,0) node (xaxis) [mynode1,right] {$Q$};
+		\draw [ultra thick,dashed,demandcolour,name path=D1] (1,19) node [mynode,above,black] {$D_1$} -- (19,7);
+		\draw [ultra thick,demandcolour,name path=D] (1,14) node [mynode,above,black] {$D$} -- (19,2);
+		\draw [ultra thick,supplycolour,name path=S] (0,10) node [mynode,left,black] {$P_{tob}$} -- +(19,0) node [mynode,right,black] {$S$};
+		\draw [name intersections={of=D and S, by=Q0},name intersections={of=D1 and S, by=Q1}]
+		[dotted,thick] (Q0) -- (xaxis -| Q0) node [mynode,below] {$Q_0$}
+		[dotted,thick] (Q1) -- (xaxis -| Q1) node [mynode,below] {$Q_1$};
+		\path [name path=arrowline] (0,12) -- +(20,0);
+		\draw [name intersections={of=arrowline and D, by=d1},name intersections={of=arrowline and D1, by=d2}]
+		[->,thick,shorten >=1mm,shorten <=1mm] (d1) -- (d2);
+		\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex4}
+The following table describes the demand and supply conditions for labour.
+\begin{Table}{}\footnotesize
+	\begin{tabu} to \linewidth {|X[4.4,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]|}	\hline
+		\rowcolor{rowcolour}	\textbf{Price (\$) = wage rate} & 0 & 10 & 20 & 30 & 40 & 50 & 60 & 70 & 80 & 90 & 100 & 110 & 120 & 130 & 140 & 150 & 160 & 170 \\ 
+								\textbf{Quantity demanded} & 1020 & 960 & 900 & 840 & 780 & 720 & 660 & 600 & 540 & 480 & 420 & 360 & 300 & 240 & 180 & 120 & 60 & 0 \\ 
+		\rowcolor{rowcolour}	\textbf{Quantity supplied} & 0 & 0 & 0 & 0 & 0 & 0 & 30 & 60 & 90 & 120 & 150 & 180 & 210 & 240 & 270 & 300 & 330 & 360	\\	\hline
+	\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Graph the functions and find the equilibrium price and quantity by equating demand and supply.
+	\item	Suppose a price ceiling is established by the government at a price of \$120. This price is below the equilibrium price that you have obtained in part (a). Calculate the amount that would be demanded and supplied and then calculate the excess demand.
+\end{enumerate}
+\begin{econsolution}
+	\begin{enumerate}
+		\item	The diagram shows that equilibrium quantity is 240, equilibrium price is \$130, which are the values obtained from equating	supply and
+		demand.
+		\item	At a price of \$120 the quantity demanded is 300 and the quantity supplied 210. Excess demand is therefore 90.
+	\end{enumerate}	
+	\begin{center*}
+		\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.2,yscale=0.25]
+		\draw [thick] (0,25) node (yaxis) [mynode1,above] {$P$} |- (50,0) node (xaxis) [mynode1,right] {$Q$};
+		\draw [ultra thick,demandcolour,name path=D] (0,17) node [mynode,left,black] {170} -- (49,8.833) node [mynode,right,black] {$D$};
+		\draw [ultra thick,supplycolour,name path=S] (0,5) node [mynode,left,black] {50} -- (49,21.333) node [mynode,right,black] {$S$};
+		\path [name path=P120] (0,12) -- +(50,0);
+		\draw [name intersections={of=S and D, by=E},name intersections={of=S and P120, by=Q210},name intersections={of=D and P120, by=Q300}]
+		[dotted,thick] (yaxis |- E) node [mynode,left] {130} -| (xaxis -| E) node [mynode,below] {240}
+		[dotted,thick] (yaxis |- Q210) node [mynode,left] {120} -| (xaxis -| Q210) node [mynode,below] {210}
+		[dotted,thick] (Q210) -| (xaxis -| Q300) node [mynode,below] {300};
+		\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex5}
+In Exercise~\ref{ex:ch3ex4}, suppose that the supply and demand describe an agricultural market rather than a labour market, and the government implements a price floor of \$140. This is greater than the equilibrium price.
+\begin{enumerate}
+	\item	Estimate the quantity supplied and the quantity demanded at this price, and calculate the excess supply.
+	\item	Suppose the government instead chose to maintain a price of \$140 by implementing a system of quotas. What quantity of quotas should the government make available to the suppliers?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	At a price of \$140 quantity demanded is 180 and quantity supplied is 270; excess supply is therefore 90.
+	\item	Total quotas of 180 will maintain a price of \$140. This is obtained by substituting the price of \$140 into the demand curve and solving for $Q$.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex6}
+In Exercise~\ref{ex:ch3ex5}, suppose that, at the minimum price, the government buys up all of the supply that is not demanded, and exports it at a price of \$80 per unit. Compute the cost to the government of this operation.
+\begin{econsolution}
+	It must buy 90 units at a cost of \$140 each. Hence it incurs a loss on each unit of \$60, making for a total loss of \$5,400.
+	
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex7}
+Let us sum two demand curves to obtain a `market' demand curve. We will suppose there are just two buyers in the market. Each of the individual demand curves has a price intercept of \$42. One has a quantity intercept of 126, the other 84.
+\begin{enumerate}
+	\item	Draw the demands either to scale or in an Excel spreadsheet, and label the intercepts on both the price and quantity axes.
+	\item	Determine how much would be purchased in the market at prices \$10, \$20, and \$30.
+	\item	\textit{Optional}: Since you know the intercepts of the market (total) demand curve, can you write an equation for it?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	The quantity axis intercepts are 84 and 126.
+	\item	The quantities demanded are 160, 110 and 60 respectively, on the market demand curve in the diagram. These values are obtained by solving the quantity demanded in each demand equation for a	given price and summing the quantities.
+	\item	The equation for the market demand curve is: $Q=210-5P$.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.26,yscale=0.13]
+	\draw [thick] (0,45) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+	\draw [ultra thick,dashed,demandcolour,name path=topline] (0,42) node [mynode,left,black] {42} -- (21,0) node [mynode,below,black] {210};
+	\draw [ultra thick,demandcolour] (0,42) -- (12.6,0) node [mynode,below,black] {126};
+	\draw [ultra thick,demandcolour] (0,42) -- (8.4,0) node [mynode,below,black] {84};
+	\path [name path=60line] (6,0) -- +(0,45);
+	\path [name path=110line] (11,0) -- +(0,45);
+	\path [name path=160line] (16,0) -- +(0,45);
+	\draw [name intersections={of=topline and 60line, by=Q60},name intersections={of=topline and 110line, by=Q110},name intersections={of=topline and 160line, by=Q160}]
+		[thick,dotted] (yaxis |- Q60) -| (xaxis -| Q60) node [mynode,below] {60}
+		[thick,dotted] (yaxis |- Q110) -| (xaxis -| Q110) node [mynode,below] {110}
+		[thick,dotted] (yaxis |- Q160) -| (xaxis -| Q160) node [mynode,below] {160};
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex8}
+In Exercise~\ref{ex:ch3ex7} the demand curves had the same price intercept. Suppose instead that the first demand curve has a price intercept of \$36 and a quantity intercept of 126; the other individual has a demand curve defined by a price intercept of \$42 and a quantity intercept of 84. Graph these curves and illustrate the market demand curve.
+\begin{econsolution}
+	\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.26,yscale=0.13]
+		\draw [thick] (0,45) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+		\draw [ultra thick,demandcolour] (0,42) node [mynode,left,black] {42} -- (8.4,0) node [mynode,below,black] {84};
+		\draw [ultra thick,dashed,demandcolour] (0,42.3) -- (1.2,36.3) -- (19.2,0) node [mynode,pos=0.9,black,above right] {$D_{\text{market}}$} node [mynode,below,black] {192};
+		\draw [ultra thick,demandcolour] (0,36) node [mynode,left,black] {36} -- (10.8,0) node [mynode,below,black] {108};
+		\draw [dotted,thick] (0,36) -- (1.2,36);
+	\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex9}
+Here is an example of a demand curve that is not linear:
+\begin{Table}{}
+	\begin{tabu} to 25em {|X[5,l]X[1,l]X[1,l]X[1,l]X[1,l]X[1,l]|}	\hline
+		\rowcolor{rowcolour}	Price (\$) & 4 & 3 & 2 & 1 & 0 \\ 
+								Quantity demanded & 25 & 100 & 225 & 400 & 625	\\	\hline
+	\end{tabu}
+\end{Table}
+\begin{enumerate}
+	\item	Plot this demand curve to scale or in Excel.
+	\item	If the supply function in this market is $P=2$, plot this function in the same diagram.
+	\item	Determine the equilibrium quantity traded in this market.
+\end{enumerate}
+\begin{econsolution}
+	\begin{enumerate}
+		\item	The demand curve is plotted below.
+		\item	The supply function is horizontal as plotted.
+		\item	Equilibrium quantity traded at $P=2$ is $Q=225$.
+	\end{enumerate}
+	\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+		\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+		\draw [ultra thick,demandcolour,name path=D] (0.1,15) node [mynode,left,black] {5} to[out=-90,in=180] node [mynode,above right,black,pos=0.8] {Demand} (24,0) node [mynode,below,black] {625};
+		\draw [ultra thick,supplycolour,name path=P2] (0,6) -- +(23,0) node [mynode,right,black] {Supply};
+		\draw [name intersections={of=P2 and D, by=E}]
+			[dotted,thick] (yaxis |- E) node [mynode,left] {2} -| (xaxis -| E) node [mynode,below] {225};
+	\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex10}
+The football stadium of the University of the North West Territories has 30 seats. The demand curve for tickets has a price intercept of \$36 and a quantity intercept of 72.
+\begin{enumerate}
+	\item	Draw the supply and demand curves to scale in a graph or in Excel. (This demand curve has the form $P=36-0.5\times Q$.)
+	\item	Determine the equilibrium admission price, and the amount of revenue generated from ticket sales for each game.
+	\item	A local alumnus and benefactor offers to install 6 more seats at no cost to the University. Compute the price that would be charged with this new supply and compute the revenue that would accrue at this new equilibrium price. Should the University accept the offer to install the seats?
+	\item	Redo the previous part of this question, assuming that the initial number of seats is 40, and the University has the option to increase capacity to 46 at no cost to itself. Should the University accept the offer in this case?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+	\item	See the diagram below.
+	\item	The equilibrium admission price is $P=\$21$, $TR=\$630$.
+	\item	The equilibrium price would now become \$18 and $TR=\$648$. Yes.
+	\item	The answer is no, because total revenue falls.
+\end{enumerate}
+\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.12,yscale=0.13]
+	\draw [thick] (0,40) node (yaxis) [mynode1,above] {Price} |- (75,0) node (xaxis) [mynode1,right] {Seats};
+	\draw [ultra thick,demandcolour,name path=D] (0,36) node [mynode,left,black] {36} -- (72,0) node [mynode,below,black] {72} node [mynode,above right,black,pos=0.8] {$D$};
+	\draw [ultra thick,supplycolour,name path=S] (30,0) node [mynode,black,below] {30} -- +(0,38) node [mynode,black,above] {$S$};
+	\draw [ultra thick,supplycolour,name path=Sprime] (36,0) node [mynode,black,below] {36} -- +(0,38) node [mynode,black,above] {$S^{\prime}$};
+	\draw [name intersections={of=S and D, by=P21},name intersections={of=Sprime and D, by=P18}]
+		[dotted,thick] (yaxis |- P21) node [mynode,left] {21} -- (P21)
+		[dotted,thick] (yaxis |- P18) node [mynode,left] {18} -- (P18);
+	\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch3ex11}
+Suppose farm workers in Mexico are successful in obtaining a substantial wage increase. Illustrate the effect of this on the price of lettuce in the Canadian winter, using a supply and demand diagram, on the assumption that all lettuce in Canada is imported during its winter.
+\begin{econsolution}
+	Wages are a cost of bringing lettuce to market. In the market diagram the supply curve for lettuce shifts upwards to reflect the increased costs. If demand is unchanged the price of lettuce rises from	$P_0$ to $P_1$ and the quantity demanded falls from $Q_0$ to $Q_1$.
+	
+	\begin{center*}
+	\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.3,yscale=0.25]
+		\draw [thick] (0,20) node (yaxis) [mynode1,above] {$P$} |- (25,0) node (xaxis) [mynode1,right] {$Q$};
+		\draw [ultra thick,demandcolour,name path=D] (3,19) -- (24,3) node [mynode,right,black] {$D$};
+		\draw [ultra thick,supplycolour,name path=S0] (1,3) -- (24,15) node [mynode,right,black] {$S_0$};
+		\draw [ultra thick,supplycolour,name path=S1] (1,8) -- (24,20) node [mynode,right,black] {$S_1$};
+		\draw [name intersections={of=D and S0, by=0},name intersections={of=D and S1, by=1}]
+			[dotted,thick] (yaxis |- 0) node [mynode,left] {$P_0$} -| (xaxis -| 0) node [mynode,below] {$Q_0$}
+			[dotted,thick] (yaxis |- 1) node [mynode,left] {$P_1$} -| (xaxis -| 1) node [mynode,below] {$Q_1$};
+		\path [name path=wageinc] (17,0) -- +(0,20);
+		\draw [name intersections={of=wageinc and S0, by=s0},name intersections={of=wageinc and S1, by=s1}]
+			[->,thick,shorten >=1mm,shorten <=1mm] (s0) -- coordinate[midway] (A) (s1);
+		\draw [->,thick,shorten >=0.5mm,shorten <=0.5mm] ([xshift=1cm]yaxis |- 0) -- ([xshift=1cm]yaxis |- 1);
+		\draw [->,thick,shorten >=0.5mm,shorten <=0.5mm] ([yshift=1cm]xaxis -| 0) -- ([yshift=1cm]xaxis -| 1);
+		\draw [<-,thick,shorten <=1mm] (A) to[out=-30,in=160] +(3,-5) node [mynode,right] {Wage\\increase\\raises costs};
+	\end{tikzpicture}
+	\end{center*}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

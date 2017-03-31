@@ -1,0 +1,17 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.34,descwidth=25em,caption={A `natural' monopolist \label{fig:naturalmonopolist}},description={When LR average costs continue to decline at very high output, one large firm may be able to supply the industry at a lower unit cost than several smaller firms. With a plant size corresponding to $ATC_2$, a single supplier can supply the whole market, whereas several smaller firms, each with plan size corresponding to $ATC_1$, cannot compete with the larger firm on account of differential unit costs.}}
+% LATC curve
+\draw [latccolour,ultra thick,name path=LATC] (2,14) to [out=-30,in=175] (24,8) node [black,mynode,right] {$LATC$};
+% MC curves
+\draw [dashed,mccolour,ultra thick,-]
+	(3,7) to [out=15,in=270] (8.5,16.5) node [black,mynode,above] {$MC_1$}
+	(17,6) to [out=15,in=270] (21,12) node [black,mynode,above] {$MC_2$};
+% axes
+\draw [thick, -] (0,20) node [above] {Cost (\$)} |- (25,0) node [right] {Quantity};
+% paths to intersect LATC
+\path [name path=oneline] (6,0) -- +(0,20);
+\path [name path=twoline] (20,0) -- +(0,20);
+% Intersection of LATC with oneline and twoline paths, and resulting ATC curves
+\draw [name intersections={of=LATC and oneline, by=one},name intersections={of=LATC and twoline, by=two}]
+	[atccolour,ultra thick] (3.5,14.5) to [out=-65,in=150] (one) to [out=-20,in=-100] (12,14) node [mynode,above,black] {$ATC_1$}
+	[atccolour,ultra thick] (17,11) to [out=-65,in=170] (two) to [out=0,in=-100] (23,10) node [mynode,above,black] {$ATC_2$};
+\end{TikzFigure}

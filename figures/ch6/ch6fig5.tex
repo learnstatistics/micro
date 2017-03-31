@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.45,yscale=0.08,descwidth=25em,caption={Utility to demand \label{fig:utiltodemand}},description={When $P=\$30$, the consumer finds the quantity such that $MU/P$ is equal for all purchases. The corresponding quantity purchased is 4 tickets. At prices of \$40 and \$20 the equilibrium condition implies quantities of 3 and 7 respectively.}}
+% demand line
+\draw [demandcolour,ultra thick,name path=demand] (5.3,53) to [out=-87,in=150] (18,17.25) node [black,mynode,above] {Demand};
+% axes
+\draw [thick, -] (0,60) node (yaxis) [above] {Price} |- (18,0) node (xaxis) [right] {Quantity};
+% paths to create dotted lines
+\path [name path=P20] (0,20) -- +(18,0);
+\path [name path=P30] (0,30) -- +(18,0);
+\path [name path=P40] (0,40) -- +(18,0);
+% intersection of demand line with paths
+\draw [name intersections={of=demand and P20, by=Q7},name intersections={of=demand and P30, by=Q4},name intersections={of=demand and P40, by=Q3}]
+	[dotted,thick] (yaxis |- Q7) node [mynode,left] {20} -| (xaxis -| Q7) node [mynode,below] {7}
+	[dotted,thick] (yaxis |- Q4) node [mynode,left] {30} -| (xaxis -| Q4) node [mynode,below] {4}
+	[dotted,thick] (yaxis |- Q3) node [mynode,left] {40} -| (xaxis -| Q3) node [mynode,below] {3};
+\end{TikzFigure}

@@ -1,0 +1,17 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Indifference curves \label{fig:indiffcurves}},description={An indifference curve defines a series of consumption bundles, all of which yield the same satisfaction. The slope of an indifference curve is the marginal rate of substitution ($MRS$) and defines the number of units of the good on the vertical axis that the individual will trade for one unit of the good on the horizontal axis. The $MRS$ declines as we move south-easterly, because the consumer values the good more highly when he has less of it.}}
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=UV] (1,10) to [out=270,in=180] node [mynode,below left,pos=0.5,black] {V} (10,1) node [black,mynode,right] {$U_V$};
+\draw [indiffcolour,ultra thick,name path=UR] (4,13) to [out=270,in=180] (13,4) node [black,mynode,right] {$U_R$};
+\draw [indiffcolour,ultra thick,name path=UL] (7,16) to [out=270,in=180] node [mynode,above right,pos=0.5,black] {L} (16,7) node [black,mynode,right] {$U_L$};
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Snowboarding} |- (25,0) node (xaxis) [right] {Jazz};
+% paths to create solid black lines between points on indifference curve U_R
+\path [name path=CMline] (4.5,0) -- +(0,20);
+\path [name path=Rline] (6.5,0) -- +(0,20);
+\path [name path=NPline] (9.5,0) -- +(0,20);
+\path [name path=Hline] (11.5,0) -- +(0,20);
+% intersection of paths with U_R line
+\draw [name intersections={of=UR and CMline, by=M},name intersections={of=UR and Rline, by=R},name intersections={of=UR and NPline, by=N},name intersections={of=UR and Hline, by=H}]
+	[thick,black] (M) node [mynode,left] {M} -- (R -| M) node [mynode,below] {C} -- (R) node [mynode,below] {R}
+	[thick,black] (N) node [mynode,above] {N} -- (H -| N) node [mynode,below] {F} -- (H) node [mynode,below] {H};
+\end{TikzFigure}

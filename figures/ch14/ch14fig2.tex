@@ -1,0 +1,24 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+	background color=figurebkgdcolour,
+	use background,
+  pie chart,
+  slice type={nonres}{piecolourone},
+  slice type={otherrev}{piecolourtwo},
+  slice type={othertax}{piecolourthree},
+  slice type={goods}{piecolourfour},
+  slice type={eipremium}{piecolourfive},
+	slice type={perincometax}{piecoloursix},
+	slice type={corincometax}{piecolourseven},
+  pie values/.style={font={\small}},
+  scale=2.5
+]
+	\pie[xshift=2.37cm]{2/nonres,12/otherrev,6/othertax,12/goods,7/eipremium,48/perincometax,13/corincometax}
+
+
+	\legend[shift={(0cm,-1cm)}]{{Non-resident income tax}/nonres, {Other revenues}/otherrev, {Other taxes and duties}/othertax, {Goods and Services tax}/goods}
+	\legend[shift={(3cm,-1cm)}]{{Employment Insurance premiums}/eipremium, {Personal income tax}/perincometax, {Corporate income tax}/corincometax}
+\end{tikzpicture}
+\caption{Federal revenues 2010/11 \label{fig:fedrev}}
+\end{figure}

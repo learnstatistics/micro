@@ -1,0 +1,8 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,caption={Supply, demand, equilibrium \label{fig:sdeq}}}
+\draw [demandcolour,ultra thick,name path=demand] (0,10) node [black,mynode,left] {10} -- node [mynode,black,above right,pos=0.25] {Demand} (10,0) node [black,mynode,below] {10};
+\draw [supplycolour,ultra thick,name path=supply] (0,1) node [black,mynode,left] {1} -- (10,6) node [black,mynode,above] {Supply};
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of demand and supply and dotted line
+\draw [name intersections={of=demand and supply, by=E}]
+	[dotted,thick] (yaxis |- E) node [mynode,left] {4} -- (E) node [mynode,above] {$E_0$} -- (xaxis -| E) node [mynode,below] {6};
+\end{TikzFigure}

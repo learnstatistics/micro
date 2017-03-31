@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.28,yscale=0.22,descwidth=25em,caption={The education/skill premium \label{fig:edskillpremium}},description={A shift in demand increases the wage premium in the short run (from $E_0$ to $E_1$) by more than in the long run (to $E_2$). In the short run, the percentage of the labour force ($S_S$) that is highly skilled is fixed. In the long run it ($S_L$) is variable and responds to the wage premium.}}
+% demand lines
+\draw [demandcolour,ultra thick,name path=D] (0,15) -- (15,0) node [black,mynode,above right,pos=0.95] {$D$};
+\draw [demandcolour,ultra thick,name path=D1] (0,20) -- (27,0) node [black,mynode,above right,pos=0.95] {$D_1$};
+% supply lines
+\draw [supplycolour,ultra thick,name path=SS] (8.2353,0) -- (8.2353,24) node [black,mynode,above] {$S_S$};
+\draw [supplycolour,ultra thick,name path=SL] (0,1) -- (30,22) node [black,mynode,above] {$S_L$};
+% axes
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {Wage\\premium} -- (0,0) node [mynode,below left] {0} -- (30,0) node [mynode1,right] {Fraction of labour\\force with high skill\\(max=1)};
+% intersection of supply and demand lines
+\draw [name intersections={of=SS and D, by=E0},name intersections={of=SS and D1, by=E1},name intersections={of=SL and D1, by=E2}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$W_{p0}$} -- (E0) node [mynode,right=0cm and 0.1cm] {$E_0$}
+	[dotted,thick] (yaxis |- E1) node [mynode,left] {$W_{p1}$} -- (E1) node [mynode,above right] {$E_1$}
+	[dotted,thick] (yaxis |- E2) node [mynode,left] {$W_{p2}$} -- (E2) node [mynode,right=0cm and 0.1cm] {$E_2$};
+\end{TikzFigure}

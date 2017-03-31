@@ -1,0 +1,47 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=20em,caption={Total cost curves \label{fig:TCcurve}},description={Total cost is the vertical sum of the variable and fixed costs.}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	extra y ticks={3000},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	x=0.85cm/25,
+	y=0.5cm/1000,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=325,ymin=0,ymax=14000,
+	xlabel={Output},
+	ylabel={Cost (\$)},
+]
+\addplot[tccolour,ultra thick,mark=none] coordinates { % Total cost
+	(0,3000)
+	(15,4000)
+	(40,5000)
+	(70,6000)
+	(110,7000)
+	(145,8000)
+	(175,9000)
+	(200,10000)
+	(220,11000)
+	(235,12000)
+	(240,13000)
+} node [black,mynode,pos=0.9,right] {Total cost};
+\addplot[vccolour,ultra thick,mark=none] coordinates { % Variable cost
+	(0,0)
+	(15,1000)
+	(40,2000)
+	(70,3000)
+	(110,4000)
+	(145,5000)
+	(175,6000)
+	(200,7000)
+	(220,8000)
+	(235,9000)
+	(240,10000)
+} node [black,mynode,pos=0.9,right] {Variable cost};
+\addplot[fccolour,ultra thick,mark=none] coordinates { % Fixed cost
+	(0,3000)
+	(240,3000)
+} node [black,mynode,pos=0.9,above] {Fixed cost ($FC$)};
+\end{axis}
+\end{TikzFigure}

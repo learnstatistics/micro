@@ -1,0 +1,24 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+	background color=figurebkgdcolour,
+	use background,
+  pie chart,
+  slice type={trantogov}{piecolourone},
+  slice type={othertran}{piecolourtwo},
+  slice type={crown}{piecolourthree},
+  slice type={dept}{piecolourfour},
+  slice type={natdef}{piecolourfive},
+	slice type={debt}{piecoloursix},
+	slice type={trantoper}{piecolourseven},
+  pie values/.style={font={\small}},
+  scale=2.5
+]
+	\pie[xshift=2.24cm]{20/trantogov,14/othertran,4/crown,18/dept,8/natdef,11/debt,25/trantoper}
+
+
+	\legend[shift={(0cm,-1cm)}]{{Transfers to governments}/trantogov, {Other transfers}/othertran, {Crown corporations}/crown, {Departments and agencies}/dept}
+	\legend[shift={(3cm,-1cm)}]{{National Defence}/natdef, {Debt servicing}/debt, {Transfers to persons}/trantoper}
+\end{tikzpicture}
+\caption{Federal expenditures 2010/11 \label{fig:fedexp}}
+\end{figure}

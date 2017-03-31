@@ -1,0 +1,22 @@
+\begin{TikzFigure}{xscale=0.33,yscale=0.25,descwidth=25em,caption={Equilibrium in an industry labour market \label{fig:eqindustrylabour}},description={A fall in the \emph{price of the good} produced in a particular industry reduces the value of the $MP_L$. Demand for labour thus falls from $D_0$ to $D_1$ and a new equilibrium $E_1$ results. Alternatively, from $E_0$, an increase in wages in another sector of the economy induces some labour to move to that sector. This is represented by the shift of $S_0$ to $S_1$ and the new equilibrium $E_2$.}}
+% demand lines
+\draw [demandcolour,ultra thick,name path=D1] (0,15) -- (15,0) node [black,mynode,above right] {$D_1$};
+\draw [demandcolour,ultra thick,name path=D0] (0,20) -- (27,0) node [black,mynode,above right] {$D_0$};
+% supply lines
+\draw [supplycolour,ultra thick,name path=S0] (0,1) -- (30,22) node [black,mynode,above] {$S_0$};
+\draw [supplycolour,ultra thick,name path=S1] (0,3) -- (25,25) node [black,mynode,above] {$S_1$};
+\draw [thick, -] (0,25) node (yaxis) [mynode1,above] {Wage\\Rate} |- (30,0) node (xaxis) [right] {Labour};
+% intersection of supply and demand lines
+\draw [name intersections={of=S0 and D0, by=E0},name intersections={of=S0 and D1, by=E1},name intersections={of=S1 and D0, by=E2}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$W_0$} -- (E0) node [mynode,above] {$E_0$} -- (xaxis -| E0) node [mynode,below] {$L_0$}
+	[dotted,thick] (yaxis |- E1) node [mynode,left] {$W_1$} -- (E1) node [mynode,above] {$E_1$} -- (xaxis -| E1) node [mynode,below] {$L_1$}
+	[dotted,thick] (yaxis |- E2) node [mynode,left] {$W_2$} -- (E2) node [mynode,above] {$E_2$} -- (xaxis -| E2) node [mynode,below] {$L_2$};
+% paths to create arrows between supply and demand lines
+\path [name path=supplyarrowline] (0,20) -- +(30,0);
+\path [name path=demandarrowline] (2,0) -- +(0,25);
+% arrows between supply and demand lines
+\draw [name intersections={of=S0 and supplyarrowline, by=s0},name intersections={of=S1 and supplyarrowline, by=s1}]
+	[->,thick,shorten >=1mm,shorten <=1mm] (s0) -- (s1);
+\draw [name intersections={of=D0 and demandarrowline, by=d0},name intersections={of=D1 and demandarrowline, by=d1}]
+	[->,thick,shorten >=1mm,shorten <=1mm] (d0) -- (d1);
+\end{TikzFigure}

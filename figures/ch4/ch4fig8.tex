@@ -1,0 +1,23 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.4,descwidth=25em,caption={Tax incidence with inelastic supply \label{fig:taxinelasticsupply}},description={The imposition of a specific tax of \$4 shifts the supply curve vertically by \$4. The final price at B ($P_t$) increases by \$2 over the no-tax price at A. At the new quantity traded, $Q_t$, the supplier gets \$3 per unit ($P_{ts}$), the government gets \$4 also and the consumer pays \$7. The incidence is shared equally by suppliers and demanders.}}
+% demand function
+\draw [demandcolour,ultra thick,name path=demand] (0,14) -- (9.333,0) node [mynode,above right,pos=0.1,black] {$D$};
+% supply functions
+\draw [supplycolour,ultra thick,name path=St] (2.333,0) -- (9.333,14) node [black,mynode,above] {$S_t$};
+\draw [supplycolour,ultra thick,name path=S] (4.333,0) -- (11.333,14) node [black,mynode,above] {$S$};
+% axes
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of demand and supply
+\draw [name intersections={of=demand and S, by=A},name intersections={of=demand and St, by=B}]
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_0=5$} -- (A) node [mynode,above] {A} -- (xaxis -| A) node [mynode,below] {$Q_0$}
+	[dotted,thick] (yaxis |- B) node [mynode,left] {$P_t=7$} -- (B) node [mynode,above] {B} -- (xaxis -| B) node [mynode,below] {$Q_t$};
+% path for P_ts=2 line
+\path [name path=Pts2] (0,2) -- (15,2);
+% intersection of Pts2 line and S line
+\draw [name intersections={of=Pts2 and S, by=C}]
+	[dotted,thick] (yaxis |- C) node [mynode,left] {$P_{ts}=3$} -- (C) node [mynode,below right] {C};
+% path to create $4=tax arrow
+\path [name path=taxline] (8,0) -- (8,15);
+% intersection of taxline with supply lines
+\draw [name intersections={of=taxline and S, by=notax},name intersections={of=taxline and St, by=withtax}]
+	[<->,thick,shorten >=1mm,shorten <=1mm] (notax) -- node [mynode,right=0cm and 0.4cm,midway] {\$4$=$tax} (withtax);
+\end{TikzFigure}

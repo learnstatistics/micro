@@ -1,0 +1,23 @@
+\begin{TikzFigure}{xscale=1.4,yscale=1.9,descwidth=25em,caption={Negative externalities and inefficiency \label{fig:negextineff}},description={A negative externality is associated with this good. $S$ reflects private costs, whereas $S_f$ reflects the full social cost. The socially optimal output is $Q^*$, not the market outcome $Q_0$. Beyond $Q^*$ the real cost exceeds the demand value; therefore $Q_0$ is not an efficient output. A tax that increases $P$ to $P^*$ and reduces output is one solution to the externality.}}
+% supply lines
+\draw [supplycolour,ultra thick,name path=Sp] (0,0.5) node [mynode,left,black] {R}-- (4,1.5) node [black,mynode,right] {$S$ (Private supply cost)};
+\draw [supplycolour,ultra thick,name path=Sf] (0,0.75) node [mynode,left,black] {K} -- (4,2.25) node [black,mynode,right] {$S_f$ (Full social supply cost)};
+% demand line
+\draw [demandcolour,ultra thick,name path=D] (0,2) node [mynode,above right,black] {U} -- (4,0) node [black,mynode,above right] {$D$};
+% axes
+\draw [thick, -] (0,3) node (yaxis) [above] {Price} |- (5,0) node [mynode1,right] (xaxis) {Quantity of\\electricity};
+% intersection of supply and demand
+\draw [name intersections={of=Sp and D, by=E0},name intersections={of=Sf and D, by=Estar}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$P_0$} -- (E0) node [mynode,above right] {$E_0$} -- (xaxis -| E0) node [mynode,below] {$Q_0$}
+	[dotted,thick] (yaxis |- Estar) node [mynode,left] {$P^{*}$} -- (Estar) node [mynode,above] {$E^{*}$};
+% path to create dotted line from E_0 to A
+\path [name path=E0Aline] (E0) -- +(0,1.5);
+% intersection of E0Aline with Sf
+\draw [name intersections={of=E0Aline and Sf, by=A}]
+	[dotted,thick] (E0) -- (A) node [mynode,above] {A};
+% path to create V on Sp line
+\path [name path=Vline] (xaxis -| Estar) -- (Estar);
+% intersection of Vline with Sp line
+\draw [name intersections={of=Sp and Vline, by=V}]
+	[dotted,thick] (Estar) -- (V) node [mynode,below right] {V} -- (xaxis -| Estar) node [mynode,below] {$Q^{*}$};
+\end{TikzFigure}

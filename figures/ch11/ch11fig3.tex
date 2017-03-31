@@ -1,0 +1,30 @@
+\begin{TikzFigure}{xscale=0.24,yscale=0.13,descwidth=27em,caption={Duopoly behaviour \label{fig:duopolybehaviour}},description={When one firm, B, chooses a specific output, e.g. $q_{B1}$, then A's residual demand $D_{A_r}$ is the difference between the market demand and $q_{B1}$. A's profit is maximized at $q_{A1}$ -- where $MC=MR_{A_r}$. This is an optimal reaction by A to B's choice. For all possible choices by B, A can form a similar optimal response. The combination of these responses forms A's reaction function.}}
+% Demand lines
+\draw [demandcolour,ultra thick,name path=Dm] (0,40) -- (40,0) coordinate (B1) node [black,mynode,above right,pos=0.7] {$D$ (market demand)};
+\draw [demandcolour,ultra thick,name path=DAr] (0,28) -- (28,0) coordinate (B2) node [black,mynode,above right,pos=0.7] {$D_{A_r}$};
+% MR lines
+\draw [dashed,mrcolour,ultra thick,name path=MR] (0,40) -- (20,0) node [black,mynode,above right] {$MR$};
+\draw [dashed,mrcolour,ultra thick,name path=MRar] (0,28) -- (14,0) node [black,mynode,above right] {$MR_{A_r}$};
+% MC line
+\draw [dashed,mccolour,ultra thick,name path=MC] (5,5) -- (30,30) node [black,mynode,above] {$MC_A$};
+% axes
+\draw [thick, -] (0,45) node (yaxis) [above] {Price} |- (45,0) node (xaxis) [right] {Quantity};
+% intersection of MC and MRar
+\draw [name intersections={of=MC and MRar, by=qA1}]
+	[dotted,thick] (qA1) -- (xaxis -| qA1) node [mynode,below] {$q_{A1}$};
+% path from qA1 to DAr
+\path [name path=qA1line] (xaxis -| qA1) -- +(0,45);
+% intersection of qA1line and DAr
+\draw [name intersections={of=qA1line and DAr, by=P1qA1}]
+	[dotted,thick] (yaxis |- P1qA1) node [mynode,left] {$P_1$} -| (qA1);
+% intersection of MC and MR
+\draw [name intersections={of=MC and MR, by=qA0}]
+	[dotted,thick] (qA0) -- (xaxis -| qA0) node [mynode,below] {$q_{A0}$};
+% path from qA0 to Dm
+\path [name path=qA0line] (xaxis -| qA0) -- +(0,45);
+% intersection of qA0line and Dm
+\draw [name intersections={of=qA0line and Dm, by=P0qA0}]
+	[dotted,thick] (yaxis |- P0qA0) node [mynode,left] {$P_0$} -| (qA0);
+% arrow from DAr to Dm
+\draw [<->,thick,shorten >=0.5mm,shorten <=0.5mm] ([yshift=-1cm]B1) -- node [mynode,midway,below] {$q_{B1}$} ([yshift=-1cm]B2);
+\end{TikzFigure}

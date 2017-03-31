@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.4,descwidth=25em,caption={Non-linear demand curves \label{fig:nonlineardemand}},description={When the demand curve is non-linear the slope changes with the price. Hence, equal price changes do not lead to equal quantity changes: The quantity change associated with a change in price from $P_0$ to $P_1$ is smaller than the change in quantity associated with the same change in price from $P_0$ to $P_2$.}}
+% axes
+\draw [thick] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% demand curve
+\draw [demandcolour,ultra thick,domain=1:15,name path=demand] plot (\x, {14/\x});
+% paths to intersect with demand curve
+\path [name path=p2line] (0,2) -- (15,2);
+\path [name path=p0line] (0,4.5) -- (15,4.5);
+\path [name path=p1line] (0,7) -- (15,7);
+% intersection of paths with demand curve
+\draw [name intersections={of=p2line and demand, by=C},name intersections={of=p0line and demand, by=A},name intersections={of=p1line and demand, by=B}]
+	[dotted,thick] (yaxis |- C) node [mynode,left] {$P_2$} -- (C) node [mynode,above right] {C} -- (xaxis -| C) node [mynode,below] {$Q_2$}
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_0$} -- (A) node [mynode,above right] {A} -- (xaxis -| A) node [mynode,below] {$Q_0$}
+	[dotted,thick] (yaxis |- B) node [mynode,left] {$P_1$} -- (B) node [mynode,above right] {B} -- (xaxis -| B) node [mynode,below] {$Q_1$};
+\end{TikzFigure}

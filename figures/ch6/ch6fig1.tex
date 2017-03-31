@@ -1,0 +1,25 @@
+\begin{TikzFigure}{xscale=1,yscale=1,caption={TU from snowboarding \label{fig:TUsnowboarding}}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=9,ymin=0,ymax=350,
+	x=0.9cm/1,
+	y=0.9cm/50,
+	xlabel={Visits to mountain},
+	ylabel={Utils},
+]
+\addplot[datasetcolourthree,ultra thick,mark=+] coordinates {
+	(1,72)
+	(2,132)
+	(3,182)
+	(4,224)
+	(5,260)
+	(6,292)
+	(7,321)
+};
+\end{axis}
+\end{TikzFigure}

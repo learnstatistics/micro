@@ -1,0 +1,15 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.32,descwidth=25em,caption={Long-run and short-run average costs \label{fig:longshortavg}},description={The long-run $ATC$ curve, $LATC$, is the lower envelope of all short-run $ATC$ curves. It defines the least cost per unit of output when all inputs are variable. Minimum efficient scale is that output level at which the $LATC$ is a minimum, indicating that further increases in the scale of production will not reduce unit costs.}}
+	\draw [latccolour,ultra thick,name path=LATC] plot [smooth, tension=0.75] coordinates {(1.5,14) (6,7) (20,7) (24.5,14)} node [black,mynode,below right] {$LATC$};
+	\draw [atccolour,ultra thick] plot [smooth,tension=1.75] coordinates {(2,13.5) (4,10.5) (7,13.5)} node [black,mynode,above] {$ATC_1$};
+	\draw [atccolour,ultra thick] plot [smooth,tension=1.75] coordinates {(5,10) (7.25,6.75) (10,10)} node [black,mynode,above] {$ATC_2$};
+	\draw [atccolour,ultra thick] plot [smooth,tension=1.71] coordinates {(15,10) (18.75,6.75) (21.75,10)};
+	\draw [atccolour,ultra thick] plot [smooth,tension=1.75] coordinates {(19,13.5) (22,10.5) (24,13.5)};
+	% axis
+	\draw [thick] (0,20) node [above] {Cost (\$)} |- (25,0) node [right] {Quantity};
+	\node [mynode] at (2,4) {Region\\of $IRS$};
+	\node [mynode] at (22,4) {Region\\of $DRS$};
+	\node [mynode] at (13,4) {Region\\of $CRS$};
+	\draw [thick,<-,shorten <=0.5em] (10,6) -- +(-2,-3) node [mynode,below] {Minimum efficient\\scale (MES)};
+	\node [black,mynode,above] at (15,10) {$ATC_3$};
+	\node [black,mynode,above] at (19,13.5) {$ATC_4$};
+\end{TikzFigure}

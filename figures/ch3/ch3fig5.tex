@@ -1,0 +1,18 @@
+\begin{TikzFigure}{xscale=0.4,yscale=0.35,descwidth=25em,caption={A model of the housing market with shifts in demand and supply \label{fig:housedemandsupply}},description={The vertical supply denotes a fixed number of houses supplied each year. Demand was stronger in 2002 than in 1997 both on account of higher incomes and lower mortgage rates. Thus the higher price in 2002 is due to both a reduction in supply and an increase in demand.}}
+\draw [demandcolour,ultra thick,name path=demand2002] (5,18) node [black,mynode,left] {$D_{2002}$} -- (17,12);
+\draw [demandcolour,ultra thick,name path=demand1997] (5,11.25) node [black,mynode,left] {$D_{1997}$} -- (16,8.5);
+\draw [supplycolour,ultra thick,name path=supply2002] (9,0) -- (9,19) node [black,mynode,above] {$S_{2002}$};
+\draw [supplycolour,ultra thick,name path=supply1997] (14,0) -- (14,19) node [black,mynode,above] {$S_{1997}$};
+\draw [thick, -] (0,20) node (yaxis) [mynode1,above] {Price in\\ \$000} |- (20,0) node (xaxis) [right] {Quantity};
+% intersection of supply and demand lines
+\draw [name intersections={of=demand2002 and supply2002,by=E2002},name intersections={of=demand1997 and supply1997,by=E1997}]
+	[dotted,thick] (yaxis |- E2002) -- (E2002) node [mynode,above right] {$E_{2002}$}
+	[dotted,thick] (yaxis |- E1997) -- (E1997) node [mynode,above right] {$E_{1997}$};
+% axis markers
+\draw [thick] (5,0) node [mynode,below] {25} -- +(0,0.2) -- +(0,-0.2);
+\draw [thick] (10,0) node [mynode,below] {50} -- +(0,0.2) -- +(0,-0.2);
+\draw [thick] (15,0) node [mynode,below] {75} -- +(0,0.2) -- +(0,-0.2);
+\draw [thick] (0,5) node [mynode,left] {100} -- +(0.2,0) -- +(-0.2,0);
+\draw [thick] (0,10) node [mynode,left] {200} -- +(0.2,0) -- +(-0.2,0);
+\draw [thick] (0,15) node [mynode,left] {300} -- +(0.2,0) -- +(-0.2,0);
+\end{TikzFigure}

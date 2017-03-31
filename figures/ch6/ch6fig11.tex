@@ -1,0 +1,14 @@
+\begin{TikzFigure}{xscale=0.38,yscale=0.34,descwidth=25em,caption={Income transfer \label{fig:incometransfer}},description={An increase in income due to a government transfer shifts the budget constraint from $I_1$ to $I_2$. This parallel shift increases the quantity consumed of the target good (daycare) \textit{and} other goods, unless one is inferior.}}
+% thick black lines tangent to the indifference curves
+\draw [thick,name path=I1] (0,13.55) -- (13,0) node [mynode,above right] {$I_1$};
+\draw [thick,name path=I2] (0,19.55) -- (19,0) node [mynode,above right] {$I_2$};
+% indifference curves
+\draw [indiffcolour,ultra thick,name path=U1] (4,13) node [black,mynode,above left] {$U_1$} to [out=270,in=180] (13,4);
+\draw [indiffcolour,ultra thick,name path=U2] (7,16) node [black,mynode,above left] {$U_2$} to [out=270,in=180] (16,7);
+% axes
+\draw [thick, -] (0,20) node (yaxis) [above] {Other goods} |- (25,0) node (xaxis) [right] {Daycare};
+% intersection of black I lines with indiff curves
+\draw [name intersections={of=I1 and U1, by=E1},name intersections={of=I2 and U2, by=E2}]
+	[dotted,thick] (yaxis |- E1) -- (E1) node [mynode,below left] {$E_1$} -- (xaxis -| E1)
+	[dotted,thick] (yaxis |- E2) -- (E2) node [mynode,above right] {$E_2$} -- (xaxis -| E2);
+\end{TikzFigure}

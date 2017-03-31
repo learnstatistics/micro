@@ -1,0 +1,10 @@
+\begin{TikzFigure}{xscale=0.32,yscale=0.27,descwidth=25em,caption={Absolute advantage -- consumption \label{fig:absadvcon}},description={With specialization and trade at a rate of $1:1$ they consume along the line joining the specialization points. If Amanda trades 8$V$ to Zoe in return for 8$F$, Amanda moves to the point A(8,10) and Zoe to Z(10,8). Each can consume more after specialization than before specialization.}}
+\draw [ppfcolourthree,ultra thick,name path=totalppf] (18,0) node [black,mynode,below] {18} -- (8,10) node [black,mynode,right] {A (8,10)}-- (10,8) node [black,mynode,right] {Z (10,8)} -- node[mynode,black,above right,pos=0.4] {Consumption possibilities\\for Amanda and Zoe} (0,18) node [black,mynode,left] {18};
+\draw [ppfcolourone,ultra thick,name path=zoeppf] (0,9) node [black,mynode,left] {9} -- coordinate[pos=0.7] (Z) (18,0) node [black,mynode,below] {18};
+\draw [ppfcolourtwo,ultra thick,name path=amandappf] (0,18) node [black,mynode,left] {18} -- coordinate[pos=0.3] (A) (12,0) node [black,mynode,below] {12};
+\draw [thick,<-,shorten <=0.5mm] (A) -- +(2,3) node [mynode,above] {Amanda's $PPF$};
+\draw [thick,<-,shorten <=0.75mm] (Z) -- +(4,2) node [mynode,right] {Zoe's $PPF$};
+\draw [thick, -] (0,20) node [above] {Vegetable} |- (25,0) node [right] {Fish};
+\draw [fill] (10,8) circle [radius=0.15];
+\draw [fill] (8,10) circle [radius=0.15];
+\end{TikzFigure}

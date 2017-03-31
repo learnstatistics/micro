@@ -1,0 +1,11 @@
+\begin{TikzFigure}{xscale=0.27,yscale=0.25,descwidth=25em,caption={Perfect price discrimination \label{fig:perfectpricedis}},description={A monopolist who can sell each unit at a different price maximizes profit by producing $Q^*$. With each consumer paying a different price the demand curve becomes the $MR$ curve. The result is that the monopoly DWL is eliminated because the efficient output is produced, and the monopolist appropriates all the consumer surplus. Total revenue for the perfect price discriminator is OAB$Q^*$.}}
+% MC line
+\draw [dashed,mccolour,ultra thick,name path=MC] (0,8) node [black,mynode,left] {$P_0$} -- (35,8) node [black,mynode,above] {$MC$};
+% Demand line
+\draw [demandcolour,ultra thick,name path=D] (0,20) node [mynode,black,left] {A} -- node [mynode,above right,black,pos=0.25] {$D=MR$} (34,3);
+% axes
+\draw [thick] (0,25) node (yaxis) [above] {\$} -- (0,0) node [below left=0cm and 0cm] {O} -- (35,0) node (xaxis) [right] {Quantity};
+% intersection of D and MC
+\draw [name intersections={of=D and MC, by=B}]
+	[dotted,thick] (B) node [mynode,above] {B} -- (xaxis -| B) node [mynode,below] {$Q^{*}$};
+\end{TikzFigure}

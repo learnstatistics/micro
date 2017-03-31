@@ -1,0 +1,18 @@
+\begin{TikzFigure}{xscale=0.52,yscale=0.42,descwidth=25em,caption={The effect of a price ceiling \label{fig:priceceiling}},description={The free market equilibrium occurs at $E_0$. A price ceiling at $P_c$ holds down the price but leads to excess demand $E_c$B, because $Q_c$ is the quantity traded. A price ceiling above $P_0$ is irrelevant since the free market equilibrium $E_0$ can still be attained.}}
+\draw [demandcolour,ultra thick,name path=demand] (0,12) -- node [mynode,black,above right,pos=0.9] {Demand} (12,0);
+\draw [supplycolour,ultra thick,name path=supply] (0,1) -- (13,14) node [black,mynode,right] {Supply};
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of supply and demand and dotted lines from axes
+\draw [name intersections={of=supply and demand,by=E0}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$P_0$} -- (E0) node [mynode,above] {$E_0$} -- (xaxis -| E0) node [mynode,below] {$Q_0$};
+% horizontal path from P_c
+\path [name path=PCline] ([yshift=-3cm]yaxis |- E0) -- +(15,0);
+% intersection of PCline with demand and supply
+\draw [name intersections={of=demand and PCline,by=B},name intersections={of=supply and PCline,by=Ec}]
+	[dotted,thick] (yaxis |- Ec) node [mynode,left] {$P_c$} -- (Ec) node [mynode,above] {$E_c$} -- (xaxis -| Ec) node [mynode,below] {$Q_c$}
+	[dotted,thick] (Ec) -- (B) node [mynode,above] {B} -- (xaxis -| B);
+% arrow between Ec and B
+\draw [<->,thick,shorten >=0.5mm,shorten <=0.5mm] ([yshift=-0.5cm]Ec) -- coordinate[pos=0.65] (A) ([yshift=-0.5cm]B);
+% arrow pointing to near middle of <-> arrow
+\draw [<-,thick,shorten >=1mm,shorten <=1mm] (A) to[out=-60,in=260] +(5,4) node [mynode] {Excess demand at $P_c$};
+\end{TikzFigure}

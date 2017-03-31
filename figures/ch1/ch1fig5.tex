@@ -1,0 +1,16 @@
+\begin{TikzFigure}{xscale=0.32,yscale=0.32,descwidth=25em,caption={Growth and the PPF \label{fig:growthandppf}},description={Economic growth or an increase in the available resources can be envisioned as an outward shift in the $PPF$ from $PPF_0$ to $PPF_1$. With $PPF_1$ the economy can produce more in both sectors than with $PPF_0$.}}
+\draw [ppfcolourthree,ultra thick,name path=ppf0] (0,16) node [black,mynode,above right] {a} node [black,mynode,left] {$S_{max}$} to [out=0,in=90] (16,0) node [black,mynode,above right] {b} node [black,mynode,below left=0cm and -0.40cm] {$G_{max}$};
+\draw [ppfcolourthree,ultra thick,name path=ppf1] (0,18) node [black,mynode,above right] {A} node [black,mynode,left] {$S'_{max}$} to [out=0,in=90] (18,0) node [black,mynode,above right] {B} node [black,mynode,below right=0cm and -0.40cm] {$G'_{max}$};
+\draw [thick, -] (0,20) node (yaxis) [above] {Services} |- (25,0) node (xaxis) [right] {Goods};
+% path to intersect with ppf0 and ppf1 to create points X_0 and X_1
+\path [name path=line1] (0,0) -- (20,20);
+% intersection of line1 with pff0 and ppf1 to create dotted lines
+\draw [name intersections={of=line1 and ppf0, by=X0},name intersections={of=line1 and ppf1, by=X1}]
+	[dotted,thick] (yaxis |- X0) node [mynode,left] {$S_0$} -- (X0) node [mynode,below left] {$X_0$} -- (xaxis -| X0) node [mynode,below] {$G_0$}
+	[dotted,thick] (yaxis |- X1) node [mynode,left] {$S_1$} -- (X1) node [mynode,above right] {$X_1$} -- (xaxis -| X1) node [mynode,below] {$G_1$};
+% path to create arrow from ppf0 to ppf1
+\path [name path=line2] (0,5) -- (10,20);
+% intersection of line2 with ppf0 and ppf1 to create arrow
+\draw [name intersections={of=line2 and ppf0, by=P0},name intersections={of=line2 and ppf1, by=P1}]
+	[->,thick,shorten >=1mm,shorten <=1mm] (P0) node [mynode,below left] {$PPF_0$} -- (P1) node [mynode,above right] {$PPF_1$};
+\end{TikzFigure}

@@ -1,0 +1,20 @@
+\begin{TikzFigure}{xscale=0.7,yscale=0.7,descwidth=25em,caption={The budget line \label{fig:budgetline}},description={FC is the budget constraint and defines the affordable combinations of snowboarding and jazz. F represents all income spent on snowboarding. Thus F$=I/P_s$. Similarly C$=I/P_j$. Points above FC are not attainable. The slope $=$ OF/OC $=(I/P_s)/(I/P_j)=P_j/P_s=20/30=2/3$. The affordable set is 0FC.}}
+% axes
+\draw [thick, -] (0,8) node (yaxis) [above] {Snowboarding} -- (0,0) node [mynode,below left] {0} -- (12,0) node (xaxis) [right] {Jazz};
+% budget line
+\draw [budgetcolour,ultra thick,name path=budget] (0,6.666) node [mynode,black,above right] {F$=I/P_s$} -- (10,0) node [black,mynode,above right] {C$=I/P_j$};
+% paths to intersect with budget line
+\path [name path=S2] (0,2) -- +(12,0);
+\path [name path=S4] (0,4) -- +(12,0);
+% intersection with budget line
+\draw [name intersections={of=budget and S2, by=J7},name intersections={of=budget and S4, by=J4}]
+	[dotted,thick]	(yaxis |- J7) node [mynode,left] {2} -- node [mynode,below,pos=0.3,yshift=-0.5em] {Affordable\\region $=$ 0FC} (J7) node (K) [mynode,above right] {K} -- (xaxis -| J7) node [mynode,below] {7}
+	[dotted,thick] (yaxis |- J4) node [mynode,left] {4} -- (J4) node (A) [mynode,above right] {A} -- (xaxis -| J4) node [mynode,below] {4};
+% vertical path from J4
+\path [name path=J4line] (xaxis -| J4) -- +(0,8);
+% intersection of J4line and S2
+\draw [name intersections={of=J4line and S2, by=B}];
+\node [mynode,above right] at (B) {B};
+% Non-affordable region
+\path [name path=NAffregion] (A) -- node [mynode,above right=1em and 1em] {Non-affordable\\region} (K);
+\end{TikzFigure}

@@ -1,0 +1,20 @@
+\begin{TikzFigure}{xscale=0.3,yscale=0.25,descwidth=25em,caption={Demand, costs and market structure \label{fig:demandcostmarketstructure}},description={With a cost structure defined by $LATC_1$ this market has space for many firms -- perfect or monopolistic competition, each producing approximately $q_1$. If costs correspond to $LATC_2$, where scale economies are substantial, there may be space for just one producer. The intermediate case, $LATC_3$, can give rise to oligopoly, with each firm producing more than $q_1$ but less than a monopolist. These curves encounter their MES at very different output levels.}}
+% Demand line
+\draw [demandcolour,ultra thick,name path=D] (1,24) -- (30,8) node [black,mynode,midway,above] {$D$};
+% LATC curves
+\draw [latccolour,ultra thick,name path=LATC1] (1,16) node [black,mynode,right] {$LATC_1$} to [out=-80,in=250] (7,16);
+\draw [latccolour,ultra thick,name path=LATC2] (1,15) to [out=-45,in=180] (24,8) node [black,mynode,right] {$LATC_2$};
+\draw [latccolour,ultra thick,name path=LATC3] (8,16) node [black,mynode,right] {$LATC_3$} to [out=-80,in=190] (20,12);
+% axes
+\draw [thick, -] (0,25) node (yaxis) [above] {\$} |- (30,0) node (xaxis) [right] {Quantity};
+% path to minimum of LATC1
+\path [name path=q1line] (4,0) -- +(0,25);
+% intersection of q1line with LATC1
+\draw [name intersections={of=q1line and LATC1, by=P1q1}]
+[dotted,thick] (P1q1) -- (xaxis -| P1q1) node [mynode,below] {$q_1$};
+% path to create dotted line intersecting with D
+\path [name path=P1line] (yaxis |- P1q1) -- +(30,0);
+% intersection of P1line with D
+\draw [name intersections={of=P1line and D, by=P1Q1}]
+[dotted,thick] (yaxis |- P1Q1) node [mynode,left] {$P_1$} -| (xaxis -| P1Q1) node [mynode,below] {$Q_1$};
+\end{TikzFigure}

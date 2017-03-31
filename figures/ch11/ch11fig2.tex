@@ -1,0 +1,33 @@
+\begin{TikzFigure}{xscale=0.26,yscale=0.14,descwidth=25em,caption={Equilibrium for a monopolistic competitor \label{fig:eqmonocomp}},description={Profits exist at the initial equilibrium ($q_0,P_0$). Hence, new firms enter and reduce the share of the total market faced by each firm, thereby shifting back their demand curve. A final equilibrium is reached where economic profits are eliminated: At $AC=P_E$ and $MR=MC$.}}
+% Demand lines
+\draw [demandcolour,ultra thick,name path=D0] (0,40) -- (40,0) node [black,mynode,above right,pos=0.95] {$D_0$};
+\draw [demandcolour,ultra thick,name path=D] (0,36) -- (18,0) node [mynode,below left,black,pos=0.88] {$D$};
+% MR lines
+\draw [dashed,mrcolour,ultra thick,name path=MR0] (0,40) -- (20,0) node [black,mynode,above right] {$MR_0$};
+\draw [dashed,mrcolour,ultra thick,name path=MR] (0,36) -- (9,0) node [black,mynode,above right] {$MR$};
+% AC curve
+\draw [atccolour,ultra thick,domain=180:360,name path=AC] plot ({16+10*cos(\x)},{26.5+10*sin(\x)}) node [mynode,above,black] {$AC$};
+% MC curve
+\draw [dashed,mccolour,ultra thick,name path=MC] (3,5) to [out=15,in=260] (20,35) node [mynode,black,above] {$MC$};
+% axes
+\draw [thick] (0,45) node (yaxis) [above] {\$} |- (45,0) node (xaxis) [right] {Quantity};
+% intersection of MR and MC
+\draw [name intersections={of=MR and MC, by=qE}]
+	[dotted,thick] (qE) -- (xaxis -| qE) node [mynode,below] {$q_E$};
+% path from qE up to D
+\path [name path=qEline] (xaxis -| qE) -- +(0,45);
+% intersection of qEline with D
+\draw [name intersections={of=qEline and D, by=PEqE}]
+	[dotted,thick] (yaxis |- PEqE) node [mynode,left] {$P_E$} -| (qE);
+% intersection of MC and MR0
+\draw [name intersections={of=MC and MR0, by=q0}]
+	[dotted,thick] (q0) -- (xaxis -| q0) node [mynode,below] {$q_0$};
+% path from q0 up to D0
+\path [name path=q0line] (xaxis -| q0) -- +(0,45);
+% intersection of q0line and D0
+\draw [name intersections={of=q0line and D0, by=P0q0}]
+	[dotted,thick] (yaxis |- P0q0) node [mynode,left] {$P_0$} -| (q0);
+% intersection of AC with q0line
+\draw [name intersections={of=AC and q0line, by=AC0}]
+	[dotted,thick] (yaxis |- AC0) node [mynode,left] {$AC_0$} -- (AC0);
+\end{TikzFigure}

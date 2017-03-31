@@ -1,0 +1,63 @@
+\begin{TikzFigure}{xscale=1,yscale=1,descwidth=25em,caption={Average and marginal cost curves \label{fig:AMCcurve}},description={The $MC$ intersects the $ATC$ and $AVC$ at their minimum values. The $AFC$ declines indefinitely as fixed costs are spread over a greater output.}}
+\begin{axis}[
+	axis line style=thick,
+	every tick label/.append style={font=\footnotesize},
+	every node near coord/.append style={font=\scriptsize},
+	xticklabel style={anchor=north,/pgf/number format/1000 sep=},
+	scaled y ticks=false,
+	x=1cm/25,
+	y=1.25cm/50,
+	yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+	xmin=0,xmax=275,ymin=0,ymax=275,
+	xlabel={Output},
+	ylabel={Cost (\$)},
+]
+\addplot[atccolour,ultra thick,mark=none] coordinates { % ATC
+	(15,266.7)
+	(40,125)
+	(70,85.7)
+	(110,63.6)
+	(145,55.2)
+	(175,51.4)
+	(200,50)
+	(220,50)
+	(235,51.1)
+	(240,54.2)
+} node [black,mynode,pos=1,right] {$ATC$};
+\addplot[dashed,mccolour,ultra thick,mark=none] coordinates { % MC
+	(15,66.7)
+	(40,40)
+	(70,33.3)
+	(110,25)
+	(145,28.6)
+	(175,33.3)
+	(200,40)
+	(220,50)
+	(235,66.7)
+} node [black,mynode,pos=1,right] {$MC$};
+\addplot[avccolour,ultra thick,mark=none] coordinates { % AVC
+	(15,66.7)
+	(40,50)
+	(70,42.9)
+	(110,36.4)
+	(145,34.5)
+	(175,34.3)
+	(200,35)
+	(220,36.4)
+	(235,38.3)
+	(240,41.7)
+} node [black,mynode,pos=1,right] {$AVC$};
+\addplot[afccolour,ultra thick,mark=none] coordinates { % AFC
+	(15,200)
+	(40,75)
+	(70,42.9)
+	(110,27.3)
+	(145,20.7)
+	(175,17.1)
+	(200,15)
+	(220,13.6)
+	(235,12.8)
+	(240,12.5)
+} node [black,mynode,pos=1,right] {$AFC$};
+\end{axis}
+\end{TikzFigure}

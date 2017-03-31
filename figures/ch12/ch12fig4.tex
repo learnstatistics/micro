@@ -1,0 +1,11 @@
+\begin{TikzFigure}{xscale=0.3,yscale=0.25,descwidth=25em,caption={Transfer earnings and rent \label{fig:transferearningrent}},description={Rent is the excess of earnings over reservation wages. Each individual earns $W_0$ and is willing to work for the amount defined by the labour supply curve. Hence rent is $W_0E_0$A and transfer earnings OA$E_0L_0$. Rent is thus the term for supplier surplus in this market.}}
+% demand line
+\draw [demandcolour,ultra thick,name path=D] (0,20) -- (27,0) node [black,mynode,above right,pos=0.95] {$D$};
+% supply line
+\draw [supplycolour,ultra thick,name path=S] (0,1) node [black,mynode,left] {A} -- (30,22) node [black,mynode,above] {$S$};
+% axes
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {Wage\\Rate} -- (0,0) node [mynode,below left] {O} -- (30,0) node (xaxis) [right] {Labour};
+% intersection of supply and demand line
+\draw [name intersections={of=S and D, by=E0}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$W_0$} -- node [mynode,below=0.25cm and 0cm,pos=0.4] {Rent} (E0) node [mynode,above] {$E_0$} -- node [mynode,left=0cm and 0.5cm,pos=0.6] {Transfer\\earnings} (xaxis -| E0) node [mynode,below] {$L_0$};
+\end{TikzFigure}

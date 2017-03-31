@@ -1,0 +1,23 @@
+\begin{TikzFigure}{xscale=0.5,yscale=0.4,descwidth=25em,caption={Tax incidence with elastic supply \label{fig:taxelasticsupply}},description={The imposition of a specific tax of \$4 shifts the supply curve vertically by \$4. The final price at B ($P_t$) increases by \$3 over the equilibrium price at A. At the new quantity traded, $Q_t$, the supplier gets \$4 per unit ($P_{ts}$), the government gets \$4 also and the consumer pays \$8. The greater part of the incidence is upon the buyer, on account of the relatively elastic supply curve: His price increases by \$3 of the \$4 tax.}}
+% demand function
+\draw [demandcolour,ultra thick,name path=demand] (0,14) -- (9.333,0) node [mynode,above right,pos=0.1,black] {$D$};
+% supply functions
+\draw [supplycolour,ultra thick,name path=St] (0,6) -- (14,13) node [black,mynode,right] {$S_t$};
+\draw [supplycolour,ultra thick,name path=S] (0,2) -- (14,9) node [black,mynode,right] {$S$};
+% axes
+\draw [thick, -] (0,15) node (yaxis) [above] {Price} |- (15,0) node (xaxis) [right] {Quantity};
+% intersection of demand and supply lines
+\draw [name intersections={of=demand and St, by=B},name intersections={of=demand and S, by=A}]
+	[dotted,thick] (yaxis |- B) node [mynode,left] {$P_t=8$} -- (B) node [mynode,above] {B} -- (xaxis -| B) node [mynode,below] {$Q_t$}
+	[dotted,thick] (yaxis |- A) node [mynode,left] {$P_0=5$} -- (A) node [mynode,above] {A} -- (xaxis -| A) node [mynode,below] {$Q_0$};
+% path for P_ts=4 line
+\path [name path=Pts4] (0,4) -- (15,4);
+% intersection of S with Pts4 line
+\draw [name intersections={of=S and Pts4, by=C}]
+	[dotted,thick] (yaxis |- C) node [mynode,left] {$P_{ts}=4$} -- (C) node [mynode,below right] {C};
+% path for $4=tax arrow
+\path [name path=taxline] (12,0) -- (12,15);
+% intersection of taxline with supply lines and resulting arrow
+\draw [name intersections={of=S and taxline, by=notax},name intersections={of=St and taxline, by=withtax}]
+	[<->,thick,shorten <=1mm,shorten >=1mm] (notax) -- node [mynode,right,midway] {\$4$=$tax} (withtax);
+\end{TikzFigure}

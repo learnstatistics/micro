@@ -1,0 +1,133 @@
+\documentclass[letter,12pt]{book}
+
+% Changes the font of the book
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc} %%Lyryx Icon
+\usepackage{roboto} %%for Lyryx Icon font
+
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage[EULERGREEK]{sansmath}
+
+% Make it look more like the Word docs
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+% Coloring various things
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+% Computing dimensions of things
+\usepackage{calc}
+
+% Conditional statements
+\usepackage{ifthen}
+
+% Page layout
+\usepackage[headheight=15pt,top=1in, bottom=1in, outer=1in, inner=1in]{geometry}
+
+% Figures that don't float
+\usepackage{float}
+
+% Used to define new float type for Application Boxes
+\usepackage{newfloat}
+
+% Wrapping text around a figure
+\usepackage{wrapfig}
+
+% Better version of cline
+\usepackage{hhline}
+
+% Coloring table cells
+\usepackage{colortbl}
+
+% Colored tables and other nice enhancements
+\usepackage{tabu}
+
+% For multirow cells in tables
+\usepackage{multirow}
+
+% For multicolumn cells in tables
+\usepackage{multicol}
+
+% Accompanies titlesec for handling toc/lof/lot entries
+% TODO: \usepackage{titletoc}
+
+% Customized part, chapter, section & subsection headers
+\usepackage[explicit]{titlesec}
+
+% For more caption features. The options make the captions bold.
+\usepackage[font=bf]{caption}
+
+% Change numbering style of enumerate
+\usepackage{enumerate}
+
+% Change spacing in and around lists
+\usepackage[shortlabels]{enumitem}
+\setlist{topsep=0pt,partopsep=0pt,parsep=0pt,itemsep=5pt}
+
+\usepackage{tcolorbox} %%for cover page 
+
+% Draw frames around text
+\usepackage[framemethod=tikz]{mdframed}
+
+% For printing counters in English
+\usepackage{fmtcount}
+%\FCloadlang{USenglish}
+
+% Hyperlinks in PDF
+%\usepackage[bookmarksnumbered,breaklinks]{hyperref}
+\usepackage{hyperref}
+
+% To prevent empty pages from having headers and footers
+\usepackage{emptypage}
+
+% Used on title page
+\usepackage{pagecolor}
+\usepackage{afterpage}
+
+% Draw images and figures
+% New versions of pgfplots load tikz automatically and conflict with
+% us loading it here...
+%\usepackage{tikz}
+
+% For plotting data
+\usepackage{pgfplots}
+
+\usetikzlibrary{calc,intersections,shapes.callouts}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{shapes,positioning}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{shadows,trees}
+\usetikzlibrary{backgrounds}
+
+\usepackage{pgfplotstable}
+
+% For fancy headers!
+\usepackage{fancyhdr}
+
+% Used for creating EOC questions with corresponding solutions at the end of the textbook
+\usepackage{answers}
+
+
+% Inputs information regarding book Title, Authors, Version and Revision
+\input{bookinfo.txt}
+
+% Inputs information regarding Institution,Course Code, Name, Session and Section (for adapted text)
+\input{courseinfo.txt}
+
+\newcommand{\textbookid}{CURTIS_PRIN_MIC_1}
+\newcommand{\epubuid}{3493ab34-ebed-48fe-8cb3-bf6164ff1dce}
+
+
+\usepackage{prineconcommon}
+\usepackage{prineconmicro}
+
+
+\begin{document}
+
+	\pagestyle{empty}
+	\input{frontmatter/titlepage}
+
+\end{document}

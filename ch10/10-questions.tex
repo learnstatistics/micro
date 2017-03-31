@@ -1,0 +1,207 @@
+\newpage
+\section*{Exercises for Chapter~\ref{chap:monopoly}}
+
+\begin{Filesave}{solutions}
+\subsubsection*{Chapter~\ref{chap:monopoly} Solutions}
+\end{Filesave}
+
+\begin{enumialphparenastyle}
+
+\begin{econex}\label{ex:ch10ex1}
+Consider a monopolist with demand curve defined by $P=100-2Q$. The $MR$ curve is $MR=100-4Q$ and the marginal cost is $MC=10+Q$. The demand intercepts are $\{\$100,50\}$, the $MR$ intercepts are $\{\$100,25\}$.
+\begin{enumerate}
+\item	Develop a diagram that illustrates this market, using either graph paper or an Excel spreadsheet, for values of output $Q=1\ldots25$.
+\item	Identify visually the profit-maximizing price and output combination.
+\item	\textit{Optional}: Compute the profit maximizing price and output combination.
+\end{enumerate}
+\begin{econsolution}
+This is a standard diagram for the monopolist. See the figure below. Equating $MC=MR$ yields $Q=18$, $P=\$64$.
+
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.13,yscale=0.05]
+\draw [thick] (0,110) node (yaxis) [mynode1,above] {Price} |- (60,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,budgetcolour,name path=G] (0,100) node [mynode,left,black] {100} -- node [mynode,above right,black,pos=0.85] {Demand: $P=100-2Q$} (50,0) node [mynode,below,black] {50};
+\draw [ultra thick,dashed,budgetcolour,name path=halfG] (0,100) -- node [mynode,above right,black,pos=0.85] {$MR=100-4Q$} (25,0) node [mynode,below,black] {25};
+\draw [ultra thick,supplycolour,name path=quota] (0,10) node [mynode,left,black] {10} -- (50,60) node [mynode,above,black] {$MC=10+Q$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex2}
+Consider a monopolist who wants to maximize revenue rather than profit. She has the demand curve $P=72-Q$, with marginal revenue $MR=72-2Q$, and $MC=12$. The demand intercepts are $\{\$72,72\}$, the $MR$ intercepts are $\{\$72,36\}$.
+\begin{enumerate}
+\item	Graph the three functions, using either graph paper or an Excel spreadsheet.
+\item	Calculate the price she should charge in order to maximize revenue. [\textit{Hint}: Where the $MR=0$.]
+\item	Compute the total revenue she will obtain using this strategy.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See below.
+\item	Total revenue is a maximum where $MR$ becomes zero. This is at $P=\$36$ and $Q=36$.
+\item	The quantity $Q=36$ sells at a price $P=\$36$, from the demand curve. Hence total revenue is $\$36\times 36=\$1,296$.
+\end{enumerate}
+\begin{center*}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.1,yscale=0.07]
+\draw [thick] (0,75) node (yaxis) [mynode1,above] {Price} |- (75,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,budgetcolour,name path=G] (0,72) node [mynode,left,black] {72} -- node [mynode,above right,black,pos=0.7] {Demand: $P=72-Q$} (72,0) node [mynode,below,black] {72};
+\draw [ultra thick,dashed,budgetcolour,name path=halfG] (0,72) -- node [mynode,above right,black,pos=0.7] {$MR=72-2Q$} (36,0) node [mynode,below,black] {36};
+\draw [ultra thick,supplycolour,name path=quota] (0,12) node [mynode,left,black] {12} -- +(70,0) node [mynode,right,black] {$MC=12$};
+\end{tikzpicture}
+\end{center*}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex3}
+Suppose that the monopoly in Exercise~\ref{ex:ch10ex2} has a large number of plants. Consider what could happen if each of these plants became a separate firm, and acted competitively. In this perfectly competitive world you can assume that the $MC$ curve of the monopolist becomes the industry supply curve.
+\begin{enumerate}
+\item	Illustrate graphically the output that would be produced in the industry? 
+\item	What price would be charged in the marketplace?
+\item	\textit{Optional}: Compute the gain to the economy in dollar terms as a result of the DWL being eliminated [\textit{Hint}: It resembles the area ABF in Figure~\ref{fig:cartelindustry}].
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Where demand equals $MC$, we obtain $72-Q=12$. Therefore $Q=60$.
+\item	From the demand curve, if $Q=60$ then $P=\$12$.
+\item	The efficiency gain in going from a profit maximizing monopoly ($Q=30$) to perfect competition ($Q=60$) is given by the area under the demand curve and above the $MC$ curve between these output levels. This is $1/2\times 30\times 30=\$450$.
+\end{enumerate}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex4}
+In the text example in Table~\ref{table:profitmaxmonopolist}, compute the profit that the monopolist would make if he were able to price discriminate, by selling each unit at the demand price in the market.
+\begin{econsolution}
+The buyers' reservation prices are given in row $P$. The cost of producing each unit is given in row $MC$. The profit on the first unit is therefore $\$(14-2)=\$12$; on the second unit is $\$(12-3)=\$9$, etc. On the fifth unit the additional profit is zero. Therefore, four units should be produced and sold. Total profit is $\$12+\$9+\$6+\$3=\$30$.
+
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex5}
+A monopolist is able to discriminate perfectly among his consumers -- by charging a different price to each one. The market demand curve facing him is given by $P=72-Q$. His marginal cost is given by $MC=24$ and marginal revenue is $MR=72-2Q$.
+\begin{enumerate}
+\item	In a diagram, illustrate the profit-maximizing equilibrium, where discrimination is not practiced. The demand intercepts are $\{\$72,72\}$, the $MR$ intercepts are $\{\$72,36\}$.
+\item	Illustrate the equilibrium output if he discriminates perfectly.
+\item	\textit{Optional}: If he has no fixed cost beyond the marginal production cost of \$24 per unit, calculate his profit in each pricing scenario.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	See figure below. The profit maximizing outcome is $Q=24$ and $P=\$48$ -- obtained from $MC=MR$.
+\item	With perfect price discrimination the monopolist's revenue is the area under the demand curve. He should continue to produce and sell as long as the demand price is greater than $MC$. Where the demand price equals $MC$ profit is maximized. This occurs at $P=\$24$, $Q=48$.
+\item	Profit is $TR-TC$ at $Q=24$. This is \$576. In (b) the profit is the area under the demand curve up to the output $Q=48$ minus the area under the $MC$ curve up to this same output. This is \$1152.
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.12,yscale=0.08]
+\draw [thick] (0,75) node (yaxis) [mynode1,above] {Price} |- (75,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,budgetcolour,name path=G] (0,72) node [mynode,left,black] {72} -- node [mynode,above right,black,pos=0.9] {Demand: $P=72-Q$} (72,0) node [mynode,below,black] {72};
+\draw [ultra thick,dashed,budgetcolour,name path=halfG] (0,72) -- node [mynode,above right,black,pos=0.9] {$MR=72-2Q$} (36,0) node [mynode,below,black] {36};
+\draw [ultra thick,supplycolour,name path=quota] (0,24) node [mynode,left,black] {24} -- +(70,0) node [mynode,right,black] {$MC=24$};
+\end{tikzpicture}
+\end{center}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex6}
+A monopolist faces two distinct markets A and B for her product, and she is able to insure that resale is not possible. The demand curves in these markets are given by $P_A=20-(1/4)Q_A$ and $P_B=14-(1/4)Q_B$. The marginal cost is constant: $MC=4$. There are no fixed costs. 
+\begin{enumerate}
+\item	Graph these two markets and illustrate the profit maximizing price and quantity in each market. [You will need to insert the $MR$ curves to determine the optimal output.] The demand intercepts in A are $\{\$20,80\}$, and in B are $\{\$14,56\}$.
+\item	In which market will the monopolist charge a higher price? 
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Profit maximizing output is where $MC=MR$ in each market. The $MR$s are $MR_A=20-(1/2)Q_A$, $MR_B=14-(1/2)Q_B$. Equating each of these in turn to $MC=4$ yields $Q_A=32$ and $Q_B=20$. These outputs can be sold at a price obtained from their demand curves: $P_A=\$12$ and $P_B=\$9$. This is illustrated in the table below.
+\item	Total profit is the sum of profit in each market: $(P_A\times Q_A-TC_A)+(P_B\times Q_B-TC_B)=\$256+\$100=\$356$.
+\end{enumerate}
+\begin{Table}{}\small
+	\begin{tabu} to \linewidth {|X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]X[1,c]|}	\hline
+		\rowcolor{rowcolour}	$Q$	&	$P_A$	&	$P_B$	&	$MC$	&	$MR_A$	&	$MR_B$	\\	\hline
+		1	&	19.75	&	13.75	&	4	&	19.5	&	13.5	\\
+		\rowcolor{rowcolour}	4	&	19	&	13	&	4	&	18	&	12	\\
+		8	&	18	&	12	&	4	&	16	&	10	\\
+		\rowcolor{rowcolour}	12	&	17	&	11	&	4	&	14	&	8	\\
+		16	&	16	&	10	&	4	&	12	&	6	\\
+		\rowcolor{rowcolour}	20	&	15	&	9	&	4	&	10	&	4	\\
+		24	&	14	&	8	&	4	&	8	&	2	\\
+		\rowcolor{rowcolour}	28	&	13	&	7	&	4	&	6	&	0	\\
+		32	&	12	&	6	&	4	&	4	&	-2	\\
+		\rowcolor{rowcolour}	36	&	11	&	5	&	4	&	2	&	-4	\\
+		40	&	10	&	4	&	4	&	0	&	-6	\\
+		\rowcolor{rowcolour}	44	&	9	&	3	&	4	&	-2	&	-8	\\
+		48	&	8	&	2	&	4	&	-4	&	-10	\\
+		\rowcolor{rowcolour}	52	&	7	&	1	&	4	&	-6	&	-12	\\
+		56	&	6	&	0	&	4	&	-8	&	-14	\\
+		\rowcolor{rowcolour}	60	&	5	&	-1	&	4	&	-10	&	-16	\\
+		64	&	4	&	-2	&	4	&	-12	&	-18	\\
+		\rowcolor{rowcolour}	68	&	3	&	-3	&	4	&	-14	&	-20	\\
+		72	&	2	&	-4	&	4	&	-16	&	-22	\\
+		\rowcolor{rowcolour}	76	&	1	&	-5	&	4	&	-18	&	-24	\\	\hline
+	\end{tabu}
+\end{Table}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex7}
+A concert organizer is preparing for the arrival of the Grateful Living band in his small town. He knows he has two types of concert goers: One group of 40 people, each willing to spend \$60 on the concert, and another group of 70 people, each willing to spend \$40. His total costs are purely fixed at \$3,500.
+\begin{enumerate}
+\item	Draw the market demand curve faced by this monopolist.
+\item	Draw the $MR$ and $MC$ curves.
+\item	With two-price discrimination what will be the monopolist's profit?
+\item	If he must charge a single price for all tickets can he make a profit?
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	The diagram here is equivalent to the one in Figure~\ref{fig:pricedismovie} in the text. The first segment, up to an output of 40 units, has a price of \$60; the second, from an output of 40 to 110, has a price of \$40.
+\item	The $MC$ curve runs along the horizontal axis -- after the fixed cost is incurred, the $MC$ is zero. The demand curve is the $MR$ curve here, composed of the two horizontal segments.
+\item	A price of \$60 can be charged to 40 buyers, and a price of \$40 charged to 70 buyers. Hence $TR=\$5,200$. Since $TC=\$3,500$, profit is \$1,700.
+\item	Yes; 110 buyers at \$40 each yields a $TR=\$4,400$. Subtract the $TC$ to yield a profit of \$900.
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background]
+\begin{axis}[
+axis line style=thick,
+every tick label/.append style={font=\footnotesize},
+ymajorgrids,
+grid style={dotted},
+every node near coord/.append style={font=\scriptsize},
+xticklabel style={rotate=90,anchor=east,/pgf/number format/1000 sep=},
+scaled y ticks=false,
+yticklabel style={/pgf/number format/fixed,/pgf/number format/1000 sep = \thinspace},
+xmin=0,xmax=120,ymin=0,ymax=70,
+y=0.8cm/10,
+x=0.9cm/15,
+]
+\addplot[datasetcolourtwo,ultra thick] table {
+	X	Y
+	0	60
+	40	60
+	40	40
+	110	40
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{econsolution}
+\end{econex}
+
+\begin{econex}\label{ex:ch10ex8}
+\textit{Optional}: A monopolist faces a demand curve $P=64-2Q$ and $MR=64-4Q$. His marginal cost is $MC=16$.
+\begin{enumerate}
+\item	Graph the three functions and compute the profit maximizing output and price.
+\item	Compute the efficient level of output (where $MC$=demand), and compute the DWL associated with producing the profit maximizing output rather than the efficient output.
+\end{enumerate}
+\begin{econsolution}
+\begin{enumerate}
+\item	Setting $MC=MR$ yields $Q=12$ and from the demand curve, $P=\$40$. See the figure below.
+\item	Where $MC$ equals demand the output is $Q=24$. In moving from the output level $Q=24$ to $Q=12$, the DWL is the area bounded by the demand curve and the $MC$ between these output levels: $1/2\times 12\times 24=\$144$.
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[background color=figurebkgdcolour,use background,xscale=0.2,yscale=0.075]
+\draw [thick] (0,75) node (yaxis) [mynode1,above] {Price} |- (35,0) node (xaxis) [mynode1,right] {Quantity};
+\draw [ultra thick,budgetcolour,name path=G] (0,64) node [mynode,left,black] {64} -- node [mynode,above right,black,pos=0.95] {Demand: $P=64-2Q$} (32,0) node [mynode,below,black] {32};
+\draw [ultra thick,dashed,budgetcolour,name path=halfG] (0,64) -- node [mynode,above right,black,pos=0.95] {$MR=64-4Q$} (16,0) node [mynode,below,black] {16};
+\draw [ultra thick,supplycolour,name path=quota] (0,16) node [mynode,left,black] {16} -- +(35,0) node [mynode,right,black] {$MC=16$};
+\end{tikzpicture}
+\end{center}
+\end{econsolution}
+\end{econex}
+
+\end{enumialphparenastyle}

@@ -1,0 +1,13 @@
+\begin{TikzFigure}{xscale=0.3,yscale=0.23,descwidth=25em,caption={The market for land services \label{fig:marketlandservices}},description={The supply of land is relatively fixed, and therefore the return to land is primarily demand determined. Shifts in demand give rise to differences in returns.}}
+% Demand lines
+\draw [demandcolour,ultra thick,name path=D0] (0,15) -- (15,0) node [black,mynode,above right,pos=0.95] {$D_0$};
+\draw [demandcolour,ultra thick,name path=D1] (0,20) -- (27,0) node [black,mynode,above right,pos=0.95] {$D_1$};
+% Supply lines
+\draw [supplycolour,ultra thick,name path=S] (12,0) -- (12,24) node [black,mynode,right] {$S$};
+% axes
+\draw [thick] (0,25) node (yaxis) [mynode1,above] {Rental\\Rate} |- (30,0) node (xaxis) [mynode1,right] {Services\\of Land};
+% intersection of supply and demand lines
+\draw [name intersections={of=S and D0, by=E0},name intersections={of=S and D1, by=E1}]
+	[dotted,thick] (yaxis |- E0) node [mynode,left] {$R_0$} -- (E0)
+	[dotted,thick] (yaxis |- E1) node [mynode,left] {$R_1$} -- (E1);
+\end{TikzFigure}
